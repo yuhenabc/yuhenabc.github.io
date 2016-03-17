@@ -24,25 +24,12 @@
   .main-body
     margin-top: - sidebar-toggle-width
   .main-body-inner
-    if sidebar is right
-      padding-right: sidebar-toggle-width
-      background-position: -340px 0 !important
-    else
-      padding-left: sidebar-toggle-width
-      background-position: -290px 0 !important
     #sidebar
       clearfix()
-      if sidebar is right
-        right: 0
-        background: url(images/s-left.png) repeat-y right 0
-      else
-        left: 0
-        background: url(images/s-left.png) repeat-y left 0
       margin: 0
       height: 100%
       position: absolute
       overflow: hidden
-      width: sidebar-toggle-width
       transition: width 0.2s ease-in 0.2s
       .sidebar-toggle
         display: block

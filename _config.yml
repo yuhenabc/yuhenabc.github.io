@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: yuhenabc
+title: 羽痕爱编程
 subtitle:
 description:
 author: yuhenabc
@@ -13,7 +13,7 @@ timezone: Asia/Shanghai
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yuhenabc.github.io/blog
-root: /blog/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -68,4 +68,6 @@ theme: hueman
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-type:
+  type: git
+  repo: git@github.com:yuhenabc/yuhenabc.github.io.git
+  message: hexo update

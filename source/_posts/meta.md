@@ -1,6 +1,6 @@
 title: 令人惊讶的 mate 标签
 date: 2016-7-1
-tags: meta html
+tags: html
 ---
 
 > 移动端的工作已经越来越成为前端工作的重要内容，除了平常的项目开发，HTML头部标签功能，特别是<meta>标签显得非常重要。
@@ -249,8 +249,9 @@ IOS 图标大小在iPhone 6 plus上是180×180，iPhone 6 是120×120。 适配i
 
 ### iOS 启动画面
 
-[官方文档](https://developer.apple.com/library/ios/qa/qa1686/_index.html)
-[参考文章](http://wxd.ctrip.com/blog/2013/09/ios7-hig-24/)
+[《官方文档》](https://developer.apple.com/library/ios/qa/qa1686/_index.html)
+
+[《参考文章》](http://wxd.ctrip.com/blog/2013/09/ios7-hig-24/)
 
 iPad 的启动画面是不包括状态栏区域的。
 

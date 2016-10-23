@@ -31,10 +31,12 @@
     color: color-link
   .article-summary-inner
     margin-right: 30px
-    box-shadow: 0 0 1px rgba(10,10,10,.2)
+    box-shadow: 0 0 2px rgba(10,10,10,.15)
     padding: 15px
+    border-radius: 8px
+    transition: box-shadow 0.3s ease-in
     &:hover
-      background-color: #FBFBFB
+      box-shadow: 0 1px 6px rgba(10,10,10,.2)
     .thumbnail
       height: 0
       width: 100%
@@ -111,7 +113,6 @@
   clearfix()
   color: color-default
   font-size: font-size-article
-  font-weight: 300
   line-height: line-height
   p, table
     margin: line-height 0
@@ -155,8 +156,8 @@
     font-size: 14px
     margin: line-height 0
     padding: 0 1em
-    border: dotted 1px #666
-    background-color: #f0f0f0
+    border: dashed 1px #666
+    background-color: #fefefe
     footer
       font-size: font-size
       margin: line-height 0

@@ -25,7 +25,7 @@
   &:last-child
     padding-bottom: 30px
   .article-summary:last-child
-    margin-bottom: 0;
+    margin-bottom: 0
 .article-summary
   width: 100%
   float: left
@@ -38,20 +38,8 @@
     box-shadow: 0 0 2px rgba(10,10,10,.15)
     padding: 15px
     border-radius: 2px
-    background-color: #333
+    background-color: #222
     transition: background 0.2s ease-in
-    &:hover
-      background-color: #222
-      .article-meta
-        time
-          color: #AAB
-      .article-title
-        a
-          color: #BCD
-          &:hover
-            color: #BCF
-      .article-excerpt
-        color: #AAB
     .thumbnail
       height: 0
       width: 100%
@@ -82,22 +70,30 @@
       word-wrap: break-word
       a
         transition: color 0.1s ease-in
-        color: #EEE
+        color: #BCD
     .article-excerpt
       transition: color 0.2s ease-in
       position: relative
-      color: #BBB
+      color: #AAB
       font-size: 16px
       line-height: line-height
       overflow: hidden
       height: 4 * line-height
-  &:hover
-    .thumbnail
-      .thumbnail-image
-        opacity: 0.7
-    .article-title
-      a
-        color: color-link
+    .article-meta
+      time
+        color: #AAB
+    &:hover
+      background-color: #222
+      .thumbnail
+        .thumbnail-image
+          opacity: 0.7
+      .article-title
+        a
+          color: #BCD
+          &:hover
+            color: #BCF
+      .article-excerpt
+        color: #AAB
 
 .article-category
   float: left

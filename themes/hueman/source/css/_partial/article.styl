@@ -1,3 +1,7 @@
+.article
+  letter-spacing: 1px
+  .highlight
+    letter-spacing: normal
 .article-single
   padding: 30px 30px 20px
 
@@ -35,11 +39,9 @@
     color: color-link
   .article-summary-inner
     margin-right: 30px
-    box-shadow: 0 0 2px rgba(10,10,10,.15)
     padding: 15px
-    border-radius: 2px
-    background-color: #222
-    transition: background 0.2s ease-in
+    background-color: #fff
+    transition: background 0.1s ease-in
     .thumbnail
       height: 0
       width: 100%
@@ -64,36 +66,40 @@
         background-image: url(thumbnail-default)
     .article-title
       margin-bottom: 10px
-      font-size: 22px
+      font-size: 38px
+      letter-spacing: 1px
       font-weight: 400
       line-height: 1.5em
       word-wrap: break-word
       a
         transition: color 0.1s ease-in
-        color: #BCD
+        color: #555
     .article-excerpt
+      letter-spacing: 1px
       transition: color 0.2s ease-in
       position: relative
-      color: #AAB
+      color: #999
       font-size: 16px
       line-height: line-height
       overflow: hidden
       height: 4 * line-height
     .article-meta
+      margin-bottom: 8px
       time
-        color: #AAB
+        color: #f5871f
+        letter-spacing: .1em
     &:hover
-      background-color: #222
+      background-color: #26272b
       .thumbnail
         .thumbnail-image
           opacity: 0.7
       .article-title
         a
-          color: #BCD
+          color: #ccc
           &:hover
-            color: #BCF
+            color: #eee
       .article-excerpt
-        color: #AAB
+        color: #999
 
 .article-category
   float: left

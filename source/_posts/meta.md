@@ -36,20 +36,20 @@ html5 之前网页中会这样写
 简体中文
 
 ```
-<html lang="zh-cmn-Hans">
+<html lang="zh-Hans">
 ```
 
 繁体中文
 
 ```
-<html lang="zh-cmn-Hant">
+<html lang="zh-Hant">
 ```
 
 很少情况才需要加地区代码，通常是为了强调不同地区汉语使用差异，例如：
 
 ```
-<p lang="zh-cmn-Hans">
-    <strong lang="zh-cmn-Hans-CN">菠萝</strong>和<strong lang="zh-cmn-Hant-TW">鳳梨</strong>其实是同一种水果。只是大陆和台湾称谓不同，且新加坡、马来西亚一带的称谓也是不同的，称之为<strong lang="zh-cmn-Hans-SG">黄梨</strong>。
+<p lang="zh-Hans">
+    <strong lang="zh-Hans-CN">菠萝</strong>和<strong lang="zh-Hant-TW">鳳梨</strong>其实是同一种水果。只是大陆和台湾称谓不同，且新加坡、马来西亚一带的称谓也是不同的，称之为<strong lang="zh-Hans-SG">黄梨</strong>。
 </p>
 ```
 
@@ -357,7 +357,7 @@ Windows 8 磁贴图标
 ``` html
 <!-- 使用 HTML5 doctype，不区分大小写 -->
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
+<html lang="zh-Hans">
 <head>
     <!-- 声明文档使用的字符编码 -->
     <meta charset='utf-8'>

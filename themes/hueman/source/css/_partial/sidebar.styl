@@ -64,6 +64,8 @@
 #article-nav
   clearfix()
   position: relative
+  display: flex
+  flex-direction: row-reverse
 
 .article-nav-link-wrap
   position: relative
@@ -76,6 +78,7 @@
   transition: 0.2s ease-in
   text-align: center
   text-decoration: none
+  flex: 1
   .icon
     position: absolute
     color: #ccc
@@ -88,7 +91,7 @@
   #icon-chevron-right
     right: 10px
   &:hover
-    background: rgba(0,0,0,0.02)
+    background: rgba(0,0,0,0.05)
     .icon
       color: color-link
 

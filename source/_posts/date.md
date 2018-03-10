@@ -1,5 +1,6 @@
 title: Date 对象使用总结
 date: 2016-8-1
+category: 知识备忘
 tags: javascript
 ---
 

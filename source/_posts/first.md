@@ -1,5 +1,6 @@
 title: 我的第一篇文章
 date: 2015-11-11
+category: 知识备忘
 tags: hexo
 ---
 

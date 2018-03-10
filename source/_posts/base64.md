@@ -1,5 +1,6 @@
 title: 字符串 Base64 转码解码
 date: 2017-2-8
+category: 知识备忘
 tags: javascript
 ---
 

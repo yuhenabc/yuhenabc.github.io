@@ -8,11 +8,11 @@ tags: shell
 
 假如你的代理机是你的本机（127.0.0.1），代理的端口为 7070，
 
-开启代理很简单，就是用 export 命令设置全局变量 https_proxy 和 http_proxy：
+开启代理很简单，就是用 export 命令设置全局变量 http_proxy 和 https_proxy：
 
 ``` bash
-export https_proxy="http://127.0.0.1:7070"
 export http_proxy="http://127.0.0.1:7070"
+export https_proxy="http://127.0.0.1:7070"
 ```
 
 关闭代理就是用 unset 命令把全局变量清空：
@@ -31,8 +31,8 @@ unset https_proxy
 openproxy.sh
 
 ``` bash
-export https_proxy="http://127.0.0.1:7070"
 export http_proxy="http://127.0.0.1:7070"
+export https_proxy="http://127.0.0.1:7070"
 
 echo "already open proxy with 127.0.0.1:7070"
 ```
@@ -55,7 +55,9 @@ alias openproxy="source ~/.command/openproxy.sh"
 alias closeproxy="source ~/.command/closeproxy.sh"
 ```
 
-# 用途
+最后，打开一个新的终端，在你需要开启的时候敲下 `openproxy` ，需要关闭的时候敲下 `closeproxy` 就可以喽～
+
+## 用途
 
 从此以后，再也不用担心通过命令行安装一些依赖的关键时刻因为“墙”的原因而卡壳，命令举例：
 

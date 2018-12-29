@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Mac 终端开启和关闭代理的方法 | 羽痕爱编程</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="简单命令假如你的代理机是你的本机（127.0.0.1），代理的端口为 7070， 开启代理很简单，就是用 export 命令设置全局变量 https_proxy 和 http_proxy： 12export https_proxy=&quot;http://127.0.0.1:7070&quot;export http_proxy=&quot;http://127.0.0.1:7070&quot; 关闭代理就是用 unset 命令把全局">
+<meta name="keywords" content="shell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac 终端开启和关闭代理的方法">
+<meta property="og:url" content="http://yuhenabc.com/2018/12/29/proxy/index.html">
+<meta property="og:site_name" content="羽痕爱编程">
+<meta property="og:description" content="简单命令假如你的代理机是你的本机（127.0.0.1），代理的端口为 7070， 开启代理很简单，就是用 export 命令设置全局变量 https_proxy 和 http_proxy： 12export https_proxy=&quot;http://127.0.0.1:7070&quot;export http_proxy=&quot;http://127.0.0.1:7070&quot; 关闭代理就是用 unset 命令把全局">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-29T08:32:40.548Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac 终端开启和关闭代理的方法">
+<meta name="twitter:description" content="简单命令假如你的代理机是你的本机（127.0.0.1），代理的端口为 7070， 开启代理很简单，就是用 export 命令设置全局变量 https_proxy 和 http_proxy： 12export https_proxy=&quot;http://127.0.0.1:7070&quot;export http_proxy=&quot;http://127.0.0.1:7070&quot; 关闭代理就是用 unset 命令把全局">
+  
+  
+
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+
+
+  
+
+  
+<!--    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>-->
+<!--    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
+  
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+</head>
+</html>
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                
+                  <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://yuhenabc.com"></form>
+                
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/categories/知识备忘/">知识备忘</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-proxy" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      Mac 终端开启和关闭代理的方法
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2018/12/29/proxy/" class="article-date">
+  <time datetime="2018-12-28T16:00:00.000Z" itemprop="datePublished">2018-12-29</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <h2 id="简单命令"><a href="#简单命令" class="headerlink" title="简单命令"></a>简单命令</h2><p>假如你的代理机是你的本机（127.0.0.1），代理的端口为 7070，</p>
+<p>开启代理很简单，就是用 export 命令设置全局变量 https_proxy 和 http_proxy：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"http://127.0.0.1:7070"</span></span><br><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://127.0.0.1:7070"</span></span><br></pre></td></tr></table></figure>
+<p>关闭代理就是用 unset 命令把全局变量清空：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">unset</span> http_proxy</span><br><span class="line"><span class="built_in">unset</span> https_proxy</span><br></pre></td></tr></table></figure>
+<h2 id="自定义命令"><a href="#自定义命令" class="headerlink" title="自定义命令"></a>自定义命令</h2><p>程序员不喜欢 repeat (him/her/it)self，所以。。。</p>
+<p>首先，创建两个文件，<code>openproxy.sh</code> 和 <code>closeproxy.sh</code>，</p>
+<p>openproxy.sh</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"http://127.0.0.1:7070"</span></span><br><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://127.0.0.1:7070"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"already open proxy with 127.0.0.1:7070"</span></span><br></pre></td></tr></table></figure>
+<p>closeproxy.sh</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">unset</span> http_proxy</span><br><span class="line"><span class="built_in">unset</span> https_proxy</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"already close proxy"</span></span><br></pre></td></tr></table></figure>
+<p>接着，在你的用户根目录新建一个 <code>.command</code> 文件夹，然后存放这两个文件，</p>
+<p>然后，修改你的 <code>.bzshrc</code> 或者 <code>.zshrc</code>，在合适的地方添加如下别名（alias）命令，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> openproxy=<span class="string">"source ~/.command/openproxy.sh"</span></span><br><span class="line"><span class="built_in">alias</span> closeproxy=<span class="string">"source ~/.command/closeproxy.sh"</span></span><br></pre></td></tr></table></figure>
+<h1 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h1><p>从此以后，再也不用担心通过命令行安装一些依赖的关键时刻因为“墙”的原因而卡壳，命令举例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># homebrew 安装 node</span></span><br><span class="line">brew install node</span><br><span class="line"></span><br><span class="line"><span class="comment"># homebrew 安装 yarn</span></span><br><span class="line">brew install yarn</span><br><span class="line"></span><br><span class="line"><span class="comment"># wget 下载国外资源</span></span><br><span class="line">wget https://&lt;some_url&gt;</span><br></pre></td></tr></table></figure>
+<p>等等。</p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://yuhenabc.com/2018/12/29/proxy/" data-id="cjq977imu000a7y6lx6y89in5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>关注我 :</p>
+    <ul class="social-links">
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/10/npm/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">使用环境变量实现 npm 换源</p>
+      <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2018 yuhenabc</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+
+
+
+
+<script src="/js/html-patch.js"></script>
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

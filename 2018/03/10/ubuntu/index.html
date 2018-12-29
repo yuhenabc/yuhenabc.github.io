@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>安装 ubuntu 后要做的三件事 | 羽痕爱编程</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 中文语言支持安装中文语言包： 1apt install language-pack-zh-hant language-pack-zh-hans 配置相关环境变量： 1vim /etc/environment 在文件中增加语言和编码的设置： 12LANG=&amp;quot;zh_CN.UTF-8&amp;quot;LANGUAGE=&amp;quot;zh_CN:zh:en_US:en&amp;quot; 重新设置本地配置">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装 ubuntu 后要做的三件事">
+<meta property="og:url" content="http://yuhenabc.com/2018/03/10/ubuntu/index.html">
+<meta property="og:site_name" content="羽痕爱编程">
+<meta property="og:description" content="1. 中文语言支持安装中文语言包： 1apt install language-pack-zh-hant language-pack-zh-hans 配置相关环境变量： 1vim /etc/environment 在文件中增加语言和编码的设置： 12LANG=&amp;quot;zh_CN.UTF-8&amp;quot;LANGUAGE=&amp;quot;zh_CN:zh:en_US:en&amp;quot; 重新设置本地配置">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-21T04:37:58.242Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="安装 ubuntu 后要做的三件事">
+<meta name="twitter:description" content="1. 中文语言支持安装中文语言包： 1apt install language-pack-zh-hant language-pack-zh-hans 配置相关环境变量： 1vim /etc/environment 在文件中增加语言和编码的设置： 12LANG=&amp;quot;zh_CN.UTF-8&amp;quot;LANGUAGE=&amp;quot;zh_CN:zh:en_US:en&amp;quot; 重新设置本地配置">
+  
+  
+
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+
+
+  
+
+  
+<!--    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>-->
+<!--    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
+  
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+</head>
+</html>
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                
+                  <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://yuhenabc.com"></form>
+                
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/categories/知识备忘/">知识备忘</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-ubuntu" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      安装 ubuntu 后要做的三件事
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2018/03/10/ubuntu/" class="article-date">
+  <time datetime="2018-03-09T16:00:00.000Z" itemprop="datePublished">2018-03-10</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <h2 id="1-中文语言支持"><a href="#1-中文语言支持" class="headerlink" title="1. 中文语言支持"></a>1. 中文语言支持</h2><p>安装中文语言包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install language-pack-zh-hant language-pack-zh-hans</span><br></pre></td></tr></table></figure>
+<p>配置相关环境变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/environment</span><br></pre></td></tr></table></figure>
+<p>在文件中增加语言和编码的设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LANG=&quot;zh_CN.UTF-8&quot;</span><br><span class="line">LANGUAGE=&quot;zh_CN:zh:en_US:en&quot;</span><br></pre></td></tr></table></figure>
+<p>重新设置本地配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-reconfigure locales</span><br></pre></td></tr></table></figure>
+<p>这时候会出来一个选择界面，把默认没有打勾的 <code>zh_</code> 开头的语言包打上勾就可以回撤了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Generating locales (this might take a while)...</span><br><span class="line">  en_US.UTF-8... done</span><br><span class="line">  zh_CN.UTF-8... done</span><br><span class="line">  zh_HK.UTF-8... done</span><br><span class="line">  zh_SG.UTF-8... done</span><br><span class="line">  zh_TW.UTF-8... done</span><br><span class="line">Generation complete.</span><br></pre></td></tr></table></figure>
+<p>表示成功。</p>
+<p>同样还可以更改一下时区：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-reconfigure tzdata</span><br></pre></td></tr></table></figure>
+<h2 id="2-新建一个超级用户"><a href="#2-新建一个超级用户" class="headerlink" title="2. 新建一个超级用户"></a>2. 新建一个超级用户</h2><p>新建用户:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser feng</span><br></pre></td></tr></table></figure>
+<p>经过设置密码等一系列操作后成功。</p>
+<p>接着添加用户到 sudo 分组：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -G sudo feng</span><br></pre></td></tr></table></figure>
+<p>验证分组：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groups feng</span><br></pre></td></tr></table></figure>
+<p>可能得到如下结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">feng : feng sudo lxd</span><br></pre></td></tr></table></figure>
+<p>你会看到已经在 sudo 分组中了，这样用户 feng 就可以使用 sudo 命令了。</p>
+<p>额外，我们给新用户生成一下 ssh-key，毕竟这是以后免不了的嘛：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
+<p>想要让机器可以通过远程访问，可以通过修改 <code>authorized_keys</code> 文件来赋予权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim authorized_keys</span><br><span class="line">chmod 600 authorized_keys</span><br></pre></td></tr></table></figure>
+<p>最后一步是改变 <code>authorized_keys</code> 文件的访问权限为 600，这是系统规定，只有如此才生效。</p>
+<h2 id="3-用更好的命令行提示工具"><a href="#3-用更好的命令行提示工具" class="headerlink" title="3. 用更好的命令行提示工具"></a>3. 用更好的命令行提示工具</h2><p><em>注意：为了不影响 root 用户，我们使用上一步创建的超级用户登录来操作。</em></p>
+<p>系统默认的命令行提示工具是 bash，为了能用上更加生动的 oh-my-zsh（谁用谁知道），我们先安装 zsh：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install zsh</span><br></pre></td></tr></table></figure>
+<p>接下来就是 oh-my-zsh 了，官方网站点 <a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="noopener">这里</a>，文章介绍了好多，只要找到其中一行命令就可以安装了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure>
+<p>安装后就可以尽情享受更加人性化和美观的命令提示界面了，还可以使用更简洁的缩写命令，例如用 <code>ll</code> 来替代 <code>ls -la</code>。</p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://yuhenabc.com/2018/03/10/ubuntu/" data-id="cjq977imw000b7y6l208sm7fd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>关注我 :</p>
+    <ul class="social-links">
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/10/python/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <p class="article-nav-title">
+        
+          使用 virtualenv 创建 python3 虚拟环境
+        
+      </p>
+      <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+  
+  
+    <a href="/2017/02/08/base64/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">字符串 Base64 转码解码</p>
+      <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2018 yuhenabc</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+
+
+
+
+<script src="/js/html-patch.js"></script>
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

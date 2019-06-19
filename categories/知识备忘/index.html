@@ -79,6 +79,32 @@
       
       <div class="article-meta">
         <p class="category"><a class="article-category-link" href="/categories/知识备忘/">知识备忘</a></p>
+        <p class="date"><time datetime="2019-06-18T16:00:00.000Z" itemprop="datePublished">2019-06-19</time></p>
+      </div>
+      <h2 class="article-title">
+        <a href="/2019/06/19/venv/" class="title">使用 venv 创建 python3 虚拟环境</a>
+      </h2>
+      <p class="article-excerpt">
+        
+        之前有篇文章，《使用 virtualenv 创建 python3 虚拟环境》，现在我们换一款软件来做同样的事情 —— venv。
+1. 安装 python31brew install python3
+2. 新建虚拟环境切换到项目根目录
+1cd path/to/myproject
+新建一个 venv，习惯上命名为 env：
+1python3 -m venv env
+没有任何错误提示，表示成功；如果是
+      </p>
+    </div>
+  </article>
+
+    
+  
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
+      
+      <div class="article-meta">
+        <p class="category"><a class="article-category-link" href="/categories/知识备忘/">知识备忘</a></p>
         <p class="date"><time datetime="2018-12-28T16:00:00.000Z" itemprop="datePublished">2018-12-29</time></p>
       </div>
       <h2 class="article-title">
@@ -87,15 +113,19 @@
       <p class="article-excerpt">
         
         简单命令假如你的代理机是你的本机（127.0.0.1），代理的端口为 7070，
-开启代理很简单，就是用 export 命令设置全局变量 https_proxy 和 http_proxy：
-12export https_proxy="http://127.0.0.1:7070"export http_proxy="http://127.0.0.1:7070"
+开启代理很简单，就是用 export 命令设置全局变量 http_proxy 和 https_proxy：
+12export http_proxy="http://127.0.0.1:7070"export https_proxy="http://127.0.0.1:7070"
 关闭代理就是用 unset 命令把全局
       </p>
     </div>
   </article>
 
     
+      </div>
+    
   
+      <div class="article-row">
+    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -113,36 +143,6 @@
 1. 安装普通的第三方模块时1registry=http://registry.npm.taobao.org npm install
 2. 安装依赖有 node-sass 时1sass_binary_site=https://npm.taobao.org/mirrors/node-sass npm install
 3. 安装依赖有 ele
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/知识备忘/">知识备忘</a></p>
-        <p class="date"><time datetime="2018-03-09T16:00:00.000Z" itemprop="datePublished">2018-03-10</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2018/03/10/python/" class="title">使用 virtualenv 创建 python3 虚拟环境</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        1. 安装 python31brew install python3
-2. 新建虚拟环境切换到用户根目录
-1cd
-新建一个 virtualenv：
-1virtualenv -p python3 .env3
-其中 .env3 是虚拟环境即将使用的文件夹，可能得到类似下面的结果，表示成功：
-12345Running virtualenv with interpreter /usr/local/bin/
       </p>
     </div>
   </article>
@@ -185,6 +185,32 @@
       
       <div class="article-meta">
         <p class="category"><a class="article-category-link" href="/categories/知识备忘/">知识备忘</a></p>
+        <p class="date"><time datetime="2018-03-09T16:00:00.000Z" itemprop="datePublished">2018-03-10</time></p>
+      </div>
+      <h2 class="article-title">
+        <a href="/2018/03/10/virtualenv/" class="title">使用 virtualenv 创建 python3 虚拟环境</a>
+      </h2>
+      <p class="article-excerpt">
+        
+        1. 安装 python31brew install python3
+2. 新建虚拟环境切换到用户根目录
+1cd
+新建一个 virtualenv：
+1virtualenv -p python3 .env3
+其中 .env3 是虚拟环境即将使用的文件夹，可能得到类似下面的结果，表示成功：
+12345Running virtualenv with interpreter /usr/local/bin/
+      </p>
+    </div>
+  </article>
+
+    
+  
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
+      
+      <div class="article-meta">
+        <p class="category"><a class="article-category-link" href="/categories/知识备忘/">知识备忘</a></p>
         <p class="date"><time datetime="2017-02-07T16:00:00.000Z" itemprop="datePublished">2017-02-08</time></p>
       </div>
       <h2 class="article-title">
@@ -201,7 +227,11 @@
   </article>
 
     
+      </div>
+    
   
+      <div class="article-row">
+    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -228,11 +258,7 @@
   </article>
 
     
-      </div>
-    
   
-      <div class="article-row">
-    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -258,7 +284,11 @@ ch
   </article>
 
     
+      </div>
+    
   
+      <div class="article-row">
+    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -313,7 +343,7 @@ ch
         <h1 class="logo-wrap">
           <a href="/" class="logo"></a>
         </h1>
-        <p>&copy; 2018 yuhenabc</p>
+        <p>&copy; 2019 yuhenabc</p>
         <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
       </div>
     </div>

@@ -4,7 +4,7 @@ category: 知识备忘
 tags: python
 ---
 
-之前有篇文章，[《使用 virtualenv 创建 python3 虚拟环境》](../../../../2018/03/10/virtualenv)，现在我们换一款软件来做同样的事情 —— venv。
+> 之前有篇文章，[《使用 virtualenv 创建 python3 虚拟环境》](../../../../2018/03/10/virtualenv)，现在我们换一款软件来做同样的事情 —— venv。
 
 ## 1. 安装 python3
 
@@ -20,10 +20,10 @@ brew install python3
 cd path/to/myproject
 ```
 
-新建一个 venv，习惯上命名为 `env`：
+新建一个 venv，习惯上命名为 `venv`：
 
 ``` bash
-python3 -m venv env
+python3 -m venv venv
 ```
 
 没有任何错误提示，表示成功；如果是 Ubuntu 系统可能提示：
@@ -46,10 +46,10 @@ package, recreate your virtual environment.
 激活 venv：
 
 ``` bash
-source env/bin/activate
+source venv/bin/activate
 ```
 
-这时候命令行开头会发生变化， 会多出一个前缀 `(env)`，表示当前是在虚拟环境中操作。
+这时候命令行开头会发生变化， 会多出一个前缀 `(venv)`，表示当前是在虚拟环境中操作。
 
 验证一下：
 
@@ -60,7 +60,7 @@ which python
 会得到：
 
 ``` bash
-path/to/myproject/env/bin/python
+path/to/myproject/venv/bin/python
 ```
 
 再验证版本：
@@ -75,7 +75,7 @@ python -V
 Python 3.6.8
 ```
 
-发现并不是系统自带的的 python，而是刚刚创建的 `env` 文件夹中的 python，而且是 3 的版本，这就对了。
+发现并不是系统自带的的 python，而是刚刚创建的 `venv` 文件夹中的 python，而且是 3 的版本，这就对了。
 
 查看一下目前都安装了哪些模块：
 
@@ -101,7 +101,7 @@ pip 有时候会有如下提示：
 DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
 ```
 
-你可以在 `env` 目录下新建一个 `pip.conf` 文件，然后把下面的内容粘贴到 `pip.conf` 中以消除错误提示：
+你可以在 `venv` 目录下新建一个 `pip.conf` 文件，然后把下面的内容粘贴到 `pip.conf` 中以消除错误提示：
 
 ``` toml
 [list]
@@ -125,4 +125,4 @@ You should consider upgrading via the 'pip install --upgrade pip' command.
 deactivate
 ```
 
-可以看到命令行的前缀 `(env)` 消失不见了。
+可以看到命令行的前缀 `(venv)` 消失不见了。

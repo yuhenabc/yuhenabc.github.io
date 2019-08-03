@@ -155,7 +155,7 @@ minimal-ui 是 iOS 7.1 beta 2 中新增属性（注意：iOS8 中已经删除）
 <meta name="viewport" content="width=414" />
 ```
 
-大部分 4.7~5 寸的安卓设备的 viewport 宽设为 360px，iPhone 6 上却是 375px，大部分 5.5 寸安卓机器（比如说三星 Note）的 viewport 宽为 400，iPhone 6 plus 上是 414px。
+大部分 4.7\~5 寸的安卓设备的 viewport 宽设为 360px，iPhone 6 上却是 375px，大部分 5.5 寸安卓机器（比如说三星 Note）的 viewport 宽为 400，iPhone 6 plus 上是 414px。
 
 ### 禁止自动识别
 

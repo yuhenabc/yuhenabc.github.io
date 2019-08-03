@@ -24,7 +24,7 @@ sass_binary_site=https://npm.taobao.org/mirrors/node-sass npm install
 electron_mirror=https://npm.taobao.org/mirrors/electron npm install
 ```
 
-### 4. 合一，将环境变量写到 ~/.npmrc 里
+### 4. 合一，将环境变量写到 `~/.npmrc` 里
 
 .npmrc 的内容：
 

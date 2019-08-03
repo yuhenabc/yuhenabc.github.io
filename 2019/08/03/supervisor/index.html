@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>使用 supervisor 让我们的 web 服务随系统启动 | 羽痕爱编程</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="安装1apt install supervisor 配置文件默认位置 /etc/supervisor/supervisord.conf 12345678910111213141516171819202122232425262728; supervisor config file[unix_http_server]file=/var/run/supervisor.sock   ; (the path">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 supervisor 让我们的 web 服务随系统启动">
+<meta property="og:url" content="http://yuhenabc.com/2019/08/03/supervisor/index.html">
+<meta property="og:site_name" content="羽痕爱编程">
+<meta property="og:description" content="安装1apt install supervisor 配置文件默认位置 /etc/supervisor/supervisord.conf 12345678910111213141516171819202122232425262728; supervisor config file[unix_http_server]file=/var/run/supervisor.sock   ; (the path">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-03T08:04:07.049Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用 supervisor 让我们的 web 服务随系统启动">
+<meta name="twitter:description" content="安装1apt install supervisor 配置文件默认位置 /etc/supervisor/supervisord.conf 12345678910111213141516171819202122232425262728; supervisor config file[unix_http_server]file=/var/run/supervisor.sock   ; (the path">
+  
+  
+
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+
+
+  
+
+  
+<!--    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>-->
+<!--    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
+  
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+</head>
+</html>
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                
+                  <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://yuhenabc.com"></form>
+                
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/categories/知识备忘/">知识备忘</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-supervisor" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      使用 supervisor 让我们的 web 服务随系统启动
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2019/08/03/supervisor/" class="article-date">
+  <time datetime="2019-08-03T07:52:45.000Z" itemprop="datePublished">2019-08-03</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt <span class="keyword">install</span> supervisor</span><br></pre></td></tr></table></figure>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>默认位置 /etc/supervisor/supervisord.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">; supervisor config file</span><br><span class="line"></span><br><span class="line">[unix_http_server]</span><br><span class="line">file=/var/run/supervisor.sock   ; (the path to the socket file)</span><br><span class="line">chmod=0700                      ; sockef file mode (default 0700)</span><br><span class="line"></span><br><span class="line">[supervisord]</span><br><span class="line">logfile=/var/log/supervisor/supervisord.log ; (main log file;default $CWD/supervisord.log)</span><br><span class="line">pidfile=/var/run/supervisord.pid ; (supervisord pidfile;default supervisord.pid)</span><br><span class="line">childlogdir=/var/log/supervisor ; (&apos;AUTO&apos; child log dir, default $TEMP)</span><br><span class="line"></span><br><span class="line">; the below section must remain in the config file for RPC</span><br><span class="line">; (supervisorctl/web interface) to work, additional interfaces may be</span><br><span class="line">; added by defining them in separate rpcinterface: sections</span><br><span class="line">[rpcinterface:supervisor]</span><br><span class="line">supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface</span><br><span class="line"></span><br><span class="line">[supervisorctl]</span><br><span class="line">serverurl=unix:///var/run/supervisor.sock ; use a unix:// URL  for a unix socket</span><br><span class="line"></span><br><span class="line">; The [include] section can just contain the &quot;files&quot; setting.  This</span><br><span class="line">; setting can list multiple files (separated by whitespace or</span><br><span class="line">; newlines).  It can also contain wildcards.  The filenames are</span><br><span class="line">; interpreted as relative to this file.  Included files *cannot*</span><br><span class="line">; include files themselves.</span><br><span class="line"></span><br><span class="line">[include]</span><br><span class="line">files = /etc/supervisor/conf.d/*.conf</span><br></pre></td></tr></table></figure>
+<p>关键看最后一句： <code>files = /etc/supervisor/conf.d/*.conf</code>，说明 <code>/etc/supervisor/conf.d/</code> 下所有以 <code>.conf</code> 为后缀的文件会被自动引入</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>supervisorctl 需要 root 用户来使用</p>
+<p>在 <code>conf.d</code>  目录下创建一个配置命名为 <code>pyapi.conf</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[program:pyapi]</span><br><span class="line">environment=FLASK_APP=hello.py,FLASK_ENV=development</span><br><span class="line">command=/bin/bash -c &quot;source env/bin/activate &amp;&amp; flask run --host=0.0.0.0&quot;</span><br><span class="line">directory=/home/feng/apps/pyapi</span><br><span class="line"></span><br><span class="line">user=feng</span><br><span class="line">autostart=true</span><br><span class="line">autorestart=true</span><br><span class="line">stdout_logfile=/var/log/supervisor/pyapi_out.log</span><br><span class="line">stderr_logfile=/var/log/supervisor/pyapi_err.log</span><br></pre></td></tr></table></figure>
+<p>为了使我们的服务生效，命令行输入 <code>supervisorctl update</code> 然后回车（因为需要 root 用户来使用，普通用户需要加 <code>sudo</code>）</p>
+<h2 id="换一种方式使用"><a href="#换一种方式使用" class="headerlink" title="换一种方式使用"></a>换一种方式使用</h2><p>使用命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">supervisorctl</span><br></pre></td></tr></table></figure>
+<p>则可以进入 supervisor 控制台（因为需要 root 用户来使用，普通用户需要加 <code>sudo</code>）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">supervisor&gt; help</span><br><span class="line"></span><br><span class="line">default commands (type help &lt;topic&gt;):</span><br><span class="line">=====================================</span><br><span class="line">add    exit      open  reload  restart   start   tail   </span><br><span class="line">avail  fg        pid   remove  shutdown  status  update </span><br><span class="line">clear  maintail  quit  reread  signal    stop    version</span><br></pre></td></tr></table></figure>
+<p>想要让我们的服务生效，输入 <code>update</code> 然后回车</p>
+<p>想要退出控制台，输入 <code>exit</code> 然后回车</p>
+<h2 id="再换一种方式使用"><a href="#再换一种方式使用" class="headerlink" title="再换一种方式使用"></a>再换一种方式使用</h2><p>往 <code>supervisord.conf</code> 里添加 <code>inet_http_server</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[inet_http_server]         ; inet (TCP) server disabled by default</span><br><span class="line">port=*:9001                ; (ip_address:port specifier, *:port for all iface)</span><br><span class="line">username=user              ; (default is no username (open server))</span><br><span class="line">password=123               ; (default is no password (open server))</span><br></pre></td></tr></table></figure>
+<p>该修改需要重启 supervisor 服务，所以使用 <code>supervisorctl</code> 的方式进入 supervisor 控制台，然后输入 <code>reload</code> 回车</p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://yuhenabc.com/2019/08/03/supervisor/" data-id="cjyv95gm7000abh0r0xovfcag" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>关注我 :</p>
+    <ul class="social-links">
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/19/venv/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">使用 venv 创建 python3 虚拟环境</p>
+      <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2019 yuhenabc</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+
+
+
+
+<script src="/js/html-patch.js"></script>
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

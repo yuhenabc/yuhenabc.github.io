@@ -79,6 +79,61 @@
       
       <div class="article-meta">
         <p class="category"><a class="article-category-link" href="/categories/知识备忘/">知识备忘</a></p>
+        <p class="date"><time datetime="2019-10-30T06:10:45.000Z" itemprop="datePublished">2019-10-30</time></p>
+      </div>
+      <h2 class="article-title">
+        <a href="/2019/10/30/sql/" class="title">SQL 学习小例子</a>
+      </h2>
+      <p class="article-excerpt">
+        
+        
+我们的目标是创建一个数据库，包含顾客、商品，以及二者产生关系得到的订单，过程中我们要尽可能地用到关系型数据库的特性，所以还有一些衍生的表单。本文的 SQL 语法遵循 Mysql 的语法。
+
+step1: 创建表单使用数据库（假设已有）：
+1USE `hungry`;
+用户表单：
+12345678CREATE TABLE `users` (  `id` int(8) unsigned NOT NU
+      </p>
+    </div>
+  </article>
+
+    
+  
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
+      
+      <div class="article-meta">
+        <p class="category"><a class="article-category-link" href="/categories/知识备忘/">知识备忘</a></p>
+        <p class="date"><time datetime="2019-08-22T08:37:56.000Z" itemprop="datePublished">2019-08-22</time></p>
+      </div>
+      <h2 class="article-title">
+        <a href="/2019/08/22/androidproxy/" class="title">Android 如何设置全局代理</a>
+      </h2>
+      <p class="article-excerpt">
+        
+        
+前言：日常生活中，Android 的 http 代理直接使用设置里的 Wi-Fi 设置就够了，但是有些情况下仍然不足，本文给出另外一种解法。这种解法就是通过控制台修改 Android 的全局设置，适用于真机及模拟器。步骤如下：
+
+step1: 进入控制台1adb shell
+step2: 设置代理1settings put global http_proxy 127.0.0.1:8888
+ste
+      </p>
+    </div>
+  </article>
+
+    
+      </div>
+    
+  
+      <div class="article-row">
+    
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
+      
+      <div class="article-meta">
+        <p class="category"><a class="article-category-link" href="/categories/知识备忘/">知识备忘</a></p>
         <p class="date"><time datetime="2019-08-03T07:52:45.000Z" itemprop="datePublished">2019-08-03</time></p>
       </div>
       <h2 class="article-title">
@@ -186,17 +241,17 @@
         <p class="date"><time datetime="2018-03-09T16:00:00.000Z" itemprop="datePublished">2018-03-10</time></p>
       </div>
       <h2 class="article-title">
-        <a href="/2018/03/10/ubuntu/" class="title">安装 ubuntu 后要做的三件事</a>
+        <a href="/2018/03/10/virtualenv/" class="title">使用 virtualenv 创建 python3 虚拟环境</a>
       </h2>
       <p class="article-excerpt">
         
-        1. 中文语言支持安装中文语言包：
-1apt install language-pack-zh-hant language-pack-zh-hans
-配置相关环境变量：
-1vim /etc/environment
-在文件中增加语言和编码的设置：
-12LANG=&quot;zh_CN.UTF-8&quot;LANGUAGE=&quot;zh_CN:zh:en_US:en&quot;
-重新设置本地配置
+        1. 安装 python31brew install python3
+2. 新建虚拟环境切换到用户根目录
+1cd
+新建一个 virtualenv：
+1virtualenv -p python3 .env3
+其中 .env3 是虚拟环境即将使用的文件夹，可能得到类似下面的结果，表示成功：
+12345Running virtualenv with interpreter /usr/local/bin/
       </p>
     </div>
   </article>
@@ -212,17 +267,17 @@
         <p class="date"><time datetime="2018-03-09T16:00:00.000Z" itemprop="datePublished">2018-03-10</time></p>
       </div>
       <h2 class="article-title">
-        <a href="/2018/03/10/virtualenv/" class="title">使用 virtualenv 创建 python3 虚拟环境</a>
+        <a href="/2018/03/10/ubuntu/" class="title">安装 ubuntu 后要做的三件事</a>
       </h2>
       <p class="article-excerpt">
         
-        1. 安装 python31brew install python3
-2. 新建虚拟环境切换到用户根目录
-1cd
-新建一个 virtualenv：
-1virtualenv -p python3 .env3
-其中 .env3 是虚拟环境即将使用的文件夹，可能得到类似下面的结果，表示成功：
-12345Running virtualenv with interpreter /usr/local/bin/
+        1. 中文语言支持安装中文语言包：
+1apt install language-pack-zh-hant language-pack-zh-hans
+配置相关环境变量：
+1vim /etc/environment
+在文件中增加语言和编码的设置：
+12LANG=&quot;zh_CN.UTF-8&quot;LANGUAGE=&quot;zh_CN:zh:en_US:en&quot;
+重新设置本地配置
       </p>
     </div>
   </article>
@@ -285,57 +340,11 @@
       </div>
     
   
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/知识备忘/">知识备忘</a></p>
-        <p class="date"><time datetime="2016-06-30T16:00:00.000Z" itemprop="datePublished">2016-07-01</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2016/07/01/meta/" class="title">令人惊讶的 mate 标签</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        
-移动端的工作已经越来越成为前端工作的重要内容，除了平常的项目开发，HTML头部标签功能，特别是标签显得非常重要。
-
-DOCTYPEDOCTYPE(Document Type)，该声明位于文档中最前面的位置，处于 html 标签之前，此标签告知浏览器文档使用哪种 HTML 或者 XHTML 规范。
-使用 HTML5 doctype，不区分大小写。
-1&lt;!DOCTYPE html&gt;
-ch
-      </p>
-    </div>
-  </article>
-
-    
   
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/知识备忘/">知识备忘</a></p>
-        <p class="date"><time datetime="2015-11-10T16:00:00.000Z" itemprop="datePublished">2015-11-11</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/11/11/first/" class="title">我的第一篇文章</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        欢迎来到我的博客!这个博客是由功能强大的 hexo 生成的。
-
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
+    <nav id="page-nav">
+      <span class="pages">第 1 页，共 2 页</span>
+      <span class="page-number current">1</span><a class="page-number" href="/categories/知识备忘/page/2/">2</a><a class="extend next" rel="next" href="/categories/知识备忘/page/2/">&raquo;</a>
+    </nav>
   
 
 

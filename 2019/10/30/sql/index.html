@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>SQL 学习小例子 | 羽痕爱编程</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="我们的目标是创建一个数据库，包含顾客、商品，以及二者产生关系得到的订单，过程中我们要尽可能地用到关系型数据库的特性，所以还有一些衍生的表单。本文的 SQL 语法遵循 Mysql 的语法。  step1: 创建表单使用数据库（假设已有）： 1USE `hungry`; 用户表单： 12345678CREATE TABLE `users` (  `id` int(8) unsigned NOT NU">
+<meta name="keywords" content="sql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL 学习小例子">
+<meta property="og:url" content="http://yuhenabc.com/2019/10/30/sql/index.html">
+<meta property="og:site_name" content="羽痕爱编程">
+<meta property="og:description" content="我们的目标是创建一个数据库，包含顾客、商品，以及二者产生关系得到的订单，过程中我们要尽可能地用到关系型数据库的特性，所以还有一些衍生的表单。本文的 SQL 语法遵循 Mysql 的语法。  step1: 创建表单使用数据库（假设已有）： 1USE `hungry`; 用户表单： 12345678CREATE TABLE `users` (  `id` int(8) unsigned NOT NU">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-30T06:44:03.874Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL 学习小例子">
+<meta name="twitter:description" content="我们的目标是创建一个数据库，包含顾客、商品，以及二者产生关系得到的订单，过程中我们要尽可能地用到关系型数据库的特性，所以还有一些衍生的表单。本文的 SQL 语法遵循 Mysql 的语法。  step1: 创建表单使用数据库（假设已有）： 1USE `hungry`; 用户表单： 12345678CREATE TABLE `users` (  `id` int(8) unsigned NOT NU">
+  
+  
+
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+
+
+  
+
+  
+<!--    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>-->
+<!--    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
+  
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+</head>
+</html>
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                
+                  <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://yuhenabc.com"></form>
+                
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/categories/知识备忘/">知识备忘</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-sql" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      SQL 学习小例子
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2019/10/30/sql/" class="article-date">
+  <time datetime="2019-10-30T06:10:45.000Z" itemprop="datePublished">2019-10-30</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <blockquote>
+<p>我们的目标是创建一个数据库，包含顾客、商品，以及二者产生关系得到的订单，过程中我们要尽可能地用到关系型数据库的特性，所以还有一些衍生的表单。本文的 SQL 语法遵循 Mysql 的语法。</p>
+</blockquote>
+<h3 id="step1-创建表单"><a href="#step1-创建表单" class="headerlink" title="step1: 创建表单"></a>step1: 创建表单</h3><p>使用数据库（假设已有）：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> <span class="string">`hungry`</span>;</span><br></pre></td></tr></table></figure>
+<p>用户表单：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`users`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">8</span>) <span class="keyword">unsigned</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`id_creator`</span> <span class="built_in">INT</span>(<span class="number">8</span>) <span class="keyword">unsigned</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'创建者ID'</span>,</span><br><span class="line">  <span class="string">`username`</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'用户名'</span>,</span><br><span class="line">  <span class="string">`purse`</span> <span class="built_in">varchar</span>(<span class="number">128</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'访问口令'</span>,</span><br><span class="line">  <span class="string">`role`</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'角色'</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8 <span class="keyword">COLLATE</span>=utf8_bin;</span><br></pre></td></tr></table></figure>
+<p>商品表单：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`goods`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">8</span>) <span class="keyword">unsigned</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`name`</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'食物名称'</span>,</span><br><span class="line">  <span class="string">`id_type`</span> <span class="built_in">INT</span>(<span class="number">8</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'类型ID'</span>,</span><br><span class="line">  <span class="string">`id_creator`</span> <span class="built_in">INT</span>(<span class="number">8</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'创建者ID'</span>,</span><br><span class="line">  <span class="string">`current_price`</span> <span class="built_in">float</span>(<span class="number">8</span>,<span class="number">2</span>) <span class="keyword">COMMENT</span> <span class="string">'现价'</span>,</span><br><span class="line">  <span class="string">`origin_price`</span> <span class="built_in">float</span>(<span class="number">8</span>,<span class="number">2</span>) <span class="keyword">COMMENT</span> <span class="string">'原价'</span>,</span><br><span class="line">  <span class="string">`rate`</span> <span class="built_in">float</span>(<span class="number">2</span>,<span class="number">1</span>) <span class="keyword">COMMENT</span> <span class="string">'折扣（0~10）'</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8 <span class="keyword">COLLATE</span>=utf8_bin;</span><br></pre></td></tr></table></figure>
+<p>订单表单：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`orders`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">8</span>) <span class="keyword">unsigned</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`id_type`</span> <span class="built_in">INT</span>(<span class="number">8</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'类型ID'</span>,</span><br><span class="line">  <span class="string">`id_creator`</span> <span class="built_in">INT</span>(<span class="number">8</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'创建者ID'</span>,</span><br><span class="line">  <span class="string">`id_goods`</span> <span class="built_in">INT</span>(<span class="number">8</span>) <span class="keyword">UNSIGNED</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'商品ID'</span>,</span><br><span class="line">  <span class="string">`price_unit`</span> <span class="built_in">float</span>(<span class="number">8</span>,<span class="number">2</span>) <span class="keyword">COMMENT</span> <span class="string">'单价'</span>,</span><br><span class="line">  <span class="string">`rate`</span> <span class="built_in">float</span>(<span class="number">2</span>,<span class="number">1</span>) <span class="keyword">COMMENT</span> <span class="string">'折扣（0~10）'</span>,</span><br><span class="line">  <span class="string">`quantity`</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">COMMENT</span> <span class="string">'数量'</span>,</span><br><span class="line">  <span class="string">`price_total`</span> <span class="built_in">float</span>(<span class="number">12</span>,<span class="number">2</span>) <span class="keyword">COMMENT</span> <span class="string">'总价'</span>,</span><br><span class="line">  <span class="string">`created`</span> datetime <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'创建时间'</span>,</span><br><span class="line">  <span class="string">`updated`</span> datetime <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'更新时间'</span>,</span><br><span class="line">  <span class="string">`status`</span> <span class="built_in">int</span>(<span class="number">1</span>) <span class="keyword">DEFAULT</span> <span class="number">1</span> <span class="keyword">COMMENT</span> <span class="string">'状态'</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8 <span class="keyword">COLLATE</span>=utf8_bin;</span><br></pre></td></tr></table></figure>
+<p>商品类型表单：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`type_of_goods`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">8</span>) <span class="keyword">unsigned</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`description`</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'描述'</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8 <span class="keyword">COLLATE</span>=utf8_bin;</span><br></pre></td></tr></table></figure>
+<p>订单类型表单：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`type_of_orders`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">8</span>) <span class="keyword">unsigned</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`description`</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'描述'</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8 <span class="keyword">COLLATE</span>=utf8_bin;</span><br></pre></td></tr></table></figure>
+<p>至此 5 张表单都已经创建完毕。</p>
+<h3 id="step2-插入数据"><a href="#step2-插入数据" class="headerlink" title="step2: 插入数据"></a>step2: 插入数据</h3><p>下面我们插入一些原始数据。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`users`</span> (username, purse, <span class="keyword">role</span>, id_creator) <span class="keyword">VALUES</span> (<span class="string">'super'</span>, <span class="string">'123456'</span>, <span class="string">'super'</span>, <span class="number">1</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`users`</span> (username, purse, <span class="keyword">role</span>, id_creator) <span class="keyword">VALUES</span> (<span class="string">'admin'</span>, <span class="string">'123456'</span>, <span class="string">'admin'</span>, <span class="number">1</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`users`</span> (username, purse, <span class="keyword">role</span>, id_creator) <span class="keyword">VALUES</span> (<span class="string">'小白'</span>, <span class="string">'123456'</span>, <span class="string">'business'</span>, <span class="number">2</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`users`</span> (username, purse, <span class="keyword">role</span>, id_creator) <span class="keyword">VALUES</span> (<span class="string">'小花'</span>, <span class="string">'123456'</span>, <span class="string">'business'</span>, <span class="number">2</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`users`</span> (username, purse, <span class="keyword">role</span>, id_creator) <span class="keyword">VALUES</span> (<span class="string">'小亮'</span>, <span class="string">'123456'</span>, <span class="string">'business'</span>, <span class="number">2</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`users`</span> (username, purse, <span class="keyword">role</span>, id_creator) <span class="keyword">VALUES</span> (<span class="string">'小明'</span>, <span class="string">'123456'</span>, <span class="string">'business'</span>, <span class="number">2</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`users`</span> (username, purse, <span class="keyword">role</span>, id_creator) <span class="keyword">VALUES</span> (<span class="string">'坏蛋'</span>, <span class="string">'123456'</span>, <span class="string">'consumer'</span>, <span class="number">2</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`users`</span> (username, purse, <span class="keyword">role</span>, id_creator) <span class="keyword">VALUES</span> (<span class="string">'笨蛋'</span>, <span class="string">'123456'</span>, <span class="string">'consumer'</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`goods`</span> (<span class="string">`name`</span>, <span class="string">`id_type`</span>, <span class="string">`id_creator`</span>, <span class="string">`current_price`</span>, <span class="string">`origin_price`</span>, <span class="string">`rate`</span>)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="string">'宫爆鸡丁'</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">8</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`orders`</span> (<span class="string">`id_type`</span>, <span class="string">`id_creator`</span>, <span class="string">`id_goods`</span>, <span class="string">`price_unit`</span>, <span class="string">`rate`</span>, <span class="string">`quantity`</span>, <span class="string">`price_total`</span>, <span class="string">`created`</span>, <span class="string">`updated`</span>)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="number">7</span>, <span class="number">1</span>, <span class="number">12</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">12</span>, <span class="keyword">NOW</span>(), <span class="keyword">NOW</span>());</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`orders`</span> (<span class="string">`id_type`</span>, <span class="string">`id_creator`</span>, <span class="string">`id_goods`</span>, <span class="string">`price_unit`</span>, <span class="string">`rate`</span>, <span class="string">`quantity`</span>, <span class="string">`price_total`</span>, <span class="string">`created`</span>, <span class="string">`updated`</span>)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">12</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">24</span>, <span class="keyword">NOW</span>(), <span class="keyword">NOW</span>());</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`type_of_goods`</span> (<span class="string">`description`</span>) <span class="keyword">VALUES</span> (<span class="string">'菜品'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`type_of_goods`</span> (<span class="string">`description`</span>) <span class="keyword">VALUES</span> (<span class="string">'主食'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`type_of_goods`</span> (<span class="string">`description`</span>) <span class="keyword">VALUES</span> (<span class="string">'酒水'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`type_of_goods`</span> (<span class="string">`description`</span>) <span class="keyword">VALUES</span> (<span class="string">'其它'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`type_of_orders`</span> (<span class="string">`description`</span>) <span class="keyword">VALUES</span> (<span class="string">'消费'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`type_of_orders`</span> (<span class="string">`description`</span>) <span class="keyword">VALUES</span> (<span class="string">'业务办理'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`type_of_orders`</span> (<span class="string">`description`</span>) <span class="keyword">VALUES</span> (<span class="string">'理赔'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="step3-创建索引、外键"><a href="#step3-创建索引、外键" class="headerlink" title="step3: 创建索引、外键"></a>step3: 创建索引、外键</h3><p>为商品创建索引：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> <span class="string">`idx_goods_creator`</span> <span class="keyword">ON</span> <span class="string">`goods`</span> (<span class="string">`id_creator`</span> <span class="keyword">ASC</span>);</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> <span class="string">`idx_goods_type`</span> <span class="keyword">ON</span> <span class="string">`goods`</span> (<span class="string">`id_type`</span> <span class="keyword">ASC</span>);</span><br></pre></td></tr></table></figure>
+<p>为商品创建外键：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`goods`</span></span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> <span class="string">`fk_goods_creator`</span></span><br><span class="line">  <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (<span class="string">`id_creator`</span>)</span><br><span class="line">  <span class="keyword">REFERENCES</span> <span class="string">`users`</span> (<span class="string">`id`</span>)</span><br><span class="line">  <span class="keyword">ON</span> <span class="keyword">DELETE</span> <span class="keyword">NO</span> <span class="keyword">ACTION</span></span><br><span class="line">  <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="keyword">NO</span> <span class="keyword">ACTION</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`goods`</span></span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> <span class="string">`fk_goods_type`</span></span><br><span class="line">  <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (<span class="string">`id_type`</span>)</span><br><span class="line">  <span class="keyword">REFERENCES</span> <span class="string">`type_of_goods`</span> (<span class="string">`id`</span>)</span><br><span class="line">  <span class="keyword">ON</span> <span class="keyword">DELETE</span> <span class="keyword">NO</span> <span class="keyword">ACTION</span></span><br><span class="line">  <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="keyword">NO</span> <span class="keyword">ACTION</span>;</span><br></pre></td></tr></table></figure>
+<p>为订单创建索引：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> <span class="string">`idx_orders_type`</span> <span class="keyword">ON</span> <span class="string">`orders`</span> (<span class="string">`id_type`</span>);</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> <span class="string">`idx_orders_creator`</span> <span class="keyword">ON</span> <span class="string">`orders`</span> (<span class="string">`id_creator`</span>);</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> <span class="string">`idx_orders_goods`</span> <span class="keyword">ON</span> <span class="string">`orders`</span> (<span class="string">`id_goods`</span>);</span><br></pre></td></tr></table></figure>
+<p>为订单创建外键：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`orders`</span></span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> <span class="string">`fk_orders_type`</span></span><br><span class="line">  <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (<span class="string">`id_type`</span>)</span><br><span class="line">  <span class="keyword">REFERENCES</span> <span class="string">`type_of_orders`</span> (<span class="string">`id`</span>)</span><br><span class="line">  <span class="keyword">ON</span> <span class="keyword">DELETE</span> <span class="keyword">NO</span> <span class="keyword">ACTION</span></span><br><span class="line">  <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="keyword">NO</span> <span class="keyword">ACTION</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`orders`</span></span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> <span class="string">`fk_orders_creator`</span></span><br><span class="line">  <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (<span class="string">`id_creator`</span>)</span><br><span class="line">  <span class="keyword">REFERENCES</span> <span class="string">`users`</span> (<span class="string">`id`</span>)</span><br><span class="line">  <span class="keyword">ON</span> <span class="keyword">DELETE</span> <span class="keyword">NO</span> <span class="keyword">ACTION</span></span><br><span class="line">  <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="keyword">NO</span> <span class="keyword">ACTION</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`orders`</span></span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> <span class="string">`fk_orders_goods`</span></span><br><span class="line">  <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (<span class="string">`id_goods`</span>)</span><br><span class="line">  <span class="keyword">REFERENCES</span> <span class="string">`goods`</span> (<span class="string">`id`</span>)</span><br><span class="line">  <span class="keyword">ON</span> <span class="keyword">DELETE</span> <span class="keyword">NO</span> <span class="keyword">ACTION</span></span><br><span class="line">  <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="keyword">NO</span> <span class="keyword">ACTION</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="step4-创建视图"><a href="#step4-创建视图" class="headerlink" title="step4: 创建视图"></a>step4: 创建视图</h3><p>我们最后还要给出一张可供别人直接查询的视图，把订单中的外键转化为更具体的值显示：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> <span class="string">`v_orders`</span> <span class="keyword">AS</span></span><br><span class="line">(<span class="keyword">SELECT</span> O.id, G.name <span class="keyword">AS</span> <span class="string">'goods_name'</span>, GT.description <span class="keyword">AS</span> <span class="string">'goods_type'</span>, B.username <span class="keyword">AS</span> <span class="string">'goods_creator'</span>,</span><br><span class="line">C.username <span class="keyword">AS</span> <span class="string">'order_creator'</span>, OT.description <span class="keyword">AS</span> <span class="string">'order_type'</span>, O.price_unit, O.quantity, O.price_total</span><br><span class="line"><span class="keyword">FROM</span> <span class="string">`orders`</span> <span class="keyword">AS</span> O <span class="keyword">INNER</span> <span class="keyword">JOIN</span> <span class="string">`goods`</span> <span class="keyword">AS</span> G <span class="keyword">INNER</span> <span class="keyword">JOIN</span> <span class="string">`users`</span> <span class="keyword">AS</span> B <span class="keyword">INNER</span> <span class="keyword">JOIN</span> <span class="string">`users`</span> <span class="keyword">AS</span> C <span class="keyword">INNER</span> <span class="keyword">JOIN</span> <span class="string">`type_of_goods`</span> <span class="keyword">AS</span> GT <span class="keyword">INNER</span> <span class="keyword">JOIN</span> <span class="string">`type_of_orders`</span> <span class="keyword">AS</span> OT</span><br><span class="line"><span class="keyword">WHERE</span> G.id = O.id_goods <span class="keyword">AND</span> B.id = G.id_creator <span class="keyword">AND</span> C.id = O.id_creator <span class="keyword">AND</span> GT.id = G.id_type <span class="keyword">AND</span> OT.id = O.id_type</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> O.id);</span><br></pre></td></tr></table></figure>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://yuhenabc.com/2019/10/30/sql/" data-id="ck2cwgqua000hb96lknqyec7n" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>关注我 :</p>
+    <ul class="social-links">
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/22/androidproxy/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">Android 如何设置全局代理</p>
+      <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2019 yuhenabc</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+
+
+
+
+<script src="/js/html-patch.js"></script>
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <title>Date 对象使用总结 | 羽痕爱编程</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="构造函数当前时间 1new Date() 距离起始时间 1970年1月1日午夜 的毫秒数 1new Date(milliseconds) 字符串代表的日期与时间。此字符串可以使用 Date.parse() 转换,比如 &amp;quot;Jannuary 1, 1998 20:13:15&amp;quot; 1new Date(dateString) 时间数值，可以不用全部写，不写则默认为 0 1new Date">
-<meta name="keywords" content="javascript">
+  <meta name="description" content="构造函数当前时间 1new Date() 距离起始时间 1970年1月1日午夜 的毫秒数 1new Date(milliseconds) 字符串代表的日期与时间。此字符串可以使用 Date.parse() 转换,比如 &quot;Jannuary 1, 1998 20:13:15&quot; 1new Date(dateString) 时间数值，可以不用全部写，不写则默认为 0 1new Date">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Date 对象使用总结">
-<meta property="og:url" content="http://yuhenabc.com/2016/08/01/date/index.html">
+<meta property="og:url" content="http://yuhenabc.com/2016/07/31/date/index.html">
 <meta property="og:site_name" content="羽痕爱编程">
-<meta property="og:description" content="构造函数当前时间 1new Date() 距离起始时间 1970年1月1日午夜 的毫秒数 1new Date(milliseconds) 字符串代表的日期与时间。此字符串可以使用 Date.parse() 转换,比如 &amp;quot;Jannuary 1, 1998 20:13:15&amp;quot; 1new Date(dateString) 时间数值，可以不用全部写，不写则默认为 0 1new Date">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-21T04:37:58.240Z">
+<meta property="og:description" content="构造函数当前时间 1new Date() 距离起始时间 1970年1月1日午夜 的毫秒数 1new Date(milliseconds) 字符串代表的日期与时间。此字符串可以使用 Date.parse() 转换,比如 &quot;Jannuary 1, 1998 20:13:15&quot; 1new Date(dateString) 时间数值，可以不用全部写，不写则默认为 0 1new Date">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-07-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-26T07:09:44.347Z">
+<meta property="article:author" content="yuhenabc">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Date 对象使用总结">
-<meta name="twitter:description" content="构造函数当前时间 1new Date() 距离起始时间 1970年1月1日午夜 的毫秒数 1new Date(milliseconds) 字符串代表的日期与时间。此字符串可以使用 Date.parse() 转换,比如 &amp;quot;Jannuary 1, 1998 20:13:15&amp;quot; 1new Date(dateString) 时间数值，可以不用全部写，不写则默认为 0 1new Date">
   
   
 
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   
   
   
@@ -32,9 +34,11 @@
 <!--    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>-->
 <!--    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
   
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-</head>
-</html>
+  
+<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
 <body>
   <div id="wrap">
     <header id="header">
@@ -72,11 +76,11 @@
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><a class="page-title-link" href="/categories/知识备忘/">知识备忘</a></h1>
+              <h1 class="header"><a class="page-title-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></h1>
             </div>
             <div class="main-body-content">
               
-  <article id="post-date" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+  <article id="post-date" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
       <!--  -->
       
@@ -91,30 +95,30 @@
         </header>
       
       <p class="article-byline">
-        <a href="/2016/08/01/date/" class="article-date">
+        <a href="/2016/07/31/date/" class="article-date">
   <time datetime="2016-07-31T16:00:00.000Z" itemprop="datePublished">2016-08-01</time>
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
         <h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>当前时间</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>()</span><br></pre></td></tr></table></figure>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>()</span><br></pre></td></tr></table></figure>
 <p>距离起始时间 <code>1970年1月1日午夜</code> 的毫秒数</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(milliseconds)</span><br></pre></td></tr></table></figure>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="constructor">Date(<span class="params">milliseconds</span>)</span></span><br></pre></td></tr></table></figure>
 <p>字符串代表的日期与时间。此字符串可以使用 <code>Date.parse()</code> 转换,比如 <code>&quot;Jannuary 1, 1998 20:13:15&quot;</code></p>
 <figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">dateString</span>)</span><br></pre></td></tr></table></figure>
 <p>时间数值，可以不用全部写，不写则默认为 <code>0</code></p>
-<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">year</span>, <span class="built_in">month</span>, <span class="built_in">day</span>, hours, minutes, seconds, microseconds)</span><br></pre></td></tr></table></figure>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="constructor">Date(<span class="params">year</span>, <span class="params">month</span>, <span class="params">day</span>, <span class="params">hours</span>, <span class="params">minutes</span>, <span class="params">seconds</span>, <span class="params">microseconds</span>)</span></span><br></pre></td></tr></table></figure>
 <h2 id="对象的获取类函数"><a href="#对象的获取类函数" class="headerlink" title="对象的获取类函数"></a>对象的获取类函数</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">getDate</span><span class="params">()</span></span>            <span class="comment">//返回天数(1-31)</span></span><br><span class="line"><span class="function"><span class="title">getDay</span><span class="params">()</span></span>             <span class="comment">//返回星期数(0-6)</span></span><br><span class="line"><span class="function"><span class="title">getFullYear</span><span class="params">()</span></span>        <span class="comment">//返回四位数年份</span></span><br><span class="line"><span class="function"><span class="title">getHours</span><span class="params">()</span></span>           <span class="comment">//返回小时数(0-23)</span></span><br><span class="line"><span class="function"><span class="title">getMilliseconds</span><span class="params">()</span></span>    <span class="comment">//返回毫秒数(0-999)</span></span><br><span class="line"><span class="function"><span class="title">getMinutes</span><span class="params">()</span></span>         <span class="comment">//返回分钟数(0-59)</span></span><br><span class="line"><span class="function"><span class="title">getMonth</span><span class="params">()</span></span>           <span class="comment">//返回月份数(0-11)</span></span><br><span class="line"><span class="function"><span class="title">getSeconds</span><span class="params">()</span></span>         <span class="comment">//返回的秒数(0-59)</span></span><br><span class="line"><span class="function"><span class="title">getTime</span><span class="params">()</span></span>            <span class="comment">//返回时间戳表示法(毫秒表示)</span></span><br><span class="line"><span class="function"><span class="title">getYear</span><span class="params">()</span></span>            <span class="comment">//返回年份(真实年份减去1900)</span></span><br></pre></td></tr></table></figure>
 <h2 id="对象的设置类函数"><a href="#对象的设置类函数" class="headerlink" title="对象的设置类函数"></a>对象的设置类函数</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">setDate</span><span class="params">()</span></span>            <span class="comment">//设置月份的一天</span></span><br><span class="line"><span class="function"><span class="title">setFullYear</span><span class="params">()</span></span>        <span class="comment">//设置的年份，月份和天</span></span><br><span class="line"><span class="function"><span class="title">setHours</span><span class="params">()</span></span>           <span class="comment">//设置小时，分钟，秒和毫秒</span></span><br><span class="line"><span class="function"><span class="title">setMilliseconds</span><span class="params">()</span></span>    <span class="comment">//设置毫秒数</span></span><br><span class="line"><span class="function"><span class="title">setMinutes</span><span class="params">()</span></span>         <span class="comment">//设置分钟，秒，毫秒</span></span><br><span class="line"><span class="function"><span class="title">setMonth</span><span class="params">()</span></span>           <span class="comment">//设置月份，天</span></span><br><span class="line"><span class="function"><span class="title">setSeconds</span><span class="params">()</span></span>         <span class="comment">//设置月份的一天</span></span><br><span class="line"><span class="function"><span class="title">setTime</span><span class="params">()</span></span>            <span class="comment">//使用毫秒数设置对象</span></span><br><span class="line"><span class="function"><span class="title">setYear</span><span class="params">()</span></span>            <span class="comment">//设置年份(真实年份减去1900)</span></span><br></pre></td></tr></table></figure>
 <h2 id="对象的转化显示类函数"><a href="#对象的转化显示类函数" class="headerlink" title="对象的转化显示类函数"></a>对象的转化显示类函数</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">toLocalString</span><span class="params">()</span></span>       <span class="comment">//返回本地化字符串表示</span></span><br><span class="line"><span class="function"><span class="title">toLocaleDateString</span><span class="params">()</span></span>  <span class="comment">//返回日期部分的本地化字符串</span></span><br><span class="line"><span class="function"><span class="title">toLocaleTimeString</span><span class="params">()</span></span>  <span class="comment">//返回时间部分的本地化字符串</span></span><br><span class="line"><span class="function"><span class="title">toString</span><span class="params">()</span></span>            <span class="comment">//返回内部表示格式</span></span><br><span class="line"><span class="function"><span class="title">toDateString</span><span class="params">()</span></span>        <span class="comment">//返回内部表示格式</span></span><br><span class="line"><span class="function"><span class="title">toTimeString</span><span class="params">()</span></span>        <span class="comment">//返回内部表示格式</span></span><br></pre></td></tr></table></figure>
 <h2 id="日期解析类函数"><a href="#日期解析类函数" class="headerlink" title="日期解析类函数"></a>日期解析类函数</h2><p>解析一个日期的字符串，并返回该日期距 <code>1970年1月1日午夜</code> 之间的毫秒数</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.<span class="built_in">parse</span>()</span><br></pre></td></tr></table></figure>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.parse()</span><br></pre></td></tr></table></figure>
       </div>
       <footer class="article-footer">
-        <a data-url="http://yuhenabc.com/2016/08/01/date/" data-id="ck2cwgqtv0001b96lwy9v5uyu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        <a data-url="http://yuhenabc.com/2016/07/31/date/" data-id="cl17iilm800038cndabryfini" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
         
         
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
 
       </footer>
     </div>
@@ -136,7 +140,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/02/08/base64/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/02/07/base64/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
       <p class="article-nav-title">
         
@@ -147,7 +151,7 @@
     </a>
   
   
-    <a href="/2016/07/01/meta/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/06/30/meta/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <p class="article-nav-title">令人惊讶的 mate 标签</p>
       <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
@@ -172,13 +176,14 @@
         <h1 class="logo-wrap">
           <a href="/" class="logo"></a>
         </h1>
-        <p>&copy; 2019 yuhenabc</p>
+        <p>&copy; 2022 yuhenabc</p>
         <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
       </div>
     </div>
   </div>
 </footer>
     
+
 
 <script src="/js/jquery.min.js"></script>
 
@@ -188,8 +193,13 @@
 
 
 
+
+
 <script src="/js/html-patch.js"></script>
+
+
 <script src="/js/script.js"></script>
+
 
   </div>
 </body>

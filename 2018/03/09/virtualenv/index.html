@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <title>使用 virtualenv 创建 python3 虚拟环境 | 羽痕爱编程</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 安装 python31brew install python3 2. 新建虚拟环境切换到用户根目录 1cd 新建一个 virtualenv： 1virtualenv -p python3 .env3 其中 .env3 是虚拟环境即将使用的文件夹，可能得到类似下面的结果，表示成功： 12345Running virtualenv with interpreter /usr/local/bin/">
-<meta name="keywords" content="python">
+  <meta name="description" content="1. 安装 python31brew install python3 2. 新建虚拟环境切换到用户根目录 1cd 新建一个 virtualenv： 1virtualenv -p python3 .env3 其中 .env3 是虚拟环境即将使用的文件夹，可能得到类似下面的结果，表示成功： 12345Running virtualenv with interpreter &#x2F;usr&#x2F;local&#x2F;bin&#x2F;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 virtualenv 创建 python3 虚拟环境">
-<meta property="og:url" content="http://yuhenabc.com/2018/03/10/virtualenv/index.html">
+<meta property="og:url" content="http://yuhenabc.com/2018/03/09/virtualenv/index.html">
 <meta property="og:site_name" content="羽痕爱编程">
-<meta property="og:description" content="1. 安装 python31brew install python3 2. 新建虚拟环境切换到用户根目录 1cd 新建一个 virtualenv： 1virtualenv -p python3 .env3 其中 .env3 是虚拟环境即将使用的文件夹，可能得到类似下面的结果，表示成功： 12345Running virtualenv with interpreter /usr/local/bin/">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-21T04:37:58.241Z">
+<meta property="og:description" content="1. 安装 python31brew install python3 2. 新建虚拟环境切换到用户根目录 1cd 新建一个 virtualenv： 1virtualenv -p python3 .env3 其中 .env3 是虚拟环境即将使用的文件夹，可能得到类似下面的结果，表示成功： 12345Running virtualenv with interpreter &#x2F;usr&#x2F;local&#x2F;bin&#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-03-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-26T07:09:44.347Z">
+<meta property="article:author" content="yuhenabc">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用 virtualenv 创建 python3 虚拟环境">
-<meta name="twitter:description" content="1. 安装 python31brew install python3 2. 新建虚拟环境切换到用户根目录 1cd 新建一个 virtualenv： 1virtualenv -p python3 .env3 其中 .env3 是虚拟环境即将使用的文件夹，可能得到类似下面的结果，表示成功： 12345Running virtualenv with interpreter /usr/local/bin/">
   
   
 
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   
   
   
@@ -32,9 +34,11 @@
 <!--    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>-->
 <!--    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
   
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-</head>
-</html>
+  
+<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
 <body>
   <div id="wrap">
     <header id="header">
@@ -72,11 +76,11 @@
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><a class="page-title-link" href="/categories/知识备忘/">知识备忘</a></h1>
+              <h1 class="header"><a class="page-title-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></h1>
             </div>
             <div class="main-body-content">
               
-  <article id="post-virtualenv" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+  <article id="post-virtualenv" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
       <!--  -->
       
@@ -91,7 +95,7 @@
         </header>
       
       <p class="article-byline">
-        <a href="/2018/03/10/virtualenv/" class="article-date">
+        <a href="/2018/03/09/virtualenv/" class="article-date">
   <time datetime="2018-03-09T16:00:00.000Z" itemprop="datePublished">2018-03-10</time>
 </a>
       </p>
@@ -102,7 +106,7 @@
 <p>新建一个 virtualenv：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv -p python3 .env3</span><br></pre></td></tr></table></figure>
 <p>其中 <code>.env3</code> 是虚拟环境即将使用的文件夹，可能得到类似下面的结果，表示成功：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Running virtualenv with interpreter /usr/local/bin/python3</span><br><span class="line">Using base prefix &apos;/usr/local/Cellar/python/3.6.4_3/Frameworks/Python.framework/Versions/3.6&apos;</span><br><span class="line">New python executable in /Users/feng/.env3/bin/python3.6</span><br><span class="line">Also creating executable in /Users/feng/.env3/bin/python</span><br><span class="line">Installing setuptools, pip, wheel...done.</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Running virtualenv with interpreter /usr/local/bin/python3</span><br><span class="line">Using base prefix &#x27;/usr/local/Cellar/python/3.6.4_3/Frameworks/Python.framework/Versions/3.6&#x27;</span><br><span class="line">New python executable in /Users/feng/.env3/bin/python3.6</span><br><span class="line">Also creating executable in /Users/feng/.env3/bin/python</span><br><span class="line">Installing setuptools, pip, wheel...done.</span><br></pre></td></tr></table></figure>
 <h2 id="3-激活虚拟环境"><a href="#3-激活虚拟环境" class="headerlink" title="3. 激活虚拟环境"></a>3. 激活虚拟环境</h2><p>激活 virtualenv：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.env3/bin/activate</span><br></pre></td></tr></table></figure>
 <p>这时候命令行开头会发生变化， 会多出一个前缀 <code>(.env3)</code>，表示当前是在虚拟环境中操作。</p>
@@ -113,12 +117,12 @@
 <p>再验证版本：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -V</span><br></pre></td></tr></table></figure>
 <p>会得到：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Python 3.6.4</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Python 3.6.4</span><br></pre></td></tr></table></figure>
 <p>发现并不是系统自带的的 python，而是刚刚创建的 <code>.env</code> 文件夹中的 python，而且是 3 的版本，这就对了。</p>
 <p>查看一下目前都安装了哪些模块：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
 <p>可能得到如下结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Package    Version</span><br><span class="line">---------- -------</span><br><span class="line">pip        9.0.1  </span><br><span class="line">setuptools 38.5.2 </span><br><span class="line">wheel      0.30.0</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Package    Version</span><br><span class="line">---------- -------</span><br><span class="line">pip        9.0.1  </span><br><span class="line">setuptools 38.5.2 </span><br><span class="line">wheel      0.30.0 </span><br></pre></td></tr></table></figure>
 <p>则表明已安装了基本模块且 pip 可以正常使用。</p>
 <h2 id="4-退出虚拟环境"><a href="#4-退出虚拟环境" class="headerlink" title="4. 退出虚拟环境"></a>4. 退出虚拟环境</h2><p>退出 virtualenv：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure>
@@ -126,10 +130,10 @@
 
       </div>
       <footer class="article-footer">
-        <a data-url="http://yuhenabc.com/2018/03/10/virtualenv/" data-id="ck2cwgquh000qb96l8eyi6ywz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        <a data-url="http://yuhenabc.com/2018/03/09/virtualenv/" data-id="cl17iilml000d8cnd0rbd383q" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
         
         
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
 
       </footer>
     </div>
@@ -151,7 +155,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/03/10/ubuntu/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/03/09/ubuntu/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
       <p class="article-nav-title">
         
@@ -162,7 +166,7 @@
     </a>
   
   
-    <a href="/2017/02/08/base64/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/02/07/base64/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <p class="article-nav-title">字符串 Base64 转码解码</p>
       <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
@@ -187,13 +191,14 @@
         <h1 class="logo-wrap">
           <a href="/" class="logo"></a>
         </h1>
-        <p>&copy; 2019 yuhenabc</p>
+        <p>&copy; 2022 yuhenabc</p>
         <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
       </div>
     </div>
   </div>
 </footer>
     
+
 
 <script src="/js/jquery.min.js"></script>
 
@@ -203,8 +208,13 @@
 
 
 
+
+
 <script src="/js/html-patch.js"></script>
+
+
 <script src="/js/script.js"></script>
+
 
   </div>
 </body>

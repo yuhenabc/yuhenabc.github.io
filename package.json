@@ -2,6 +2,9 @@
   "name": "hexo-site-yuhenabc",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "build": "hexo clean & hexo generate"
+  },
   "hexo": {
     "version": "3.8.0"
   },

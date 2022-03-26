@@ -119,9 +119,9 @@ Enable context isolation in all ren
 我们的目标是创建一个数据库，包含顾客、商品，以及二者产生关系得到的订单，过程中我们要尽可能地用到关系型数据库的特性，所以还有一些衍生的表单。本文的 SQL 语法遵循 Mysql 的语法。
 
 step1: 创建表单使用数据库（假设已有）：
-1USE `hungry`;
+USE `hungry`;
 用户表单：
-12345678CREATE TABLE `users` (  `id` int(8) unsigned NOT NU
+CREATE TABLE `users` (  `id` int(8) unsigned NOT NULL AUTO_I
       </p>
     </div>
   </article>
@@ -148,9 +148,9 @@ step1: 创建表单使用数据库（假设已有）：
         
 前言：日常生活中，Android 的 http 代理直接使用设置里的 Wi-Fi 设置就够了，但是有些情况下仍然不足，本文给出另外一种解法。这种解法就是通过控制台修改 Android 的全局设置，适用于真机及模拟器。步骤如下：
 
-step1: 进入控制台1adb shell
-step2: 设置代理1settings put global http_proxy 127.0.0.1:8888
-ste
+step1: 进入控制台adb shell
+step2: 设置代理settings put global http_proxy 127.0.0.1:8888
+step3
       </p>
     </div>
   </article>
@@ -177,7 +177,7 @@ ste
 一但用了 ES6 模块，就不要想着再用 CommonJs 模块了（不可混用）
 
 证明截止到我写这篇文章，Node.js 的最新版本为 12.7.0，先写一段我们以前耳熟能详，现在看起来老眼昏花的代码：
-1234// commonjs/funs.jsexports.a = function a() &#123; r
+// commonjs/funs.jsexports.a = function a() &#123; retur
       </p>
     </div>
   </article>
@@ -201,9 +201,9 @@ ste
       </h2>
       <p class="article-excerpt">
         
-        安装1apt install supervisor
+        安装apt install supervisor
 配置文件默认位置 /etc/supervisor/supervisord.conf
-12345678910111213141516171819202122232425262728; supervisor config file[unix_http_server]file=/var/run/supervisor.sock   ; (the path
+; supervisor config file[unix_http_server]file=/var/run/supervisor.sock   ; (the path to the socket file)chmod=0700                  
       </p>
     </div>
   </article>
@@ -226,12 +226,12 @@ ste
         
 之前有篇文章，《使用 virtualenv 创建 python3 虚拟环境》，现在我们换一款软件来做同样的事情 —— venv。
 
-1. 安装 python31brew install python3
+1. 安装 python3brew install python3
 2. 新建虚拟环境切换到项目根目录
-1cd path/to/myproject
+cd path/to/myproject
 新建一个 venv，习惯上命名为 venv：
-1python3 -m venv venv
-没有任何错误提示，表示成功
+python3 -m venv venv
+没有任何错误提示，表示成功；如果
       </p>
     </div>
   </article>
@@ -257,7 +257,8 @@ ste
         
         简单命令假如你的代理机是你的本机（127.0.0.1），代理的端口为 7070，
 开启代理很简单，就是用 export 命令设置全局变量 http_proxy 和 https_proxy：
-12export http_proxy=&quot;http://127.0.0.1:7070&quot;export https_proxy=&quot;http://127.0.0.1:7070&quot;
+export http_proxy=&quot;http://127.0.0.1:7070&quot;export https_proxy=&quot;http://127.0.0.1:7070&quot;
+关
       </p>
     </div>
   </article>
@@ -278,9 +279,9 @@ ste
       <p class="article-excerpt">
         
         为什么需要换源？换源是一种不屈的态度，是对自己生命的负责。
-1. 安装普通的第三方模块时1registry=http://registry.npm.taobao.org npm install
-2. 安装依赖有 node-sass 时1sass_binary_site=https://npm.taobao.org/mirrors/node-sass npm install
-3. 安装依赖有 ele
+1. 安装普通的第三方模块时registry=http://registry.npm.taobao.org npm install
+2. 安装依赖有 node-sass 时sass_binary_site=https://npm.taobao.org/mirrors/node-sass npm install
+3. 安装依赖有 elect
       </p>
     </div>
   </article>
@@ -305,12 +306,13 @@ ste
       <p class="article-excerpt">
         
         1. 中文语言支持安装中文语言包：
-1apt install language-pack-zh-hant language-pack-zh-hans
+apt install language-pack-zh-hant language-pack-zh-hans
 配置相关环境变量：
-1vim /etc/environment
+vim /etc/environment
 在文件中增加语言和编码的设置：
-12LANG=&quot;zh_CN.UTF-8&quot;LANGUAGE=&quot;zh_CN:zh:en_US:en&quot;
-重新设置本地配置
+LANG=&quot;zh_CN.UTF-8&quot;LANGUAGE=&quot;zh_CN:zh:en_US:en&quot;
+重新设置本地配置：
+dp
       </p>
     </div>
   </article>
@@ -330,13 +332,13 @@ ste
       </h2>
       <p class="article-excerpt">
         
-        1. 安装 python31brew install python3
+        1. 安装 python3brew install python3
 2. 新建虚拟环境切换到用户根目录
-1cd
+cd
 新建一个 virtualenv：
-1virtualenv -p python3 .env3
+virtualenv -p python3 .env3
 其中 .env3 是虚拟环境即将使用的文件夹，可能得到类似下面的结果，表示成功：
-12345Running virtualenv with interpreter /usr/local/bin/
+Running virtualenv with interpreter /usr/local/bin/python3U
       </p>
     </div>
   </article>

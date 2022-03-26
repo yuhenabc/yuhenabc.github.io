@@ -93,9 +93,9 @@
         
 前言：日常生活中，Android 的 http 代理直接使用设置里的 Wi-Fi 设置就够了，但是有些情况下仍然不足，本文给出另外一种解法。这种解法就是通过控制台修改 Android 的全局设置，适用于真机及模拟器。步骤如下：
 
-step1: 进入控制台1adb shell
-step2: 设置代理1settings put global http_proxy 127.0.0.1:8888
-ste
+step1: 进入控制台adb shell
+step2: 设置代理settings put global http_proxy 127.0.0.1:8888
+step3
       </p>
     </div>
   </article>
@@ -122,7 +122,7 @@ ste
 一但用了 ES6 模块，就不要想着再用 CommonJs 模块了（不可混用）
 
 证明截止到我写这篇文章，Node.js 的最新版本为 12.7.0，先写一段我们以前耳熟能详，现在看起来老眼昏花的代码：
-1234// commonjs/funs.jsexports.a = function a() &#123; r
+// commonjs/funs.jsexports.a = function a() &#123; retur
       </p>
     </div>
   </article>
@@ -146,9 +146,9 @@ ste
       </h2>
       <p class="article-excerpt">
         
-        安装1apt install supervisor
+        安装apt install supervisor
 配置文件默认位置 /etc/supervisor/supervisord.conf
-12345678910111213141516171819202122232425262728; supervisor config file[unix_http_server]file=/var/run/supervisor.sock   ; (the path
+; supervisor config file[unix_http_server]file=/var/run/supervisor.sock   ; (the path to the socket file)chmod=0700                  
       </p>
     </div>
   </article>

@@ -90,9 +90,9 @@
       </h2>
       <p class="article-excerpt">
         
-        安装1apt install supervisor
+        安装apt install supervisor
 配置文件默认位置 /etc/supervisor/supervisord.conf
-12345678910111213141516171819202122232425262728; supervisor config file[unix_http_server]file=/var/run/supervisor.sock   ; (the path
+; supervisor config file[unix_http_server]file=/var/run/supervisor.sock   ; (the path to the socket file)chmod=0700                  
       </p>
     </div>
   </article>
@@ -113,12 +113,13 @@
       <p class="article-excerpt">
         
         1. 中文语言支持安装中文语言包：
-1apt install language-pack-zh-hant language-pack-zh-hans
+apt install language-pack-zh-hant language-pack-zh-hans
 配置相关环境变量：
-1vim /etc/environment
+vim /etc/environment
 在文件中增加语言和编码的设置：
-12LANG=&quot;zh_CN.UTF-8&quot;LANGUAGE=&quot;zh_CN:zh:en_US:en&quot;
-重新设置本地配置
+LANG=&quot;zh_CN.UTF-8&quot;LANGUAGE=&quot;zh_CN:zh:en_US:en&quot;
+重新设置本地配置：
+dp
       </p>
     </div>
   </article>

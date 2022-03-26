@@ -5,15 +5,15 @@
   
   <title>Mac 终端开启和关闭代理的方法 | 羽痕爱编程</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简单命令假如你的代理机是你的本机（127.0.0.1），代理的端口为 7070， 开启代理很简单，就是用 export 命令设置全局变量 http_proxy 和 https_proxy： 12export http_proxy&#x3D;&quot;http:&#x2F;&#x2F;127.0.0.1:7070&quot;export https_proxy&#x3D;&quot;http:&#x2F;&#x2F;127.0.0.1:7070&quot;">
+  <meta name="description" content="简单命令假如你的代理机是你的本机（127.0.0.1），代理的端口为 7070， 开启代理很简单，就是用 export 命令设置全局变量 http_proxy 和 https_proxy： export http_proxy&#x3D;&quot;http:&#x2F;&#x2F;127.0.0.1:7070&quot;export https_proxy&#x3D;&quot;http:&#x2F;&#x2F;127.0.0.1:7070&quot; 关">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac 终端开启和关闭代理的方法">
 <meta property="og:url" content="http://yuhenabc.com/2018/12/28/proxy/index.html">
 <meta property="og:site_name" content="羽痕爱编程">
-<meta property="og:description" content="简单命令假如你的代理机是你的本机（127.0.0.1），代理的端口为 7070， 开启代理很简单，就是用 export 命令设置全局变量 http_proxy 和 https_proxy： 12export http_proxy&#x3D;&quot;http:&#x2F;&#x2F;127.0.0.1:7070&quot;export https_proxy&#x3D;&quot;http:&#x2F;&#x2F;127.0.0.1:7070&quot;">
+<meta property="og:description" content="简单命令假如你的代理机是你的本机（127.0.0.1），代理的端口为 7070， 开启代理很简单，就是用 export 命令设置全局变量 http_proxy 和 https_proxy： export http_proxy&#x3D;&quot;http:&#x2F;&#x2F;127.0.0.1:7070&quot;export https_proxy&#x3D;&quot;http:&#x2F;&#x2F;127.0.0.1:7070&quot; 关">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-12-28T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-26T09:03:27.415Z">
+<meta property="article:modified_time" content="2022-03-26T15:49:53.081Z">
 <meta property="article:author" content="yuhenabc">
 <meta property="article:tag" content="shell">
 <meta name="twitter:card" content="summary">
@@ -102,26 +102,26 @@
       <div class="article-entry" itemprop="articleBody">
         <h2 id="简单命令"><a href="#简单命令" class="headerlink" title="简单命令"></a>简单命令</h2><p>假如你的代理机是你的本机（127.0.0.1），代理的端口为 7070，</p>
 <p>开启代理很简单，就是用 export 命令设置全局变量 http_proxy 和 https_proxy：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7070&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7070&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7070&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7070&quot;</span></span><br></pre></td></tr></table></figure>
 <p>关闭代理就是用 unset 命令把全局变量清空：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">unset</span> http_proxy</span><br><span class="line"><span class="built_in">unset</span> https_proxy</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">unset</span> http_proxy</span><br><span class="line"><span class="built_in">unset</span> https_proxy</span><br></pre></td></tr></table></figure>
 <h2 id="自定义命令"><a href="#自定义命令" class="headerlink" title="自定义命令"></a>自定义命令</h2><p>程序员不喜欢 repeat (him/her/it)self，所以。。。</p>
 <p>首先，创建两个文件，<code>openproxy.sh</code> 和 <code>closeproxy.sh</code>，</p>
 <p>openproxy.sh</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7070&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7070&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;already open proxy with 127.0.0.1:7070&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7070&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7070&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;already open proxy with 127.0.0.1:7070&quot;</span></span><br></pre></td></tr></table></figure>
 <p>closeproxy.sh</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">unset</span> http_proxy</span><br><span class="line"><span class="built_in">unset</span> https_proxy</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;already close proxy&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">unset</span> http_proxy</span><br><span class="line"><span class="built_in">unset</span> https_proxy</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;already close proxy&quot;</span></span><br></pre></td></tr></table></figure>
 <p>接着，在你的用户根目录新建一个 <code>.command</code> 文件夹，然后存放这两个文件，</p>
 <p>然后，修改你的 <code>.bzshrc</code> 或者 <code>.zshrc</code>，在合适的地方添加如下别名（alias）命令，</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> openproxy=<span class="string">&quot;source ~/.command/openproxy.sh&quot;</span></span><br><span class="line"><span class="built_in">alias</span> closeproxy=<span class="string">&quot;source ~/.command/closeproxy.sh&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> openproxy=<span class="string">&quot;source ~/.command/openproxy.sh&quot;</span></span><br><span class="line"><span class="built_in">alias</span> closeproxy=<span class="string">&quot;source ~/.command/closeproxy.sh&quot;</span></span><br></pre></td></tr></table></figure>
 <p>最后，打开一个新的终端，在你需要开启的时候敲下 <code>openproxy</code> ，需要关闭的时候敲下 <code>closeproxy</code> 就可以喽～</p>
 <h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><p>从此以后，再也不用担心通过命令行安装一些依赖的关键时刻因为“墙”的原因而卡壳，命令举例：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># homebrew 安装 node</span></span><br><span class="line">brew install node</span><br><span class="line"></span><br><span class="line"><span class="comment"># homebrew 安装 yarn</span></span><br><span class="line">brew install yarn</span><br><span class="line"></span><br><span class="line"><span class="comment"># wget 下载国外资源</span></span><br><span class="line">wget https://&lt;some_url&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># homebrew 安装 node</span></span><br><span class="line">brew install node</span><br><span class="line"></span><br><span class="line"><span class="comment"># homebrew 安装 yarn</span></span><br><span class="line">brew install yarn</span><br><span class="line"></span><br><span class="line"><span class="comment"># wget 下载国外资源</span></span><br><span class="line">wget https://&lt;some_url&gt;</span><br></pre></td></tr></table></figure>
 <p>等等。</p>
 
       </div>
       <footer class="article-footer">
-        <a data-url="http://yuhenabc.com/2018/12/28/proxy/" data-id="cl17mku8s00088nnhf19ddahp" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        <a data-url="http://yuhenabc.com/2018/12/28/proxy/" data-id="cl1813ikr000b9iokh2f9esz1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
         
         
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/" rel="tag">shell</a></li></ul>

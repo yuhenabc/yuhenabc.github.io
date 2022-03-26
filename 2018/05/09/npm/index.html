@@ -5,15 +5,15 @@
   
   <title>使用环境变量实现 npm 换源 | 羽痕爱编程</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="为什么需要换源？换源是一种不屈的态度，是对自己生命的负责。 1. 安装普通的第三方模块时1registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org npm install 2. 安装依赖有 node-sass 时1sass_binary_site&#x3D;https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node-sass npm install 3. 安装依赖有 ele">
+  <meta name="description" content="为什么需要换源？换源是一种不屈的态度，是对自己生命的负责。 1. 安装普通的第三方模块时registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org npm install 2. 安装依赖有 node-sass 时sass_binary_site&#x3D;https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node-sass npm install 3. 安装依赖有 elect">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用环境变量实现 npm 换源">
 <meta property="og:url" content="http://yuhenabc.com/2018/05/09/npm/index.html">
 <meta property="og:site_name" content="羽痕爱编程">
-<meta property="og:description" content="为什么需要换源？换源是一种不屈的态度，是对自己生命的负责。 1. 安装普通的第三方模块时1registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org npm install 2. 安装依赖有 node-sass 时1sass_binary_site&#x3D;https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node-sass npm install 3. 安装依赖有 ele">
+<meta property="og:description" content="为什么需要换源？换源是一种不屈的态度，是对自己生命的负责。 1. 安装普通的第三方模块时registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org npm install 2. 安装依赖有 node-sass 时sass_binary_site&#x3D;https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node-sass npm install 3. 安装依赖有 elect">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-05-09T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-26T09:03:27.415Z">
+<meta property="article:modified_time" content="2022-03-26T15:49:53.081Z">
 <meta property="article:author" content="yuhenabc">
 <meta property="article:tag" content="npm">
 <meta name="twitter:card" content="summary">
@@ -101,19 +101,19 @@
       </p>
       <div class="article-entry" itemprop="articleBody">
         <p>为什么需要换源？换源是一种不屈的态度，是对自己生命的负责。</p>
-<h3 id="1-安装普通的第三方模块时"><a href="#1-安装普通的第三方模块时" class="headerlink" title="1. 安装普通的第三方模块时"></a>1. 安装普通的第三方模块时</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">registry=http://registry.npm.taobao.org npm install</span><br></pre></td></tr></table></figure>
-<h3 id="2-安装依赖有-node-sass-时"><a href="#2-安装依赖有-node-sass-时" class="headerlink" title="2. 安装依赖有 node-sass 时"></a>2. 安装依赖有 node-sass 时</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass_binary_site=https://npm.taobao.org/mirrors/node-sass npm install</span><br></pre></td></tr></table></figure>
-<h3 id="3-安装依赖有-electron-时"><a href="#3-安装依赖有-electron-时" class="headerlink" title="3. 安装依赖有 electron 时"></a>3. 安装依赖有 electron 时</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">electron_mirror=https://npm.taobao.org/mirrors/electron npm install</span><br></pre></td></tr></table></figure>
+<h3 id="1-安装普通的第三方模块时"><a href="#1-安装普通的第三方模块时" class="headerlink" title="1. 安装普通的第三方模块时"></a>1. 安装普通的第三方模块时</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">registry=http://registry.npm.taobao.org npm install</span><br></pre></td></tr></table></figure>
+<h3 id="2-安装依赖有-node-sass-时"><a href="#2-安装依赖有-node-sass-时" class="headerlink" title="2. 安装依赖有 node-sass 时"></a>2. 安装依赖有 node-sass 时</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sass_binary_site=https://npm.taobao.org/mirrors/node-sass npm install</span><br></pre></td></tr></table></figure>
+<h3 id="3-安装依赖有-electron-时"><a href="#3-安装依赖有-electron-时" class="headerlink" title="3. 安装依赖有 electron 时"></a>3. 安装依赖有 electron 时</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">electron_mirror=https://npm.taobao.org/mirrors/electron npm install</span><br></pre></td></tr></table></figure>
 <h3 id="4-合一，将环境变量写到-npmrc-里"><a href="#4-合一，将环境变量写到-npmrc-里" class="headerlink" title="4. 合一，将环境变量写到 ~/.npmrc 里"></a>4. 合一，将环境变量写到 <code>~/.npmrc</code> 里</h3><p>.npmrc 的内容：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">registry=http://registry.npm.taobao.org/</span><br><span class="line">sass_binary_site=https://npm.taobao.org/mirrors/node-sass/</span><br><span class="line">electron_mirror=https://npm.taobao.org/mirrors/electron/</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">registry=http://registry.npm.taobao.org/</span><br><span class="line">sass_binary_site=https://npm.taobao.org/mirrors/node-sass/</span><br><span class="line">electron_mirror=https://npm.taobao.org/mirrors/electron/</span><br></pre></td></tr></table></figure>
 <p>以后直接：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
 <p>就可以。</p>
-<h3 id="5-用-nvm-安装-node-时同样有环境变量可用"><a href="#5-用-nvm-安装-node-时同样有环境变量可用" class="headerlink" title="5. 用 nvm 安装 node 时同样有环境变量可用"></a>5. 用 nvm 安装 node 时同样有环境变量可用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install v10.0.0</span><br></pre></td></tr></table></figure>
+<h3 id="5-用-nvm-安装-node-时同样有环境变量可用"><a href="#5-用-nvm-安装-node-时同样有环境变量可用" class="headerlink" title="5. 用 nvm 安装 node 时同样有环境变量可用"></a>5. 用 nvm 安装 node 时同样有环境变量可用</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install v10.0.0</span><br></pre></td></tr></table></figure>
 
       </div>
       <footer class="article-footer">
-        <a data-url="http://yuhenabc.com/2018/05/09/npm/" data-id="cl17mku8r00078nnh3kgbghla" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        <a data-url="http://yuhenabc.com/2018/05/09/npm/" data-id="cl1813ikr000a9iokgto318yu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
         
         
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/" rel="tag">npm</a></li></ul>

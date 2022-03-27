@@ -5,15 +5,15 @@
   
   <title>Electron 通信新思路 | 羽痕爱编程</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="就像官方文档说的那样：Electron Docs -&gt; Best Practices -&gt; Security   Only load secure content Disable the Node.js integration in all renderers that display remote content Enable context isolation in all ren">
+  <meta name="description" content="这里指主进程与渲染进程之间的通信。 就像官方文档说的那样：Electron Docs -&gt; Best Practices -&gt; Security   Only load secure content Disable the Node.js integration in all renderers that display remote content Enable context is">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Electron 通信新思路">
 <meta property="og:url" content="http://yuhenabc.com/2022/03/26/electron-communication/index.html">
 <meta property="og:site_name" content="羽痕爱编程">
-<meta property="og:description" content="就像官方文档说的那样：Electron Docs -&gt; Best Practices -&gt; Security   Only load secure content Disable the Node.js integration in all renderers that display remote content Enable context isolation in all ren">
+<meta property="og:description" content="这里指主进程与渲染进程之间的通信。 就像官方文档说的那样：Electron Docs -&gt; Best Practices -&gt; Security   Only load secure content Disable the Node.js integration in all renderers that display remote content Enable context is">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-26T07:35:27.000Z">
-<meta property="article:modified_time" content="2022-03-26T15:49:53.081Z">
+<meta property="article:modified_time" content="2022-03-27T01:33:06.577Z">
 <meta property="article:author" content="yuhenabc">
 <meta property="article:tag" content="electron">
 <meta name="twitter:card" content="summary">
@@ -100,7 +100,8 @@
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <p>就像官方文档说的那样：<a href="(https://www.electronjs.org/zh/docs/latest/tutorial/security#checklist-security-recommendations)">Electron Docs -&gt; Best Practices -&gt; Security</a></p>
+        <p>这里指主进程与渲染进程之间的通信。</p>
+<p>就像官方文档说的那样：<a href="(https://www.electronjs.org/zh/docs/latest/tutorial/security#checklist-security-recommendations)">Electron Docs -&gt; Best Practices -&gt; Security</a></p>
 <blockquote>
 <ol>
 <li>Only load secure content</li>
@@ -121,7 +122,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Preload (Isolated World)</span></span><br><span class="line"><span class="keyword">const</span> &#123; contextBridge, ipcRenderer &#125; = <span class="built_in">require</span>(<span class="string">&#x27;electron&#x27;</span>);</span><br><span class="line"></span><br><span class="line">contextBridge.<span class="title function_">exposeInMainWorld</span>(<span class="string">&#x27;electron&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">ipc</span>: ipcRenderer</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>然后再渲染进程里：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Renderer (Main World)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">electron</span>.<span class="property">ipc</span>);</span><br></pre></td></tr></table></figure>
-<p>发现，这里的 <code>ipc</code> ，也有 <code>invoke</code>，有 <code>send</code>，也有 <code>sendSync</code>，就是没有 <code>on</code>，使用这种方式，似乎只能进行 <code>Main --&gt; Renderer</code> 方向的通信，距离完成我们的任务还有一半距离，如果说项目只需要这单一方向的通信也就罢了，但是如果想要双向通信的话，就要开始新的尝试了。于是有了：</p>
+<p>发现，这里的 <code>ipc</code> ，也有 <code>invoke</code>，有 <code>send</code>，也有 <code>sendSync</code>，就是没有 <code>on</code>，使用这种方式，似乎只能进行 <code>Renderer --&gt; Main</code> 方向的通信，反之则不可以，距离完成我们的任务还有一半距离，如果说项目只需要这单一方向的通信也就罢了，但是如果想要双向通信的话，就要开始新的尝试了。于是有了：</p>
 <h2 id="改进二："><a href="#改进二：" class="headerlink" title="改进二："></a>改进二：</h2><p>我的思路是，既然 <code>contextBridge</code> 不给我暴露 <code>ipcRenderer</code> 的 <code>on</code> 方法，那我就自己写一个，于是有了下面的代码：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Preload (Isolated World)</span></span><br><span class="line"><span class="keyword">const</span> &#123; <span class="attr">contextBridge</span>: bridge, <span class="attr">ipcRenderer</span>: ipc &#125; = <span class="built_in">require</span>(<span class="string">&#x27;electron&#x27;</span>);</span><br><span class="line"></span><br><span class="line">bridge.<span class="title function_">exposeInMainWorld</span>(<span class="string">&#x27;ipc&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">send</span>: <span class="function">(<span class="params">channel, data</span>) =&gt;</span> ipc.<span class="title function_">send</span>(channel, data),</span><br><span class="line">  <span class="attr">on</span>: <span class="function">(<span class="params">channel, fun</span>) =&gt;</span> ipc.<span class="title function_">on</span>(channel, fun),</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>渲染进程里：</p>
@@ -132,13 +133,13 @@
 <p>渲染进程：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Renderer (Main World)</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> ipc = <span class="variable language_">window</span>.<span class="property">ipc</span>;</span><br><span class="line">  ipc.<span class="title function_">send</span>(<span class="string">&#x27;ping&#x27;</span>, <span class="number">1</span>);</span><br><span class="line">  ipc.<span class="title function_">on</span>(<span class="string">&#x27;pong&#x27;</span>, <span class="function">(<span class="params">e, data</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;received&#x27;</span>, data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// --&gt;</span></span><br><span class="line"><span class="comment">// received 2</span></span><br></pre></td></tr></table></figure>
 <p>至此，成功！</p>
-<p>完整的例子，参见我的 <a href="(https://github.com/yuhenabc/demo-electron-commutication)">Github</a></p>
+<p>完整的例子，参见我的 <a href="(https://github.com/yuhenabc/demo-electron-commutication)">Github Demo</a></p>
 <h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p><code>Isolated World</code> 与 <code>Main World</code>？</p>
 <p>ELectron 官方把预加载 js 中的环境称为 <code>Isolated World</code>，而把渲染进程中普通 js 中的环境称为 <code>Main World</code>，个人揣测是因为其实现方式，预加载 js 的实现方式其实就是将这个文件当作浏览器插件的形式插入到渲染进程的渲染窗口，所以渲染进程中普通 js 为“主”，预加载 js 为“辅”，有了以上称谓。</p>
 
       </div>
       <footer class="article-footer">
-        <a data-url="http://yuhenabc.com/2022/03/26/electron-communication/" data-id="cl1813iko00069ioka7go1gx4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        <a data-url="http://yuhenabc.com/2022/03/26/electron-communication/" data-id="cl18lxjmt0006cqopcwd2f4ov" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
         
         
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/electron/" rel="tag">electron</a></li></ul>

@@ -32,3 +32,7 @@ jobs:
           publish_branch: master
           full_commit_message: hexo update
           publish_dir: ./public
+      - name: Deploy to Webhookd
+        uses: CamiloGarciaLaRotta/watermelon-http-client@v1
+        with:
+          url: https://hook.yuhenabc.com/io

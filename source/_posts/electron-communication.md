@@ -4,6 +4,8 @@ category: 探索发现
 tags: electron
 ---
 
+这里指主进程与渲染进程之间的通信。
+
 就像官方文档说的那样：[Electron Docs -> Best Practices -> Security][1]
 
 > 1. Only load secure content
@@ -58,7 +60,7 @@ contextBridge.exposeInMainWorld('electron', {
 console.log(window.electron.ipc);
 ```
 
-发现，这里的 `ipc` ，也有 `invoke`，有 `send`，也有 `sendSync`，就是没有 `on`，使用这种方式，似乎只能进行 `Main --> Renderer` 方向的通信，距离完成我们的任务还有一半距离，如果说项目只需要这单一方向的通信也就罢了，但是如果想要双向通信的话，就要开始新的尝试了。于是有了：
+发现，这里的 `ipc` ，也有 `invoke`，有 `send`，也有 `sendSync`，就是没有 `on`，使用这种方式，似乎只能进行 `Renderer --> Main` 方向的通信，反之则不可以，距离完成我们的任务还有一半距离，如果说项目只需要这单一方向的通信也就罢了，但是如果想要双向通信的话，就要开始新的尝试了。于是有了：
 
 ## 改进二：
 
@@ -119,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 至此，成功！
 
-完整的例子，参见我的 [Github][3]
+完整的例子，参见我的 [Github Demo][3]
 
 ## 题外话
 

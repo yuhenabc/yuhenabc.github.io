@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>给公司整理的前端规范 | 羽痕爱编程</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、目录结构规范普遍地，项目需要有以下几项文件夹或文件：  src - 源代码存放的文件夹 package.json - 包描述文件 yarn.lock - 包管理器 yarn 自动生成的版本锁定文件 README.md - 新手上手指南，针对项目的启动命令、环境配置，依赖安装难点等进行描述  其它的目录结构，按照生成项目时使用的脚手架自行决定，推荐的脚手架：    框架 脚手架 创建命令 官网">
+<meta property="og:type" content="article">
+<meta property="og:title" content="给公司整理的前端规范">
+<meta property="og:url" content="http://yuhenabc.com/2022/05/17/frontend-standards/index.html">
+<meta property="og:site_name" content="羽痕爱编程">
+<meta property="og:description" content="一、目录结构规范普遍地，项目需要有以下几项文件夹或文件：  src - 源代码存放的文件夹 package.json - 包描述文件 yarn.lock - 包管理器 yarn 自动生成的版本锁定文件 README.md - 新手上手指南，针对项目的启动命令、环境配置，依赖安装难点等进行描述  其它的目录结构，按照生成项目时使用的脚手架自行决定，推荐的脚手架：    框架 脚手架 创建命令 官网">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-17T03:39:18.000Z">
+<meta property="article:modified_time" content="2022-05-24T01:51:12.822Z">
+<meta property="article:author" content="yuhenabc">
+<meta property="article:tag" content="doc">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+
+
+  
+
+  
+<!--    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>-->
+<!--    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
+  
+  
+<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                
+                  <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://yuhenabc.com"></form>
+                
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-frontend-standards" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      给公司整理的前端规范
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2022/05/17/frontend-standards/" class="article-date">
+  <time datetime="2022-05-17T03:39:18.000Z" itemprop="datePublished">2022-05-17</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <h3 id="一、目录结构规范"><a href="#一、目录结构规范" class="headerlink" title="一、目录结构规范"></a>一、目录结构规范</h3><p>普遍地，项目需要有以下几项文件夹或文件：</p>
+<ul>
+<li><code>src</code> - 源代码存放的文件夹</li>
+<li><code>package.json</code> - 包描述文件</li>
+<li><code>yarn.lock</code> - 包管理器 <code>yarn</code> 自动生成的版本锁定文件</li>
+<li><code>README.md</code> - 新手上手指南，针对项目的启动命令、环境配置，依赖安装难点等进行描述</li>
+</ul>
+<p>其它的目录结构，按照生成项目时使用的脚手架自行决定，推荐的脚手架：</p>
+<table>
+<thead>
+<tr>
+<th>框架</th>
+<th>脚手架</th>
+<th>创建命令</th>
+<th>官网</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>React</td>
+<td>create-react-app</td>
+<td><code>yarn create react-app my-app</code></td>
+<td><a target="_blank" rel="noopener" href="https://create-react-app.dev/">https://create-react-app.dev/</a></td>
+</tr>
+<tr>
+<td>Vue2</td>
+<td>vue-cli-service</td>
+<td><code>vue create my-app</code></td>
+<td><a target="_blank" rel="noopener" href="https://cli.vuejs.org/">https://cli.vuejs.org/</a></td>
+</tr>
+<tr>
+<td>Vue3</td>
+<td>vite</td>
+<td><code>yarn create vite my-app</code></td>
+<td><a target="_blank" rel="noopener" href="https://vitejs.dev/">https://vitejs.dev/</a></td>
+</tr>
+</tbody>
+</table>
+<p>在 <code>src</code> 目录下，如果脚手架自带的子目录不够使用，可以自己开辟，常见的子目录名称及用法：</p>
+<ul>
+<li><code>utils</code> - 存放工具类函数集合的文件夹</li>
+<li><code>emnus</code> - 存放枚举型变量集合的文件夹</li>
+<li><code>assets</code> / <code>static</code> - 存放图片、音视频等静态资源的文件夹</li>
+<li><code>components</code> - 存放全局公共组件的文件夹</li>
+<li><code>views</code> / <code>pages</code> - 存放页面级别的业务组件的文件夹</li>
+</ul>
+<p>注意：脚手架生成项目完毕，不建议使用 <code>eject</code> 等命令将原始构建脚本暴露，因为这样的操作是不可逆的，不方便将来项目对脚手架的升级。如需对 <code>webpack</code> 等底层工具进行自定义配置，应该采用脚手架建议的方式去拓展或重写，参考各个脚手架的官方文档。</p>
+<p>环境配置，尽量使用 <code>.env</code> 文件家族来定义因环境不同而产生的变量，比如 API 访问地址等。</p>
+<p>不同环境下的文件命名：</p>
+<ul>
+<li><code>development</code> - 开发环境，可用 <code>.env.development</code>、<code>.env.development.local</code> 等文件配置环境变量，其中后者仅当前开发者保有，不同步到 Git 代码仓库</li>
+<li><code>test</code> - 测试环境，可用 <code>.env.test</code>、<code>.env.test.local</code> 等文件配置环境变量</li>
+<li><code>production</code> - 生产环境，可用 <code>.env.production</code>、<code>.env.production.local</code> 等文件配置环境变量</li>
+</ul>
+<h3 id="二、文件命名规范"><a href="#二、文件命名规范" class="headerlink" title="二、文件命名规范"></a>二、文件命名规范</h3><p>JS：</p>
+<ul>
+<li>单个单词小写，多个单词小驼峰命名法（lowerCamelCase）命名，如：<code>routes.js</code>、<code>taskMap.js</code></li>
+</ul>
+<p>React：</p>
+<ul>
+<li>扩展名用 <code>.jsx</code> 作为组件扩展名，但框架如 Next.js 不支持除外。</li>
+<li>组件命名，采用大驼峰命名法（UpperCamelCase）命名，也可以将文件夹名作为组件名，根组件用 <code>index.jsx</code> 命名，如 <code>TodoList.jsx</code>、<code>TodoList/index.jsx</code>。</li>
+<li>组件名应该倾向于完整单词而不是缩写，这一点跟 Vue 一样。</li>
+</ul>
+<p>Vue：</p>
+<ul>
+<li>组件名应该始终是多个单词的，这样做可以避免跟现有的以及未来的 HTML 元素相冲突。</li>
+<li>单文件组件的命名，应采用大驼峰命名法（UpperCamelCase）命名，如 <code>TodoList.vue</code>。</li>
+<li>组件名应该倾向于完整单词而不是缩写，比如 <code>UserProfileOptions.vue</code> 不要缩短成 <code>UProfOpts.vue</code>。</li>
+</ul>
+<h3 id="三、变量命名规范"><a href="#三、变量命名规范" class="headerlink" title="三、变量命名规范"></a>三、变量命名规范</h3><p>JS：</p>
+<ul>
+<li>变量声明，使用 <code>const</code> 或 <code>let</code>，不要使用 <code>var</code>。</li>
+<li>方法名、参数名、成员变量、局部变量命名，采用小写开头的单词或小驼峰命名法（lowerCamelCase）命名，其中 <code>Boolean</code> 类型的变量一般要以 <code>is</code> 或 <code>has</code> 开头，方法名采用 <code>动词 + 名词</code> 的动宾形式，如 <code>toNum</code>、<code>onClick</code> 和 <code>handleClick</code>，不要采用动词修饰名词的形式，如 <code>clickHandler</code>。</li>
+<li>类名和构造函数名，采用大写开头的单词或大驼峰命名法（UpperCamelCase）命名</li>
+<li>不要使用 <code>that</code> 或 <code>_this</code> 等指代 <code>this</code> 变量，而应该寻求使用箭头函数等避免改变 <code>this</code> 指向的途径解决。</li>
+</ul>
+<p>React：</p>
+<ul>
+<li>组件 props 名，采用小驼峰命名法（lowerCamelCase）命名，如 <code>maxLines</code>、<code>beginTime</code>。</li>
+</ul>
+<p>Vue：</p>
+<ul>
+<li>组件 props 名，定义 props 时采用小驼峰命名法（lowerCamelCase），给组件设置 props 时采用串式命名法（kebab-case），如：<code>props: &#123; greetingText: String &#125;</code> 定义，<code>&lt;some-component greating-text=&quot;hello&quot;&gt;&lt;/some-component&gt;</code> 使用。</li>
+<li>始终使用 <code>:</code>、<code>@</code> 和 <code>#</code> 等指令缩写代替 <code>v-bind:</code>、<code>v-on:</code> 和 <code>v-slot:</code>。</li>
+<li>组件名，引入时保持和文件名一致，如 <code>import MyComponent from &#39;./MyComponent.vue&#39;</code>，使用时最好采用成对的串式命名法（kebab-case）使用，如 <code>&lt;my-component&gt;&lt;/my-component&gt;</code></li>
+</ul>
+<p>CSS：</p>
+<ul>
+<li>类名如果是多个单词，采用串式命名法（kebab-case），如 <code>.card-body</code></li>
+</ul>
+<h3 id="四、版本命名规范"><a href="#四、版本命名规范" class="headerlink" title="四、版本命名规范"></a>四、版本命名规范</h3><p>前端项目如果有版本发布需求，命名应当参照 npm 官方的命名规范——<a target="_blank" rel="noopener" href="https://semver.org/">semver</a>，即三位数字加上短横线再加自定义部分：<code>&lt;数字&gt;.&lt;数字&gt;.&lt;数字&gt;-&lt;自定义&gt;.&lt;自定义2&gt;</code>，按照项目的迭代进度，分为开发版、测试版、线上预览版、试验版和正式版，我们分别采用不同的标识去加以区分，其中正式版不需要标识：</p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>标识</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开发版</td>
+<td>dev</td>
+<td><code>1.0.0-dev.12</code></td>
+<td>该版本用于开发人员打包自测，验证当次的开发迭代是否会对打包流程造成影响</td>
+</tr>
+<tr>
+<td>测试版</td>
+<td>alpha</td>
+<td><code>1.0.0-alpha.20</code></td>
+<td>该版本用于交付测试人员，每次构建都应该升级最末端的小版本号，如 <code>alpha.20</code> -&gt; <code>alpha.21</code></td>
+</tr>
+<tr>
+<td>线上预览版</td>
+<td>beta</td>
+<td><code>1.0.0-beta.4</code></td>
+<td>该版本使用独立的版本标识，但连接线上的服务器接口，用于测试人员回归测试</td>
+</tr>
+<tr>
+<td>试验版</td>
+<td>canary</td>
+<td><code>1.0.0-canary.1</code></td>
+<td>该版本只对少数终端用户可用，如果新的功能或新的设计没有被很好地接受，那么很容易回滚。</td>
+</tr>
+<tr>
+<td>正式版</td>
+<td>无</td>
+<td><code>1.0.0</code></td>
+<td>该版本可以交付给最终用户</td>
+</tr>
+</tbody>
+</table>
+<h3 id="五、代码格式规范"><a href="#五、代码格式规范" class="headerlink" title="五、代码格式规范"></a>五、代码格式规范</h3><p>统一使用 <a target="_blank" rel="noopener" href="https://prettier.io/">Prettier</a>，这是一个大部分代码编辑器都支持的格式化工具。</p>
+<ul>
+<li>在对象，数组括号与文字之间加空格，如 <code>&#123; foo: bar &#125;</code></li>
+<li>箭头函数参数只有一个时是否省略小括号，如 <code>(x) =&gt; &#123;&#125;</code> 省略为 <code>x =&gt; &#123;&#125;</code>，不要省略</li>
+<li>超过 120 列换行</li>
+<li>行末不留分号</li>
+<li>行结尾模式 LF（Linux 模式）</li>
+<li>使用单引号</li>
+<li>Tab 键宽度设为 2</li>
+<li>在对象或数组最后一个元素后面加逗号</li>
+<li>不读取 <code>.editorConfig</code> 作为格式化依据</li>
+<li>使用空格代替制表符缩进</li>
+<li>JSX 把 <code>&gt;</code> 单独放一行</li>
+<li>JSX 中使用单引号代替双引号</li>
+<li>Vue <code>&lt;script&gt;</code> 和 <code>&lt;style&gt;</code> 标签不要整体缩进</li>
+</ul>
+<p>想要做到以上这些，只需要往项目根目录中加入 <code>.prettierrc</code> 文件，并且确保编辑器读取文件并且生效，如果使用的是 VS Code 编辑器，则会自动生效。文件内容如下：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;printWidth&quot;</span><span class="punctuation">:</span> <span class="number">120</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;arrowParens&quot;</span><span class="punctuation">:</span> <span class="string">&quot;always&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;bracketSpacing&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;semi&quot;</span><span class="punctuation">:</span> <span class="keyword">false</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;endOfLine&quot;</span><span class="punctuation">:</span> <span class="string">&quot;lf&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;jsxBracketSameLine&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;jsxSingleQuote&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;singleQuote&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;tabWidth&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;trailingComma&quot;</span><span class="punctuation">:</span> <span class="string">&quot;es5&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;useEditorConfig&quot;</span><span class="punctuation">:</span> <span class="keyword">false</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;useTabs&quot;</span><span class="punctuation">:</span> <span class="keyword">false</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;vueIndentScriptAndStyle&quot;</span><span class="punctuation">:</span> <span class="keyword">false</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;withNodeModules&quot;</span><span class="punctuation">:</span> <span class="keyword">false</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>之后就可以使用编辑器的快捷键进行格式化了。</p>
+<h3 id="六、编程规范"><a href="#六、编程规范" class="headerlink" title="六、编程规范"></a>六、编程规范</h3><p>编程规范一般指的是模式、语法上的规范，目前比较统一可靠的工具是 <a target="_blank" rel="noopener" href="https://eslint.org/">ESLint</a>。</p>
+<p>ESLint 不限定于特定的编码规则，用户也可以自由地启用或禁用各个编码规则，它是一个可高度定制工具。用户可以通过定义原始规则来灵活地设置自己的编码标准。</p>
+<p>前面提到的脚手架，其实在初始化的时候就可以选择自动安装 eslint 依赖，并且生成配置文件；如果初始化项目时并未选择 eslint，可以使用命令 <code>npx eslint --init</code> 根据提示生成配置文件，并且向 <code>package.json</code> 添加用户命令：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;lint&quot;</span><span class="punctuation">:</span> <span class="string">&quot;eslint src&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>之后每次使用 <code>yarn eslint</code> 进行代码校验。</p>
+<p>常见的配置文件格式如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// .eslintrc.js</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">env</span>: &#123;</span><br><span class="line">    <span class="attr">browser</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">es2021</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">extends</span>: [<span class="string">&#x27;eslint:recommended&#x27;</span>, <span class="string">&#x27;plugin:vue/essential&#x27;</span>],</span><br><span class="line">  <span class="attr">parserOptions</span>: &#123;</span><br><span class="line">    <span class="attr">ecmaVersion</span>: <span class="string">&#x27;latest&#x27;</span>,</span><br><span class="line">    <span class="attr">sourceType</span>: <span class="string">&#x27;module&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [<span class="string">&#x27;vue&#x27;</span>],</span><br><span class="line">  <span class="attr">rules</span>: &#123;&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中，<code>extends</code> 字段表示继承自哪一套或哪几套规则合集，我们一般使用脚手架设定好的就可以，后期公司可以出一套自己的规则，届时本文档会做相应的修改。</p>
+<p>ESLint 是由一系列的规则组合起来的，有些规则是代码格式规则，这一点和 Prettier 重合，注意不要冲突，其它规则则是模式、语法上的。全部的规则参考其<a target="_blank" rel="noopener" href="https://eslint.org/">官网</a>。</p>
+<p>ESLint 推荐的规则中，值得强调的有：</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>规则</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>object-shorthand</td>
+<td>用对象方法简写</td>
+</tr>
+<tr>
+<td>2</td>
+<td>prefer-destructuring</td>
+<td>尽量用对象的解构赋值来获取和使用对象某个或多个属性值</td>
+</tr>
+<tr>
+<td>3</td>
+<td>prefer-template</td>
+<td>尽量使用模板字符串而不是字符串拼接</td>
+</tr>
+<tr>
+<td>4</td>
+<td>no-loop-func</td>
+<td>不要在非函数块内声明函数</td>
+</tr>
+<tr>
+<td>5</td>
+<td>prefer-rest-params</td>
+<td>不要使用 <code>arguments</code>，用收集参数语法 <code>...</code> 代替</td>
+</tr>
+<tr>
+<td>6</td>
+<td>default-param-last</td>
+<td>把默认参数赋值放在最后</td>
+</tr>
+<tr>
+<td>7</td>
+<td>no-param-reassign</td>
+<td>不要修改参数或对参数重新赋值</td>
+</tr>
+<tr>
+<td>8</td>
+<td>arrow-parens</td>
+<td>在箭头函数参数两头，总是使用小括号包裹住参数</td>
+</tr>
+<tr>
+<td>9</td>
+<td>class-methods-use-this</td>
+<td>类方法应该使用 <code>this</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td>import/first</td>
+<td>把 <code>import</code> 放在其他所有语句之前</td>
+</tr>
+<tr>
+<td>11</td>
+<td>import/extensions</td>
+<td>import 文件不用包含扩展名</td>
+</tr>
+<tr>
+<td>12</td>
+<td>one-var</td>
+<td>为每个变量声明都用一个 <code>const</code> 或 <code>let</code></td>
+</tr>
+<tr>
+<td>13</td>
+<td>eqeqeq</td>
+<td>用 <code>===</code> 和 <code>!==</code> 而不是 <code>==</code> 和 <code>!=</code></td>
+</tr>
+<tr>
+<td>14</td>
+<td>no-else-return</td>
+<td>最后的 <code>return</code> 不需要 <code>else</code> 包裹</td>
+</tr>
+<tr>
+<td>15</td>
+<td>radix</td>
+<td><code>parseInt</code> 转换 <code>string</code> 应总是带上基数</td>
+</tr>
+<tr>
+<td>16</td>
+<td>no-new-wrappers</td>
+<td>不要使用 <code>new</code> 操作符进行类型转化</td>
+</tr>
+</tbody>
+</table>
+<p>完整的例子：</p>
+<h5 id="1-object-shorthand"><a href="#1-object-shorthand" class="headerlink" title="1. object-shorthand"></a>1. object-shorthand</h5><p>用对象方法简写。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> atom = &#123;</span><br><span class="line">  <span class="attr">value</span>: <span class="number">1</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 键 + 匿名方法</span></span><br><span class="line">  <span class="attr">addValue</span>: <span class="keyword">function</span> (<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> atom.<span class="property">value</span> + value</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> atom = &#123;</span><br><span class="line">  <span class="attr">value</span>: <span class="number">1</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 对象的方法</span></span><br><span class="line">  <span class="title function_">addValue</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> atom.<span class="property">value</span> + value</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="2-prefer-destructuring"><a href="#2-prefer-destructuring" class="headerlink" title="2. prefer-destructuring"></a>2. prefer-destructuring</h5><p>尽量用对象的解构赋值来获取和使用对象某个或多个属性值。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getFullName</span>(<span class="params">user</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> firstName = user.<span class="property">firstName</span></span><br><span class="line">  <span class="keyword">const</span> lastName = user.<span class="property">lastName</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;firstName&#125;</span> <span class="subst">$&#123;lastName&#125;</span>`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getFullName</span>(<span class="params">user</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; firstName, lastName &#125; = user</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;firstName&#125;</span> <span class="subst">$&#123;lastName&#125;</span>`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// best</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getFullName</span>(<span class="params">&#123; firstName, lastName &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;firstName&#125;</span> <span class="subst">$&#123;lastName&#125;</span>`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3-prefer-template"><a href="#3-prefer-template" class="headerlink" title="3. prefer-template"></a>3. prefer-template</h5><p>尽量使用模板字符串而不是字符串拼接。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sayHi</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;How are you, &#x27;</span> + name + <span class="string">&#x27;?&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sayHi</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> [<span class="string">&#x27;How are you, &#x27;</span>, name, <span class="string">&#x27;?&#x27;</span>].<span class="title function_">join</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sayHi</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`How are you, <span class="subst">$&#123;name&#125;</span>?`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sayHi</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`How are you, <span class="subst">$&#123;name&#125;</span>?`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="4-no-loop-func"><a href="#4-no-loop-func" class="headerlink" title="4. no-loop-func"></a>4. no-loop-func</h5><p>不要在非函数块（<code>if</code>、<code>while</code> 等）内声明函数，浏览器会允许你这样做，但不同浏览器的解析方式不同。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">if</span> (currentUser) &#123;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Nope.&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">let</span> test</span><br><span class="line"><span class="keyword">if</span> (currentUser) &#123;</span><br><span class="line">  test = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Yup.&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="5-prefer-rest-params"><a href="#5-prefer-rest-params" class="headerlink" title="5. prefer-rest-params"></a>5. prefer-rest-params</h5><p>不要使用 <code>arguments</code>，用收集参数语法 <code>...</code> 代替。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">concatenateAll</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> args = <span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">slice</span>.<span class="title function_">call</span>(<span class="variable language_">arguments</span>)</span><br><span class="line">  <span class="keyword">return</span> args.<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">concatenateAll</span>(<span class="params">...args</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> args.<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="6-default-param-last"><a href="#6-default-param-last" class="headerlink" title="6. default-param-last"></a>6. default-param-last</h5><p>把默认参数赋值放在最后。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">handleThings</span>(<span class="params">opts = &#123;&#125;, name</span>) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">handleThings</span>(<span class="params">name, opts = &#123;&#125;</span>) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="7-no-param-reassign"><a href="#7-no-param-reassign" class="headerlink" title="7. no-param-reassign"></a>7. no-param-reassign</h5><p>不要修改参数或对参数重新赋值。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">f1</span>(<span class="params">obj</span>) &#123;</span><br><span class="line">  obj.<span class="property">key</span> = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">f2</span>(<span class="params">obj</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> key = <span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">hasOwnProperty</span>.<span class="title function_">call</span>(obj, <span class="string">&#x27;key&#x27;</span>) ? obj.<span class="property">key</span> : <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="8-arrow-parens"><a href="#8-arrow-parens" class="headerlink" title="8. arrow-parens"></a>8. arrow-parens</h5><p>在箭头函数参数两头，总是使用小括号包裹住参数，这样做使代码更清晰且一致。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].<span class="title function_">map</span>(<span class="function"><span class="params">x</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> y = x + <span class="number">1</span></span><br><span class="line">  <span class="keyword">return</span> x * y</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].<span class="title function_">map</span>(<span class="function">(<span class="params">x</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> y = x + <span class="number">1</span></span><br><span class="line">  <span class="keyword">return</span> x * y</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="9-class-methods-use-this"><a href="#9-class-methods-use-this" class="headerlink" title="9. class-methods-use-this"></a>9. class-methods-use-this</h5><p>除非外部库或框架需要使用特定的非静态方法，否则类方法应该使用 <code>this</code> 或被写成静态方法。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Foo</span> &#123;</span><br><span class="line">  <span class="title function_">bar</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;bar&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good - this 被使用了</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Foo</span> &#123;</span><br><span class="line">  <span class="title function_">bar</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">bar</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="10-import-first"><a href="#10-import-first" class="headerlink" title="10. import/first"></a>10. import/first</h5><p>把 <code>import</code> 放在其他所有语句之前。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">import</span> foo <span class="keyword">from</span> <span class="string">&#x27;foo&#x27;</span></span><br><span class="line">foo.<span class="title function_">init</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> bar <span class="keyword">from</span> <span class="string">&#x27;bar&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">import</span> foo <span class="keyword">from</span> <span class="string">&#x27;foo&#x27;</span></span><br><span class="line"><span class="keyword">import</span> bar <span class="keyword">from</span> <span class="string">&#x27;bar&#x27;</span></span><br><span class="line"></span><br><span class="line">foo.<span class="title function_">init</span>()</span><br></pre></td></tr></table></figure>
+<h5 id="11-import-extensions"><a href="#11-import-extensions" class="headerlink" title="11. import/extensions"></a>11. import/extensions</h5><p>import 文件不用包含扩展名。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">import</span> foo <span class="keyword">from</span> <span class="string">&#x27;./foo.js&#x27;</span></span><br><span class="line"><span class="keyword">import</span> bar <span class="keyword">from</span> <span class="string">&#x27;./bar.jsx&#x27;</span></span><br><span class="line"><span class="keyword">import</span> baz <span class="keyword">from</span> <span class="string">&#x27;./baz/index.jsx&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">import</span> foo <span class="keyword">from</span> <span class="string">&#x27;./foo&#x27;</span></span><br><span class="line"><span class="keyword">import</span> bar <span class="keyword">from</span> <span class="string">&#x27;./bar&#x27;</span></span><br><span class="line"><span class="keyword">import</span> baz <span class="keyword">from</span> <span class="string">&#x27;./baz&#x27;</span></span><br></pre></td></tr></table></figure>
+<h5 id="12-one-var"><a href="#12-one-var" class="headerlink" title="12. one-var"></a>12. one-var</h5><p>为每个变量声明都用一个 <code>const</code> 或 <code>let</code>。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> items = <span class="title function_">getItems</span>(),</span><br><span class="line">  goSportsTeam = <span class="literal">true</span>,</span><br><span class="line">  dragonball = <span class="string">&#x27;z&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> items = <span class="title function_">getItems</span>()</span><br><span class="line"><span class="keyword">const</span> goSportsTeam = <span class="literal">true</span></span><br><span class="line"><span class="keyword">const</span> dragonball = <span class="string">&#x27;z&#x27;</span></span><br></pre></td></tr></table></figure>
+<h5 id="13-eqeqeq"><a href="#13-eqeqeq" class="headerlink" title="13. eqeqeq"></a>13. eqeqeq</h5><p>用 <code>===</code> 和 <code>!==</code> 而不是 <code>==</code> 和 <code>!=</code>。</p>
+<h5 id="14-no-else-return"><a href="#14-no-else-return" class="headerlink" title="14. no-else-return"></a>14. no-else-return</h5><p>如果 <code>if</code> 语句中每个判断分支总是需要用 <code>return</code> 返回，最后的 <code>return</code> 就不需要 <code>else</code> 包裹了。同时，开发者书写代码时，建议先写最后一行的 <code>return</code>，再写 <code>if</code> 部分，这样可以保证函数有保底的返回语句。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (x) &#123;</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> y</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (x) &#123;</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="15-radix"><a href="#15-radix" class="headerlink" title="15. radix"></a>15. radix</h5><p>用 <code>Number</code> 做类型转换，<code>parseInt</code> 转换 <code>string</code> 应总是带上基数。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> val = <span class="built_in">parseInt</span>(inputValue)</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> val = <span class="title class_">Number</span>(inputValue)</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> val = <span class="built_in">parseInt</span>(inputValue, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="16-no-new-wrappers"><a href="#16-no-new-wrappers" class="headerlink" title="16. no-new-wrappers"></a>16. no-new-wrappers</h5><p>不要使用 <code>new</code> 操作符进行类型转化。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> reviewScore = <span class="number">9</span></span><br><span class="line"><span class="keyword">const</span> age = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> totalScore = <span class="keyword">new</span> <span class="title class_">String</span>(reviewScore) <span class="comment">// typeof totalScore is &quot;object&quot; not &quot;string&quot;</span></span><br><span class="line"><span class="keyword">const</span> hasAge = <span class="keyword">new</span> <span class="title class_">Boolean</span>(age)</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> totalScore = <span class="title class_">String</span>(<span class="variable language_">this</span>.<span class="property">reviewScore</span>)</span><br><span class="line"><span class="keyword">const</span> hasAge = <span class="title class_">Boolean</span>(age)</span><br></pre></td></tr></table></figure>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://yuhenabc.com/2022/05/17/frontend-standards/" data-id="cl3ji499700098wn28nwxe50b" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/doc/" rel="tag">doc</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>关注我 :</p>
+    <ul class="social-links">
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/03/26/electron-communication/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">Electron 通信新思路</p>
+      <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2022 yuhenabc</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+
+
+
+
+
+
+<script src="/js/html-patch.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>

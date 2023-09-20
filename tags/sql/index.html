@@ -83,6 +83,34 @@
       
       <div class="article-meta">
         <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
+        <p class="date"><time datetime="2023-09-18T02:47:17.000Z" itemprop="datePublished">2023-09-18</time></p>
+      </div>
+      <h2 class="article-title">
+        <a href="/2023/09/18/create-db-and-owner/" class="title">初始化数据库必备步骤</a>
+      </h2>
+      <p class="article-excerpt">
+        
+        我们在创建测试数据库的时候，应该遵循一个数据库一个用户的原则，避免所有数据库都使用 root 来操作，这样可以顺便练习一下赋予权限的操作，合理利用数据库资源。一般会固定的有以下几个步骤：
+
+创建新用户
+创建新数据库
+赋予该用户对该数据库的使用权限
+
+下面以 dbuser 为新用户，exampledb 为新数据库，给出简单的示例
+postgres创建新用户：
+CREATE USER dbuser W
+      </p>
+    </div>
+  </article>
+
+    
+  
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
+      
+      <div class="article-meta">
+        <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
         <p class="date"><time datetime="2019-10-30T06:10:45.000Z" itemprop="datePublished">2019-10-30</time></p>
       </div>
       <h2 class="article-title">
@@ -135,7 +163,7 @@ CREATE TABLE `users` (  `id` int(8) unsigned NOT NULL AUTO_I
         <h1 class="logo-wrap">
           <a href="/" class="logo"></a>
         </h1>
-        <p>&copy; 2022 yuhenabc</p>
+        <p>&copy; 2023 yuhenabc</p>
         <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
       </div>
     </div>

@@ -83,6 +83,34 @@
       
       <div class="article-meta">
         <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
+        <p class="date"><time datetime="2023-09-18T02:47:17.000Z" itemprop="datePublished">2023-09-18</time></p>
+      </div>
+      <h2 class="article-title">
+        <a href="/2023/09/18/create-db-and-owner/" class="title">初始化数据库必备步骤</a>
+      </h2>
+      <p class="article-excerpt">
+        
+        我们在创建测试数据库的时候，应该遵循一个数据库一个用户的原则，避免所有数据库都使用 root 来操作，这样可以顺便练习一下赋予权限的操作，合理利用数据库资源。一般会固定的有以下几个步骤：
+
+创建新用户
+创建新数据库
+赋予该用户对该数据库的使用权限
+
+下面以 dbuser 为新用户，exampledb 为新数据库，给出简单的示例
+postgres创建新用户：
+CREATE USER dbuser W
+      </p>
+    </div>
+  </article>
+
+    
+  
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
+      
+      <div class="article-meta">
+        <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
         <p class="date"><time datetime="2022-05-17T03:39:18.000Z" itemprop="datePublished">2022-05-17</time></p>
       </div>
       <h2 class="article-title">
@@ -111,7 +139,11 @@ README.md - 新手上手指南，针对项目的启动命令、环境配置，�
   </article>
 
     
+      </div>
+    
   
+      <div class="article-row">
+    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -137,11 +169,7 @@ CREATE TABLE `users` (  `id` int(8) unsigned NOT NULL AUTO_I
   </article>
 
     
-      </div>
-    
   
-      <div class="article-row">
-    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -166,7 +194,11 @@ step3
   </article>
 
     
+      </div>
+    
   
+      <div class="article-row">
+    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -188,11 +220,7 @@ step3
   </article>
 
     
-      </div>
-    
   
-      <div class="article-row">
-    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -220,7 +248,11 @@ python3 -m venv venv
   </article>
 
     
+      </div>
+    
   
+      <div class="article-row">
+    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -243,11 +275,7 @@ export http_proxy=&quot;http://127.0.0.1:7070&quot;export https_proxy=&quot;http
   </article>
 
     
-      </div>
-    
   
-      <div class="article-row">
-    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -270,7 +298,11 @@ export http_proxy=&quot;http://127.0.0.1:7070&quot;export https_proxy=&quot;http
   </article>
 
     
+      </div>
+    
   
+      <div class="article-row">
+    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -297,11 +329,7 @@ dp
   </article>
 
     
-      </div>
-    
   
-      <div class="article-row">
-    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -322,29 +350,6 @@ cd
 virtualenv -p python3 .env3
 其中 .env3 是虚拟环境即将使用的文件夹，可能得到类似下面的结果，表示成功：
 Running virtualenv with interpreter /usr/local/bin/python3U
-      </p>
-    </div>
-  </article>
-
-    
-  
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
-        <p class="date"><time datetime="2017-02-07T16:00:00.000Z" itemprop="datePublished">2017-02-08</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2017/02/07/base64/" class="title">字符串 Base64 转码解码</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        什么是 Base64 ?我不会说 “Base64是一种基于64个可打印字符来表示二进制数据的表示方法”，因为维基百科就摆在那里。
-我想说，Base64 只是一种编码方式而已，和它并列的好基友有：hex、utf8、ascii、binary、ucs2，所以经过它编码后，仍然包含编码之前的全部信息。
-就这么多。
-为啥要用 Base64 ？Base64 的使用场景很多，例如 &lt;img&gt;、&lt
       </p>
     </div>
   </article>
@@ -389,7 +394,7 @@ Running virtualenv with interpreter /usr/local/bin/python3U
         <h1 class="logo-wrap">
           <a href="/" class="logo"></a>
         </h1>
-        <p>&copy; 2022 yuhenabc</p>
+        <p>&copy; 2023 yuhenabc</p>
         <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
       </div>
     </div>

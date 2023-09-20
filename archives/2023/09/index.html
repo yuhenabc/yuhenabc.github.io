@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2018/3 | 羽痕爱编程</title>
+  <title>Archives: 2023/9 | 羽痕爱编程</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="羽痕爱编程">
-<meta property="og:url" content="http://yuhenabc.com/archives/2018/03/index.html">
+<meta property="og:url" content="http://yuhenabc.com/archives/2023/09/index.html">
 <meta property="og:site_name" content="羽痕爱编程">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="yuhenabc">
@@ -71,7 +71,7 @@
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon fa fa-archive"></i>归档: 2018/3</h1>
+              <h1 class="header"><i class="icon fa fa-archive"></i>归档: 2023/9</h1>
             </div>
             <div class="main-body-content">
               
@@ -83,47 +83,22 @@
       
       <div class="article-meta">
         <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
-        <p class="date"><time datetime="2018-03-09T16:00:00.000Z" itemprop="datePublished">2018-03-10</time></p>
+        <p class="date"><time datetime="2023-09-18T02:47:17.000Z" itemprop="datePublished">2023-09-18</time></p>
       </div>
       <h2 class="article-title">
-        <a href="/2018/03/09/ubuntu/" class="title">安装 ubuntu 后要做的三件事</a>
+        <a href="/2023/09/18/create-db-and-owner/" class="title">初始化数据库必备步骤</a>
       </h2>
       <p class="article-excerpt">
         
-        1. 中文语言支持安装中文语言包：
-apt install language-pack-zh-hant language-pack-zh-hans
-配置相关环境变量：
-vim /etc/environment
-在文件中增加语言和编码的设置：
-LANG=&quot;zh_CN.UTF-8&quot;LANGUAGE=&quot;zh_CN:zh:en_US:en&quot;
-重新设置本地配置：
-dp
-      </p>
-    </div>
-  </article>
+        我们在创建测试数据库的时候，应该遵循一个数据库一个用户的原则，避免所有数据库都使用 root 来操作，这样可以顺便练习一下赋予权限的操作，合理利用数据库资源。一般会固定的有以下几个步骤：
 
-    
-  
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
-        <p class="date"><time datetime="2018-03-09T16:00:00.000Z" itemprop="datePublished">2018-03-10</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2018/03/09/virtualenv/" class="title">使用 virtualenv 创建 python3 虚拟环境</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        1. 安装 python3brew install python3
-2. 新建虚拟环境切换到用户根目录
-cd
-新建一个 virtualenv：
-virtualenv -p python3 .env3
-其中 .env3 是虚拟环境即将使用的文件夹，可能得到类似下面的结果，表示成功：
-Running virtualenv with interpreter /usr/local/bin/python3U
+创建新用户
+创建新数据库
+赋予该用户对该数据库的使用权限
+
+下面以 dbuser 为新用户，exampledb 为新数据库，给出简单的示例
+postgres创建新用户：
+CREATE USER dbuser W
       </p>
     </div>
   </article>

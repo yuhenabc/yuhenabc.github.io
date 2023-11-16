@@ -83,6 +83,28 @@
       
       <div class="article-meta">
         <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
+        <p class="date"><time datetime="2023-11-16T10:19:39.000Z" itemprop="datePublished">2023-11-16</time></p>
+      </div>
+      <h2 class="article-title">
+        <a href="/2023/11/16/kubernetes-docker-config-json/" class="title">如何实现 kubernetes 从私有镜像仓库拉取镜像</a>
+      </h2>
+      <p class="article-excerpt">
+        
+        如果我们的镜像位于私有镜像仓库，比如阿里、Coding.net 等，直接拉取注定会失败，因为这时 kubernetes 还没有这些私有镜像仓库的认证信息，也不会尝试登录。
+所以，在部署前我们要预先吧私有镜像仓库的认证信息告诉 kubernetes，而告诉 kubernetes 的方式就是配置一个类型为 dockerconfigjson 的 Secret
+首次创建 Secret假设 Secret 取
+      </p>
+    </div>
+  </article>
+
+    
+  
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
+      
+      <div class="article-meta">
+        <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
         <p class="date"><time datetime="2023-09-18T02:47:17.000Z" itemprop="datePublished">2023-09-18</time></p>
       </div>
       <h2 class="article-title">

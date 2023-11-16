@@ -83,6 +83,28 @@
       
       <div class="article-meta">
         <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
+        <p class="date"><time datetime="2023-11-16T10:19:39.000Z" itemprop="datePublished">2023-11-16</time></p>
+      </div>
+      <h2 class="article-title">
+        <a href="/2023/11/16/kubernetes-docker-config-json/" class="title">如何实现 kubernetes 从私有镜像仓库拉取镜像</a>
+      </h2>
+      <p class="article-excerpt">
+        
+        如果我们的镜像位于私有镜像仓库，比如阿里、Coding.net 等，直接拉取注定会失败，因为这时 kubernetes 还没有这些私有镜像仓库的认证信息，也不会尝试登录。
+所以，在部署前我们要预先吧私有镜像仓库的认证信息告诉 kubernetes，而告诉 kubernetes 的方式就是配置一个类型为 dockerconfigjson 的 Secret
+首次创建 Secret假设 Secret 取
+      </p>
+    </div>
+  </article>
+
+    
+  
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
+      
+      <div class="article-meta">
+        <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
         <p class="date"><time datetime="2023-09-18T02:47:17.000Z" itemprop="datePublished">2023-09-18</time></p>
       </div>
       <h2 class="article-title">
@@ -104,7 +126,11 @@ CREATE USER dbuser W
   </article>
 
     
+      </div>
+    
   
+      <div class="article-row">
+    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -139,11 +165,7 @@ README.md - 新手上手指南，针对项目的启动命令、环境配置，�
   </article>
 
     
-      </div>
-    
   
-      <div class="article-row">
-    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -169,7 +191,11 @@ CREATE TABLE `users` (  `id` int(8) unsigned NOT NULL AUTO_I
   </article>
 
     
+      </div>
+    
   
+      <div class="article-row">
+    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -194,11 +220,7 @@ step3
   </article>
 
     
-      </div>
-    
   
-      <div class="article-row">
-    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -220,7 +242,11 @@ step3
   </article>
 
     
+      </div>
+    
   
+      <div class="article-row">
+    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -248,11 +274,7 @@ python3 -m venv venv
   </article>
 
     
-      </div>
-    
   
-      <div class="article-row">
-    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -275,7 +297,11 @@ export http_proxy=&quot;http://127.0.0.1:7070&quot;export https_proxy=&quot;http
   </article>
 
     
+      </div>
+    
   
+      <div class="article-row">
+    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -298,11 +324,7 @@ export http_proxy=&quot;http://127.0.0.1:7070&quot;export https_proxy=&quot;http
   </article>
 
     
-      </div>
-    
   
-      <div class="article-row">
-    
         
   <article class="article article-summary">
     <div class="article-summary-inner">
@@ -324,32 +346,6 @@ vim /etc/environment
 LANG=&quot;zh_CN.UTF-8&quot;LANGUAGE=&quot;zh_CN:zh:en_US:en&quot;
 重新设置本地配置：
 dp
-      </p>
-    </div>
-  </article>
-
-    
-  
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
-        <p class="date"><time datetime="2018-03-09T16:00:00.000Z" itemprop="datePublished">2018-03-10</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2018/03/09/virtualenv/" class="title">使用 virtualenv 创建 python3 虚拟环境</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        1. 安装 python3brew install python3
-2. 新建虚拟环境切换到用户根目录
-cd
-新建一个 virtualenv：
-virtualenv -p python3 .env3
-其中 .env3 是虚拟环境即将使用的文件夹，可能得到类似下面的结果，表示成功：
-Running virtualenv with interpreter /usr/local/bin/python3U
       </p>
     </div>
   </article>

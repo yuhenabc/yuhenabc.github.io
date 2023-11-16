@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>如何实现 kubernetes 从私有镜像仓库拉取镜像 | 羽痕爱编程</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="如果我们的镜像位于私有镜像仓库，比如阿里、Coding.net 等，直接拉取注定会失败，因为这时 kubernetes 还没有这些私有镜像仓库的认证信息，也不会尝试登录。 所以，在部署前我们要预先吧私有镜像仓库的认证信息告诉 kubernetes，而告诉 kubernetes 的方式就是配置一个类型为 dockerconfigjson 的 Secret 首次创建 Secret假设 Secret 取">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何实现 kubernetes 从私有镜像仓库拉取镜像">
+<meta property="og:url" content="http://yuhenabc.com/2023/11/16/kubernetes-docker-config-json/index.html">
+<meta property="og:site_name" content="羽痕爱编程">
+<meta property="og:description" content="如果我们的镜像位于私有镜像仓库，比如阿里、Coding.net 等，直接拉取注定会失败，因为这时 kubernetes 还没有这些私有镜像仓库的认证信息，也不会尝试登录。 所以，在部署前我们要预先吧私有镜像仓库的认证信息告诉 kubernetes，而告诉 kubernetes 的方式就是配置一个类型为 dockerconfigjson 的 Secret 首次创建 Secret假设 Secret 取">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-16T10:19:39.000Z">
+<meta property="article:modified_time" content="2023-11-16T10:44:09.775Z">
+<meta property="article:author" content="yuhenabc">
+<meta property="article:tag" content="kubernetes">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+
+
+  
+
+  
+<!--    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>-->
+<!--    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
+  
+  
+<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                
+                  <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://yuhenabc.com"></form>
+                
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-kubernetes-docker-config-json" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      如何实现 kubernetes 从私有镜像仓库拉取镜像
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2023/11/16/kubernetes-docker-config-json/" class="article-date">
+  <time datetime="2023-11-16T10:19:39.000Z" itemprop="datePublished">2023-11-16</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p>如果我们的镜像位于私有镜像仓库，比如阿里、Coding.net 等，直接拉取注定会失败，因为这时 kubernetes 还没有这些私有镜像仓库的认证信息，也不会尝试登录。</p>
+<p>所以，在部署前我们要预先吧私有镜像仓库的认证信息告诉 kubernetes，而告诉 kubernetes 的方式就是配置一个类型为 <code>dockerconfigjson</code> 的 Secret</p>
+<h3 id="首次创建-Secret"><a href="#首次创建-Secret" class="headerlink" title="首次创建 Secret"></a>首次创建 Secret</h3><p>假设 Secret 取名为 coding-imooc，首次在 dev 命名空间内创建，则使用如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">kubectl create secret docker-registry coding-imooc -n dev \</span><br><span class="line">--docker-server=&lt;你的私有镜像仓库域名&gt; \</span><br><span class="line">--docker-username=&lt;你的用户名&gt; \</span><br><span class="line">--docker-password=&lt;你的密码&gt;</span><br></pre></td></tr></table></figure>
+<p>创建成功后可以用如下命令验证：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">kubectl get secret -A | grep coding-imooc</span><br></pre></td></tr></table></figure>
+<p>PS：如何使用？</p>
+<p>利用 <code>imagePullSecrets</code> 字段使用 Secret：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Pod</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">some-app</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">containers:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">some-app-container</span></span><br><span class="line">      <span class="attr">image:</span> <span class="string">&lt;your-private-image&gt;</span></span><br><span class="line">  <span class="attr">imagePullSecrets:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">coding-imooc</span></span><br></pre></td></tr></table></figure>
+<p>当然，得保证你的 Pod 部署命名空间和 Secret 的命名空间是一致的才行！</p>
+<h3 id="拷贝已有的-Secret-到其它命名空间"><a href="#拷贝已有的-Secret-到其它命名空间" class="headerlink" title="拷贝已有的 Secret 到其它命名空间"></a>拷贝已有的 Secret 到其它命名空间</h3><h4 id="第一步：提取已有的-Secret-到-yaml-文件"><a href="#第一步：提取已有的-Secret-到-yaml-文件" class="headerlink" title="第一步：提取已有的 Secret 到 yaml 文件"></a>第一步：提取已有的 Secret 到 yaml 文件</h4><p>我们可以先尝试看一下已有的 Secret 的内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">kubectl get secret coding-imooc -o yaml -n dev</span><br></pre></td></tr></table></figure>
+<p>可能打印如下信息：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">data:</span></span><br><span class="line">  <span class="string">.dockerconfigjson:</span> <span class="string">******</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Secret</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">creationTimestamp:</span> <span class="string">&quot;2023-11-15T08:28:27Z&quot;</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">coding-imooc</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">dev</span></span><br><span class="line">  <span class="attr">resourceVersion:</span> <span class="string">&quot;1184913&quot;</span></span><br><span class="line">  <span class="attr">uid:</span> <span class="string">3e29da41-b62b-427d-a845-7aaca94cb9ea</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">kubernetes.io/dockerconfigjson</span></span><br></pre></td></tr></table></figure>
+<p>将其保存到 <code>some.yaml</code> 文件中：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">kubectl get secret coding-imooc -o yaml -n dev &gt; some.yaml</span><br></pre></td></tr></table></figure>
+<p>删除掉 <code>creationTimestamp</code>、<code>namespace</code>、<code>resourceVersion</code> 和 <code>uid</code> 几行，精简之后如下：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">data:</span></span><br><span class="line">  <span class="string">.dockerconfigjson:</span> <span class="string">******</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Secret</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">coding-imooc</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">kubernetes.io/dockerconfigjson</span></span><br></pre></td></tr></table></figure>
+<h4 id="第二步：利用-yaml-文件在其它命名空间内重新创建-Secret"><a href="#第二步：利用-yaml-文件在其它命名空间内重新创建-Secret" class="headerlink" title="第二步：利用 yaml 文件在其它命名空间内重新创建 Secret"></a>第二步：利用 yaml 文件在其它命名空间内重新创建 Secret</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># test 命名空间</span></span><br><span class="line">kubectl apply -f some.yaml -n <span class="built_in">test</span></span><br><span class="line"><span class="comment"># prod 命名空间</span></span><br><span class="line">kubectl apply -f some.yaml -n prod</span><br><span class="line"><span class="comment"># and so on</span></span><br></pre></td></tr></table></figure>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://yuhenabc.com/2023/11/16/kubernetes-docker-config-json/" data-id="clp12dgch000kgep50hojc1ua" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kubernetes/" rel="tag">kubernetes</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>关注我 :</p>
+    <ul class="social-links">
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/09/18/create-db-and-owner/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">初始化数据库必备步骤</p>
+      <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2023 yuhenabc</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+
+
+
+
+
+
+<script src="/js/html-patch.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>

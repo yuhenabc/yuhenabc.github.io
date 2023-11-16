@@ -1,4 +1,4 @@
-name: Pages
+name: pages-publish-master
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - hexo # default branch
 
 jobs:
-  pages:
+  do:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -25,14 +25,14 @@ jobs:
         run: yarn
       - name: Build
         run: yarn build
-      - name: Deploy
+      - name: Publish to master
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: master
           full_commit_message: hexo update
           publish_dir: ./public
-      - name: Deploy to Webhookd
+      - name: Trigger my Webhookd
         uses: CamiloGarciaLaRotta/watermelon-http-client@v1
         with:
           url: https://hook.yuhenabc.com/hooks/io

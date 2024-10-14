@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>async 函数哪些地方优于 Promise？ | 羽痕爱编程</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="async 函数是 JavaScript 中处理异步操作的一种高级语法糖，它基于 Promise，但提供了更简洁和易读的语法。以下是我在工作过程中总结的 async 函数相对于 Promise 的一些优势： 1. 串联地执行多个异步操作async function getArticleList() &amp;#123;  const articles &#x3D; []  let i &#x3D; 0  while (i++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="async 函数哪些地方优于 Promise？">
+<meta property="og:url" content="http://yuhenabc.com/2024/02/14/async-function-profit/index.html">
+<meta property="og:site_name" content="羽痕爱编程">
+<meta property="og:description" content="async 函数是 JavaScript 中处理异步操作的一种高级语法糖，它基于 Promise，但提供了更简洁和易读的语法。以下是我在工作过程中总结的 async 函数相对于 Promise 的一些优势： 1. 串联地执行多个异步操作async function getArticleList() &amp;#123;  const articles &#x3D; []  let i &#x3D; 0  while (i++">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-02-14T13:14:11.000Z">
+<meta property="article:modified_time" content="2024-10-14T06:08:02.067Z">
+<meta property="article:author" content="yuhenabc">
+<meta property="article:tag" content="js">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+
+
+  
+
+  
+<!--    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>-->
+<!--    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
+  
+  
+<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                
+                  <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://yuhenabc.com"></form>
+                
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/categories/%E5%8E%9F%E5%88%9B%E8%AE%A8%E8%AE%BA/">原创讨论</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-async-function-profit" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      async 函数哪些地方优于 Promise？
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2024/02/14/async-function-profit/" class="article-date">
+  <time datetime="2024-02-14T13:14:11.000Z" itemprop="datePublished">2024-02-14</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p><code>async</code> 函数是 JavaScript 中处理异步操作的一种高级语法糖，它基于 <code>Promise</code>，但提供了更简洁和易读的语法。以下是我在工作过程中总结的 <code>async</code> 函数相对于 <code>Promise</code> 的一些优势：</p>
+<h2 id="1-串联地执行多个异步操作"><a href="#1-串联地执行多个异步操作" class="headerlink" title="1. 串联地执行多个异步操作"></a>1. 串联地执行多个异步操作</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getArticleList</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> articles = []</span><br><span class="line">  <span class="keyword">let</span> i = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> (i++ &lt; <span class="number">100</span>) &#123;</span><br><span class="line">    <span class="comment">// 假设为了减轻服务端并行压力，接口要依次请求</span></span><br><span class="line">    articles.<span class="title function_">push</span>(<span class="keyword">await</span> axios.<span class="title function_">get</span>(&#123;<span class="string">&#x27;/api/article&#x27;</span>, <span class="attr">params</span>: &#123; <span class="attr">id</span>: i &#125;&#125;))</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> articles</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-多个异步操作统一-catch"><a href="#2-多个异步操作统一-catch" class="headerlink" title="2. 多个异步操作统一 catch"></a>2. 多个异步操作统一 catch</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">doSomething</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> response1 = <span class="keyword">await</span> <span class="title function_">fetch</span>(url1); <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">const</span> data1 = <span class="keyword">await</span> response1.<span class="title function_">json</span>(); <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> response2 = <span class="keyword">await</span> <span class="title function_">fetch</span>(url2); <span class="comment">// 3</span></span><br><span class="line">    <span class="keyword">const</span> data2 = <span class="keyword">await</span> response2.<span class="title function_">json</span>(); <span class="comment">// 4</span></span><br><span class="line"></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(data1, data2);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="comment">// 这里将 1～4 四处可能产生的异常统一处理</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;Error:&#x27;</span>, error);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-结合-switch-将多个异或关系的异步操作的-then-集中在一处"><a href="#3-结合-switch-将多个异或关系的异步操作的-then-集中在一处" class="headerlink" title="3. 结合 switch 将多个异或关系的异步操作的 then 集中在一处"></a>3. 结合 switch 将多个异或关系的异步操作的 then 集中在一处</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="attr">mode</span>: ref&lt;<span class="string">&#x27;create&#x27;</span> | <span class="string">&#x27;update&#x27;</span>&gt;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">handleFormConfirm</span> = <span class="keyword">async</span> (<span class="params">form</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">switch</span> (mode.<span class="property">value</span>) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;create&#x27;</span>:</span><br><span class="line">      <span class="keyword">await</span> <span class="title function_">createCreature</span>(form);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;update&#x27;</span>:</span><br><span class="line">      <span class="keyword">await</span> <span class="title function_">updateCreature</span>(form);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 这里相当于 createCreature 或 updateCreature 共同的 then</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>以上就是我总结的一些特殊案例，如果使用 Promise，几乎难以达到同样目的同时代码仍简洁易读。大家还能想到哪些？欢迎补充！</p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://yuhenabc.com/2024/02/14/async-function-profit/" data-id="cm28m5188000lkvpzdn5fgo3b" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>关注我 :</p>
+    <ul class="social-links">
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2024/01/14/hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">Hexo 常用命令</p>
+      <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2024 yuhenabc</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+
+
+
+
+
+
+<script src="/js/html-patch.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>

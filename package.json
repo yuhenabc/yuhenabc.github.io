@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "serve": "hexo server",
+    "serve": "hexo server --port 4321",
     "clean": "hexo clean",
     "build": "hexo generate"
   },

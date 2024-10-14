@@ -1,4 +1,4 @@
-title: Mac 终端开启和关闭代理的方法
+title: Shell 终端开启和关闭代理的方法
 date: 2018-12-29
 category: 知识备忘
 tags: shell

@@ -1,5 +1,6 @@
 title: corepack
-tags:
+category: 探索发现
+tags: nodejs
 ---
 
 在我的 Mac 电脑上运行以下命令：

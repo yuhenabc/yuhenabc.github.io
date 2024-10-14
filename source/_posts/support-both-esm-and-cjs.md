@@ -1,7 +1,7 @@
 title: 让我们的 npm 包同时支持 CommonJS 和 ES modules
 date: 2024-03-11 12:53:29
 category: 知识备忘
-tags: js
+tags: nodejs
 ---
 
 

@@ -1,3 +1,4 @@
 title: 怎么发布 deno 包？有哪些注意点？
-tags:
+category: 动手能力
+tags: deno
 ---

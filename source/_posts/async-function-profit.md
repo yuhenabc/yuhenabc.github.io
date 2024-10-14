@@ -1,7 +1,7 @@
 title: async 函数哪些地方优于 Promise？
 date: 2024-02-14 21:14:11
 category: 原创讨论
-tags: js
+tags: javascript
 
 ---
 

@@ -1,7 +1,7 @@
 title: 使用环境变量实现 npm 换源
 date: 2018-5-10
 category: 知识备忘
-tags: npm
+tags: nodejs
 ---
 
 为什么需要换源？换源是一种不屈的态度，是对自己生命的负责。

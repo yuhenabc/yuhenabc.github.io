@@ -83,6 +83,54 @@
       
       <div class="article-meta">
         <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
+        <p class="date"><time datetime="2024-04-30T10:58:59.000Z" itemprop="datePublished">2024-04-30</time></p>
+      </div>
+      <h2 class="article-title">
+        <a href="/2024/04/30/typescript-type-interface/" class="title">Typescript 中 Type 和 Interface 的区别</a>
+      </h2>
+      <p class="article-excerpt">
+        
+        在 TypeScript 中，interface 和 type 都可以用来定义类型，但它们有一些关键的区别。了解这些区别有助于你在不同的场景中选择合适的方式。
+1. 基本语法Interfaceinterface Person &#123;  name: string;  age: number;&#125;
+Typetype Person = &#123;  name: string;  age:
+      </p>
+    </div>
+  </article>
+
+    
+  
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
+      
+      <div class="article-meta">
+        <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
+        <p class="date"><time datetime="2024-04-01T01:29:31.000Z" itemprop="datePublished">2024-04-01</time></p>
+      </div>
+      <h2 class="article-title">
+        <a href="/2024/04/01/typescript-generics/" class="title">Typescript 泛型的定义和使用范围</a>
+      </h2>
+      <p class="article-excerpt">
+        
+        在 TypeScript 中，你可以在定义类型时使用泛型。泛型允许你创建可重用的类型定义，这些类型定义可以根据传入的类型参数进行调整。这使得类型定义更加灵活和强大。
+泛型类型定义1. 基本语法你可以使用 &lt;T&gt;（或其他任何标识符）来定义泛型类型参数。例如：
+type Box&lt;T&gt; = &#123;  value: T;&#125;;const boxNumber: Box&
+      </p>
+    </div>
+  </article>
+
+    
+      </div>
+    
+  
+      <div class="article-row">
+    
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
+      
+      <div class="article-meta">
+        <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
         <p class="date"><time datetime="2024-03-11T04:53:29.000Z" itemprop="datePublished">2024-03-11</time></p>
       </div>
       <h2 class="article-title">
@@ -255,7 +303,7 @@ CREATE TABLE `users` (  `id` int(8) unsigned NOT NULL AUTO_I
         <p class="date"><time datetime="2019-08-22T08:37:56.000Z" itemprop="datePublished">2019-08-22</time></p>
       </div>
       <h2 class="article-title">
-        <a href="/2019/08/22/androidproxy/" class="title">Android 如何设置全局代理</a>
+        <a href="/2019/08/22/android-proxy/" class="title">Android 如何设置全局代理</a>
       </h2>
       <p class="article-excerpt">
         
@@ -287,61 +335,6 @@ step3
         安装apt install supervisor
 配置文件默认位置 /etc/supervisor/supervisord.conf
 ; supervisor config file[unix_http_server]file=/var/run/supervisor.sock   ; (the path to the socket file)chmod=0700                  
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
-        <p class="date"><time datetime="2019-06-18T16:00:00.000Z" itemprop="datePublished">2019-06-19</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2019/06/18/venv/" class="title">使用 venv 创建 python3 虚拟环境</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        
-之前有篇文章，《使用 virtualenv 创建 python3 虚拟环境》，现在我们换一款软件来做同样的事情 —— venv。
-
-1. 安装 python3brew install python3
-2. 新建虚拟环境切换到项目根目录
-cd path/to/myproject
-新建一个 venv，习惯上命名为 venv：
-python3 -m venv venv
-没有任何错误提示，表示成功；如果
-      </p>
-    </div>
-  </article>
-
-    
-  
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
-        <p class="date"><time datetime="2018-12-28T16:00:00.000Z" itemprop="datePublished">2018-12-29</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2018/12/28/proxy/" class="title">Mac 终端开启和关闭代理的方法</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        简单命令假如你的代理机是你的本机（127.0.0.1），代理的端口为 7070，
-开启代理很简单，就是用 export 命令设置全局变量 http_proxy 和 https_proxy：
-export http_proxy=&quot;http://127.0.0.1:7070&quot;export https_proxy=&quot;http://127.0.0.1:7070&quot;
-关
       </p>
     </div>
   </article>

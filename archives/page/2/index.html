@@ -83,6 +83,62 @@
       
       <div class="article-meta">
         <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
+        <p class="date"><time datetime="2019-08-22T08:37:56.000Z" itemprop="datePublished">2019-08-22</time></p>
+      </div>
+      <h2 class="article-title">
+        <a href="/2019/08/22/android-proxy/" class="title">Android 如何设置全局代理</a>
+      </h2>
+      <p class="article-excerpt">
+        
+        
+前言：日常生活中，Android 的 http 代理直接使用设置里的 Wi-Fi 设置就够了，但是有些情况下仍然不足，本文给出另外一种解法。这种解法就是通过控制台修改 Android 的全局设置，适用于真机及模拟器。步骤如下：
+
+step1: 进入控制台adb shell
+step2: 设置代理settings put global http_proxy 127.0.0.1:8888
+step3
+      </p>
+    </div>
+  </article>
+
+    
+  
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
+      
+      <div class="article-meta">
+        <p class="category"><a class="article-category-link" href="/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/">探索发现</a></p>
+        <p class="date"><time datetime="2019-08-04T11:53:14.000Z" itemprop="datePublished">2019-08-04</time></p>
+      </div>
+      <h2 class="article-title">
+        <a href="/2019/08/04/esmodule/" class="title">都什么年代了，Node.js 支持 ES6 模块了吗？</a>
+      </h2>
+      <p class="article-excerpt">
+        
+        结论能用，但是有限制：
+
+要加开启实验性功能的参数
+脚本必须使用 .mjs 作为后缀
+一但用了 ES6 模块，就不要想着再用 CommonJs 模块了（不可混用）
+
+证明截止到我写这篇文章，Node.js 的最新版本为 12.7.0，先写一段我们以前耳熟能详，现在看起来老眼昏花的代码：
+// commonjs/funs.jsexports.a = function a() &#123; retur
+      </p>
+    </div>
+  </article>
+
+    
+      </div>
+    
+  
+      <div class="article-row">
+    
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
+      
+      <div class="article-meta">
+        <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
         <p class="date"><time datetime="2019-08-03T07:52:45.000Z" itemprop="datePublished">2019-08-03</time></p>
       </div>
       <h2 class="article-title">
@@ -140,7 +196,7 @@ python3 -m venv venv
         <p class="date"><time datetime="2018-12-28T16:00:00.000Z" itemprop="datePublished">2018-12-29</time></p>
       </div>
       <h2 class="article-title">
-        <a href="/2018/12/28/proxy/" class="title">Mac 终端开启和关闭代理的方法</a>
+        <a href="/2018/12/28/proxy/" class="title">Shell 终端开启和关闭代理的方法</a>
       </h2>
       <p class="article-excerpt">
         
@@ -289,61 +345,10 @@ const date = new Date(dateString)
       </div>
     
   
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
-        <p class="date"><time datetime="2016-06-30T16:00:00.000Z" itemprop="datePublished">2016-07-01</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2016/06/30/meta/" class="title">令人惊讶的 mate 标签</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        
-移动端的工作已经越来越成为前端工作的重要内容，除了平常的项目开发，HTML头部标签功能，特别是标签显得非常重要。
-
-DOCTYPEDOCTYPE(Document Type)，该声明位于文档中最前面的位置，处于 html 标签之前，此标签告知浏览器文档使用哪种 HTML 或者 XHTML 规范。
-使用 HTML5 doctype，不区分大小写。
-&lt;!DOCTYPE html&gt;
-cha
-      </p>
-    </div>
-  </article>
-
-    
-  
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></p>
-        <p class="date"><time datetime="2015-11-10T16:00:00.000Z" itemprop="datePublished">2015-11-11</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/11/10/first/" class="title">我的第一篇文章</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        欢迎来到我的博客!这个博客是由功能强大的 hexo 生成的。
-
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
   
     <nav id="page-nav">
-      <span class="pages">第 2 页，共 2 页</span>
-      <a class="extend prev" rel="prev" href="/archives/">◀</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+      <span class="pages">第 2 页，共 3 页</span>
+      <a class="extend prev" rel="prev" href="/archives/">◀</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">▶</a>
     </nav>
   
 

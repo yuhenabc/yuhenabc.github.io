@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>实现一个最简单的单点登录（SSO）系统 | 羽痕爱编程</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一个最简单的单点登录（SSO）系统，包括认证中心（auth-server）、登录页（login-page）、资源服务端（resource-erver）和客户端（sso-client）四个部分，以下是详细的实现步骤。 1. 认证中心（Auth Server）认证中心负责用户认证，并在成功认证后生成一个 JWT token。 安装依赖mkdir auth-servercd auth-servernpm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实现一个最简单的单点登录（SSO）系统">
+<meta property="og:url" content="http://yuhenabc.com/2024/06/18/auth-server/index.html">
+<meta property="og:site_name" content="羽痕爱编程">
+<meta property="og:description" content="一个最简单的单点登录（SSO）系统，包括认证中心（auth-server）、登录页（login-page）、资源服务端（resource-erver）和客户端（sso-client）四个部分，以下是详细的实现步骤。 1. 认证中心（Auth Server）认证中心负责用户认证，并在成功认证后生成一个 JWT token。 安装依赖mkdir auth-servercd auth-servernpm">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-06-18T13:54:45.000Z">
+<meta property="article:modified_time" content="2024-10-17T14:08:47.762Z">
+<meta property="article:author" content="yuhenabc">
+<meta property="article:tag" content="nodejs">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+
+
+  
+
+  
+<!--    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>-->
+<!--    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
+  
+  
+<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                
+                  <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://yuhenabc.com"></form>
+                
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/">探索发现</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-auth-server" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      实现一个最简单的单点登录（SSO）系统
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2024/06/18/auth-server/" class="article-date">
+  <time datetime="2024-06-18T13:54:45.000Z" itemprop="datePublished">2024-06-18</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p>一个最简单的单点登录（SSO）系统，包括认证中心（auth-server）、登录页（login-page）、资源服务端（resource-erver）和客户端（sso-client）四个部分，以下是详细的实现步骤。</p>
+<h3 id="1-认证中心（Auth-Server）"><a href="#1-认证中心（Auth-Server）" class="headerlink" title="1. 认证中心（Auth Server）"></a>1. 认证中心（Auth Server）</h3><p>认证中心负责用户认证，并在成功认证后生成一个 JWT token。</p>
+<h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> auth-server</span><br><span class="line"><span class="built_in">cd</span> auth-server</span><br><span class="line">npm init -y</span><br><span class="line">npm install express jsonwebtoken</span><br></pre></td></tr></table></figure>
+<h4 id="auth-server-index-js"><a href="#auth-server-index-js" class="headerlink" title="auth-server/index.js"></a><code>auth-server/index.js</code></h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> jwt = <span class="built_in">require</span>(<span class="string">&#x27;jsonwebtoken&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PORT</span> = <span class="number">3001</span>;</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">json</span>());</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> users = &#123;</span><br><span class="line">  <span class="attr">user1</span>: <span class="string">&#x27;password1&#x27;</span>,</span><br><span class="line">  <span class="attr">user2</span>: <span class="string">&#x27;password2&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> secretKey = <span class="string">&#x27;your-secret-key&#x27;</span>; <span class="comment">// 请使用环境变量或安全存储</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">generateToken</span> = (<span class="params">username</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> jwt.<span class="title function_">sign</span>(&#123; username &#125;, secretKey, &#123; <span class="attr">expiresIn</span>: <span class="string">&#x27;1h&#x27;</span> &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/login&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; username, password &#125; = req.<span class="property">body</span>;</span><br><span class="line">  <span class="keyword">if</span> (users[username] === password) &#123;</span><br><span class="line">    <span class="keyword">const</span> token = <span class="title function_">generateToken</span>(username);</span><br><span class="line">    res.<span class="title function_">json</span>(&#123; <span class="attr">success</span>: <span class="literal">true</span>, token &#125;);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    res.<span class="title function_">status</span>(<span class="number">401</span>).<span class="title function_">json</span>(&#123; <span class="attr">success</span>: <span class="literal">false</span>, <span class="attr">message</span>: <span class="string">&#x27;Invalid credentials&#x27;</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/verify&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> token = req.<span class="property">headers</span>.<span class="property">authorization</span>?.<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>)[<span class="number">1</span>];</span><br><span class="line">  <span class="keyword">if</span> (token) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> decoded = jwt.<span class="title function_">verify</span>(token, secretKey);</span><br><span class="line">      res.<span class="title function_">json</span>(&#123; <span class="attr">success</span>: <span class="literal">true</span>, <span class="attr">user</span>: decoded.<span class="property">username</span> &#125;);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      res.<span class="title function_">status</span>(<span class="number">401</span>).<span class="title function_">json</span>(&#123; <span class="attr">success</span>: <span class="literal">false</span>, <span class="attr">message</span>: <span class="string">&#x27;Invalid token&#x27;</span> &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    res.<span class="title function_">status</span>(<span class="number">401</span>).<span class="title function_">json</span>(&#123; <span class="attr">success</span>: <span class="literal">false</span>, <span class="attr">message</span>: <span class="string">&#x27;No token found&#x27;</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="variable constant_">PORT</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Auth server listening on port <span class="subst">$&#123;PORT&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="2-登录页（React）"><a href="#2-登录页（React）" class="headerlink" title="2. 登录页（React）"></a>2. 登录页（React）</h3><p>登录页负责用户输入用户名和密码，并发送请求到认证中心进行认证。</p>
+<h4 id="安装依赖-1"><a href="#安装依赖-1" class="headerlink" title="安装依赖"></a>安装依赖</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx create-react-app login-page</span><br><span class="line"><span class="built_in">cd</span> login-page</span><br><span class="line">npm install axios</span><br></pre></td></tr></table></figure>
+<h4 id="login-page-src-App-js"><a href="#login-page-src-App-js" class="headerlink" title="login-page/src/App.js"></a><code>login-page/src/App.js</code></h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [username, setUsername] = <span class="title function_">useState</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">  <span class="keyword">const</span> [password, setPassword] = <span class="title function_">useState</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">handleLogin</span> = <span class="keyword">async</span> (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> response = <span class="keyword">await</span> axios.<span class="title function_">post</span>(<span class="string">&#x27;http://localhost:3001/login&#x27;</span>, &#123;</span><br><span class="line">        username,</span><br><span class="line">        password</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="keyword">if</span> (response.<span class="property">data</span>.<span class="property">success</span>) &#123;</span><br><span class="line">        <span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;token&#x27;</span>, response.<span class="property">data</span>.<span class="property">token</span>);</span><br><span class="line">        <span class="title function_">alert</span>(<span class="string">&#x27;Login successful&#x27;</span>);</span><br><span class="line">        <span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span> = <span class="string">&#x27;/client&#x27;</span>; <span class="comment">// 重定向到客户端</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="title function_">alert</span>(<span class="string">&#x27;Login failed&#x27;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;Login error:&#x27;</span>, error);</span><br><span class="line">      <span class="title function_">alert</span>(<span class="string">&#x27;Login failed&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Login Page<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">input</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">type</span>=<span class="string">&quot;text&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">placeholder</span>=<span class="string">&quot;Username&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">value</span>=<span class="string">&#123;username&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">onChange</span>=<span class="string">&#123;(e)</span> =&gt;</span> setUsername(e.target.value)&#125;</span></span><br><span class="line"><span class="language-xml">        /&gt;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">input</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">type</span>=<span class="string">&quot;password&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">placeholder</span>=<span class="string">&quot;Password&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">value</span>=<span class="string">&#123;password&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">onChange</span>=<span class="string">&#123;(e)</span> =&gt;</span> setPassword(e.target.value)&#125;</span></span><br><span class="line"><span class="language-xml">        /&gt;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;handleLogin&#125;</span>&gt;</span>Login<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="3-资源服务端（Resource-Server）"><a href="#3-资源服务端（Resource-Server）" class="headerlink" title="3. 资源服务端（Resource Server）"></a>3. 资源服务端（Resource Server）</h3><p>资源服务端负责验证 JWT token，并提供受保护的资源。</p>
+<h4 id="安装依赖-2"><a href="#安装依赖-2" class="headerlink" title="安装依赖"></a>安装依赖</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> resource-server</span><br><span class="line"><span class="built_in">cd</span> resource-server</span><br><span class="line">npm init -y</span><br><span class="line">npm install express jsonwebtoken</span><br></pre></td></tr></table></figure>
+<h4 id="resource-server-index-js"><a href="#resource-server-index-js" class="headerlink" title="resource-server/index.js"></a><code>resource-server/index.js</code></h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> jwt = <span class="built_in">require</span>(<span class="string">&#x27;jsonwebtoken&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PORT</span> = <span class="number">3002</span>;</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">json</span>());</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> secretKey = <span class="string">&#x27;your-secret-key&#x27;</span>; <span class="comment">// 请使用环境变量或安全存储</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">validateToken</span> = (<span class="params">token</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> decoded = jwt.<span class="title function_">verify</span>(token, secretKey);</span><br><span class="line">    <span class="keyword">return</span> decoded.<span class="property">username</span>;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/protected&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> token = req.<span class="property">headers</span>.<span class="property">authorization</span>?.<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>)[<span class="number">1</span>];</span><br><span class="line">  <span class="keyword">const</span> user = <span class="title function_">validateToken</span>(token);</span><br><span class="line">  <span class="keyword">if</span> (user) &#123;</span><br><span class="line">    res.<span class="title function_">json</span>(&#123; <span class="attr">message</span>: <span class="string">&#x27;This is protected data&#x27;</span>, user &#125;);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    res.<span class="title function_">status</span>(<span class="number">401</span>).<span class="title function_">json</span>(&#123; <span class="attr">message</span>: <span class="string">&#x27;Unauthorized&#x27;</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="variable constant_">PORT</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Resource server listening on port <span class="subst">$&#123;PORT&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="4-客户端（React）"><a href="#4-客户端（React）" class="headerlink" title="4. 客户端（React）"></a>4. 客户端（React）</h3><p>客户端负责展示受保护的资源，并处理用户登录状态。</p>
+<h4 id="安装依赖-3"><a href="#安装依赖-3" class="headerlink" title="安装依赖"></a>安装依赖</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx create-react-app sso-client</span><br><span class="line"><span class="built_in">cd</span> sso-client</span><br><span class="line">npm install axios</span><br></pre></td></tr></table></figure>
+<h4 id="sso-client-src-App-js"><a href="#sso-client-src-App-js" class="headerlink" title="sso-client/src/App.js"></a><code>sso-client/src/App.js</code></h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [protectedData, setProtectedData] = <span class="title function_">useState</span>(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> token = <span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;token&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span> (token) &#123;</span><br><span class="line">      axios.<span class="property">defaults</span>.<span class="property">headers</span>.<span class="property">common</span>[<span class="string">&#x27;Authorization&#x27;</span>] = <span class="string">`Bearer <span class="subst">$&#123;token&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, []);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">handleFetchProtectedData</span> = <span class="keyword">async</span> (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> response = <span class="keyword">await</span> axios.<span class="title function_">get</span>(<span class="string">&#x27;http://localhost:3002/protected&#x27;</span>);</span><br><span class="line">      <span class="title function_">setProtectedData</span>(response.<span class="property">data</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;Fetch error:&#x27;</span>, error);</span><br><span class="line">      <span class="title function_">alert</span>(<span class="string">&#x27;Failed to fetch protected data&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>SSO Client<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;handleFetchProtectedData&#125;</span>&gt;</span>Fetch Protected Data<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;protectedData &amp;&amp; (</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Protected Data<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">pre</span>&gt;</span>&#123;JSON.stringify(protectedData, null, 2)&#125;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        )&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h3><h5 id="1-启动认证中心："><a href="#1-启动认证中心：" class="headerlink" title="1. 启动认证中心："></a>1. <strong>启动认证中心</strong>：</h5>   <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> auth-server</span><br><span class="line">node index.js</span><br></pre></td></tr></table></figure>
+<h5 id="2-启动资源服务端："><a href="#2-启动资源服务端：" class="headerlink" title="2. 启动资源服务端："></a>2. <strong>启动资源服务端</strong>：</h5>   <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> resource-server</span><br><span class="line">node index.js</span><br></pre></td></tr></table></figure>
+<h5 id="3-启动登录页："><a href="#3-启动登录页：" class="headerlink" title="3. 启动登录页："></a>3. <strong>启动登录页</strong>：</h5>   <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> login-page</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+<h5 id="4-启动客户端："><a href="#4-启动客户端：" class="headerlink" title="4. 启动客户端："></a>4. <strong>启动客户端</strong>：</h5>   <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> sso-client</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><ol>
+<li>打开浏览器，访问 <code>http://localhost:3000</code>（登录页）。</li>
+<li>输入用户名和密码（例如 <code>user1</code> 和 <code>password1</code>），点击登录。</li>
+<li>登录成功后，页面会重定向到 <code>http://localhost:3003</code>（客户端）。</li>
+<li>在客户端页面，点击“Fetch Protected Data”按钮，查看受保护的数据。</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这个示例展示了如何使用 Node.js 和 Express 实现一个简单的单点登录系统，包括认证中心、登录页、资源服务端和客户端。认证中心负责用户认证并生成 JWT token，资源服务端验证 JWT token 并提供受保护的资源，登录页和客户端分别负责用户登录和展示受保护的资源。按照最常见的情况， token 存储在 <code>localStorage</code> 中，并在发送请求时包含在 HTTP 头中。希望这个示例能帮助你理解 SSO 的基本原理和实现方法。</p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://yuhenabc.com/2024/06/18/auth-server/" data-id="cm2ddmpwm000xc5qee3ftaned" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>关注我 :</p>
+    <ul class="social-links">
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2024/05/16/ansible/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">Ansible 命令及其使用指南</p>
+      <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2024 yuhenabc</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+
+
+
+
+
+
+<script src="/js/html-patch.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>

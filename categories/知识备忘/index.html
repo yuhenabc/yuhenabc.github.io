@@ -183,15 +183,15 @@ type Box&lt;T&gt; = &#123;  value: T;&#125;;const boxNumber: Box&
         <p class="date"><time datetime="2024-01-14T00:51:16.000Z" itemprop="datePublished">2024-01-14</time></p>
       </div>
       <h2 class="article-title">
-        <a href="/2024/01/14/hexo/" class="title">Hexo 常用命令</a>
+        <a href="/2024/01/14/hexo/" class="title">Hexo 常用命令备忘</a>
       </h2>
       <p class="article-excerpt">
         
         Hexo 是一个快速、简单且功能强大的博客框架，使用 Node.js 编写。以下是一些常用的 Hexo 命令，帮助你管理和发布你的博客。
-1. 初始化新博客hexo init &lt;folder&gt;cd &lt;folder&gt;npm install
-
-hexo init &lt;folder&gt;：在指定的文件夹中初始化一个新的 Hexo 博客。
-cd &lt;folder&gt;：
+1. 初始化新博客hexo init foldercd foldernpm install
+在指定的文件夹中初始化一个新的 Hexo 博客，并进入初始化的文件夹，安装 Hexo 及其依赖。
+2. 生成静态文件hexo generate
+生成静态文件到 publi
       </p>
     </div>
   </article>
@@ -237,15 +237,15 @@ cd &lt;folder&gt;：
       </h2>
       <p class="article-excerpt">
         
-        我们在创建测试数据库的时候，应该遵循一个数据库一个用户的原则，避免所有数据库都使用 root 来操作，这样可以顺便练习一下赋予权限的操作，合理利用数据库资源。一般会固定的有以下几个步骤：
+        我们在创建测试数据库的时候，应该遵循一个数据库一个用户的原则，避免所有数据库都使用管理员（MySQL 是 root，PostgreSQL 是 postgres）来操作，这样可以顺便练习一下赋予权限的操作，合理利用数据库资源。一般会固定的有以下几个步骤：
 
 创建新用户
 创建新数据库
 赋予该用户对该数据库的使用权限
+删除用户（可选）
+删除数据库（可选）
 
-下面以 dbuser 为新用户，exampledb 为新数据库，给出简单的示例
-postgres创建新用户：
-CREATE USER dbuser W
+下面以 dbuser 为新用户，example
       </p>
     </div>
   </article>

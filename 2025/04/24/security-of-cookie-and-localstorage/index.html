@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Cookie 和 LocalStorage 的安全风险及防护措施 | 羽痕爱编程</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Cookie 的安全风险 跨站脚本攻击 (XSS)：攻击者通过注入恶意脚本窃取存储在 Cookie 中的敏感信息。 跨站请求伪造 (CSRF)：恶意网站可以利用用户的登录状态（通过未保护的 Cookie）发送未经授权的请求。 中间人攻击 (MITM)：如果没有使用 HTTPS，攻击者可以在网络传输过程中截获 Cookie 数据。 不正确的配置：如 HttpOnly 标志未设置，允许 JavaScr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cookie 和 LocalStorage 的安全风险及防护措施">
+<meta property="og:url" content="http://yuhenabc.com/2025/04/24/security-of-cookie-and-localstorage/index.html">
+<meta property="og:site_name" content="羽痕爱编程">
+<meta property="og:description" content="Cookie 的安全风险 跨站脚本攻击 (XSS)：攻击者通过注入恶意脚本窃取存储在 Cookie 中的敏感信息。 跨站请求伪造 (CSRF)：恶意网站可以利用用户的登录状态（通过未保护的 Cookie）发送未经授权的请求。 中间人攻击 (MITM)：如果没有使用 HTTPS，攻击者可以在网络传输过程中截获 Cookie 数据。 不正确的配置：如 HttpOnly 标志未设置，允许 JavaScr">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-24T02:58:13.000Z">
+<meta property="article:modified_time" content="2025-04-24T03:14:53.796Z">
+<meta property="article:author" content="yuhenabc">
+<meta property="article:tag" content="browser">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+
+
+  
+
+  
+<!--    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>-->
+<!--    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
+  
+  
+<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                
+                  <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://yuhenabc.com"></form>
+                
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/categories/%E7%9F%A5%E8%AF%86%E5%A4%87%E5%BF%98/">知识备忘</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-security-of-cookie-and-localstorage" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      Cookie 和 LocalStorage 的安全风险及防护措施
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2025/04/24/security-of-cookie-and-localstorage/" class="article-date">
+  <time datetime="2025-04-24T02:58:13.000Z" itemprop="datePublished">2025-04-24</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <h3 id="Cookie-的安全风险"><a href="#Cookie-的安全风险" class="headerlink" title="Cookie 的安全风险"></a><strong>Cookie 的安全风险</strong></h3><ol>
+<li><strong>跨站脚本攻击 (XSS)</strong>：攻击者通过注入恶意脚本窃取存储在 Cookie 中的敏感信息。</li>
+<li><strong>跨站请求伪造 (CSRF)</strong>：恶意网站可以利用用户的登录状态（通过未保护的 Cookie）发送未经授权的请求。</li>
+<li><strong>中间人攻击 (MITM)</strong>：如果没有使用 HTTPS，攻击者可以在网络传输过程中截获 Cookie 数据。</li>
+<li><strong>不正确的配置</strong>：如 <code>HttpOnly</code> 标志未设置，允许 JavaScript 访问包含敏感数据的 Cookie；或 <code>Secure</code> 标志未启用，在非 HTTPS 连接上传输 Cookie。</li>
+</ol>
+<h5 id="防护措施"><a href="#防护措施" class="headerlink" title="防护措施"></a><strong>防护措施</strong></h5><ul>
+<li><strong>使用 HttpOnly 和 Secure 标志</strong>：确保 Cookie 不能通过客户端脚本访问 (<code>HttpOnly</code>) 并且只通过 HTTPS 传输 (<code>Secure</code>)。</li>
+<li><strong>SameSite 属性</strong>：防止 CSRF 攻击，限制 Cookie 是否应与跨站请求一起发送。</li>
+<li><strong>加密敏感数据</strong>：对存储在 Cookie 中的敏感信息进行加密处理。</li>
+<li><strong>定期更新和清理</strong>：及时删除不再需要的 Cookie，并定期轮换 Cookie 值。</li>
+</ul>
+<h3 id="LocalStorage-的安全风险"><a href="#LocalStorage-的安全风险" class="headerlink" title="LocalStorage 的安全风险"></a><strong>LocalStorage 的安全风险</strong></h3><ol>
+<li><strong>XSS 攻击</strong>：与 Cookie 类似，如果网站存在 XSS 漏洞，攻击者可以通过执行恶意脚本来读取或修改 LocalStorage 中的数据。</li>
+<li><strong>缺乏域隔离</strong>：LocalStorage 在同源策略下共享，这意味着同一域名下的所有页面都可以访问相同的数据，增加了数据泄露的风险。</li>
+<li><strong>持久性存储</strong>：数据永久保存直到被手动清除，这可能使得旧数据成为潜在的安全隐患。</li>
+</ol>
+<h5 id="防护措施-1"><a href="#防护措施-1" class="headerlink" title="防护措施"></a><strong>防护措施</strong></h5><ul>
+<li><strong>最小化敏感数据存储</strong>：避免在 LocalStorage 中存储敏感信息如密码、令牌等。</li>
+<li><strong>加密存储</strong>：对于必须存储在 LocalStorage 中的重要数据，采用强加密算法加密后再存储。</li>
+<li><strong>输入验证和输出编码</strong>：防止 XSS 攻击，确保所有用户输入都经过严格验证并正确编码输出。</li>
+<li><strong>定期清理过期数据</strong>：主动管理 LocalStorage 内容，移除不再需要的数据以减少暴露面。</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>无论是 Cookie 还是 LocalStorage，都需要采取适当的安全措施来保护用户数据免受各种类型的攻击。同时，保持浏览器更新，修复已知漏洞也是至关重要的。</p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://yuhenabc.com/2025/04/24/security-of-cookie-and-localstorage/" data-id="cm9ushxho0029hvqaedao74di" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browser/" rel="tag">browser</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>关注我 :</p>
+    <ul class="social-links">
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2024/11/25/use-client-or-server/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">&quot;use-client&quot; 和 &quot;use server&quot; 的使用场景</p>
+      <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2025 yuhenabc</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+
+
+
+
+
+
+<script src="/js/html-patch.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>

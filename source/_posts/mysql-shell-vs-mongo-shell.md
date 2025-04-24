@@ -9,25 +9,27 @@ MySQL 8.0 开始也支持 NoSQL 了，那么和 MongoDB 相比较，体验是否
 
 ### MySQL 8.0 (使用 MySQL Shell 和 X DevAPI)
 
-#### 1. 创建 Schema
+#### 1. 连接到 MySQL 服务器
 
 ```sh
 mysqlsh --uri user@host:33060 --mysqlx
 ```
+
+#### 2. 创建 Schema
 
 ```javascript
 // 创建一个新的 schema
 var demo = session.createSchema('demo');
 ```
 
-#### 2. 创建 Collection
+#### 3. 创建 Collection
 
 ```javascript
 // 创建一个新的 collection
 var users = demo.createCollection('users');
 ```
 
-#### 3. 创建 Document
+#### 4. 创建 Document
 
 ```javascript
 // 插入文档
@@ -39,21 +41,21 @@ users
   .execute();
 ```
 
-#### 4. 更新 Document
+#### 5. 更新 Document
 
 ```javascript
 // 更新文档
 users.modify('_id = :id').set('age', 31).bind('id', '1').execute();
 ```
 
-#### 5. 删除 Document
+#### 6. 删除 Document
 
 ```javascript
 // 删除文档
 users.remove('_id = :id').bind('id', '1').execute();
 ```
 
-#### 6. 查询 Document
+#### 7. 查询 Document
 
 ```javascript
 // 查询文档

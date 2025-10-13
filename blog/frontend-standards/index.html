@@ -1,0 +1,521 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="羽痕爱编程" href="https://example.com/rss.xml"><meta name="generator" content="Astro v5.14.4"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://example.com/blog/frontend-standards/"><!-- Primary Meta Tags --><title>给公司整理的前端规范</title><meta name="title" content="给公司整理的前端规范"><meta name="description" content="Lorem ipsum dolor sit amet"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://example.com/blog/frontend-standards/"><meta property="og:title" content="给公司整理的前端规范"><meta property="og:description" content="Lorem ipsum dolor sit amet"><meta property="og:image" content="https://example.com/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://example.com/blog/frontend-standards/"><meta property="twitter:title" content="给公司整理的前端规范"><meta property="twitter:description" content="Lorem ipsum dolor sit amet"><meta property="twitter:image" content="https://example.com/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><style>:root{--accent: #2337ff;--accent-dark: #000d8a;--black: 15, 18, 25;--gray: 96, 115, 159;--gray-light: 229, 233, 240;--gray-dark: 34, 41, 57;--gray-gradient: rgba(var(--gray-light), 50%), #fff;--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-bold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}body{font-family:Atkinson,sans-serif;margin:0;padding:0;text-align:left;background:linear-gradient(var(--gray-gradient)) no-repeat;background-size:100% 600px;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));font-size:14px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{color:rgb(var(--black));line-height:1.2}h1{margin:1.5rem 0;font-size:2.852em}h2{margin:1.2rem 0;font-size:2.441em}h3{margin:1rem 0;font-size:1.953em}h4{margin:.8rem 0;font-size:1.563em}h5{margin:.5rem 0;font-size:1.25em}h6{margin:.3rem 0}ul{margin-block-start:8px;margin-block-end:4px}li:first-child{margin-top:0}li{margin-top:.5em}strong,b{font-weight:700}a,a:hover{color:var(--accent)}p{margin-bottom:1em}.prose p{margin-top:.5em;margin-bottom:.5em}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%;margin-bottom:1em}img{max-width:100%;height:auto;border-radius:8px}code{padding:2px 5px;background-color:rgb(var(--gray-light));border-radius:4px}pre{padding:1.5em;border-radius:8px}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);padding:0 0 0 20px;margin:0;font-size:1em}table{border-spacing:0}hr{border:none;border-top:1px solid rgb(var(--gray-light));margin-block-start:2em;margin-block-end:2em}th,td{padding:.3em .5em}th{border-bottom:1px solid rgb(var(--gray-light))}th:not(:last-child),td:not(:last-child){border-right:1px solid rgb(var(--gray-light))}@media (max-width: 720px){body{font-size:12px}main{padding:1em}}.sr-only{border:0;padding:0;margin:0;position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);clip-path:inset(50%);white-space:nowrap}footer[data-astro-cid-sz7xmlte]{padding:2em 1em 6em;background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center}.social-links[data-astro-cid-sz7xmlte]{display:flex;justify-content:center;gap:1em;margin-top:1em}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]{text-decoration:none;color:rgb(var(--gray))}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]:hover{color:rgb(var(--gray-dark))}a[data-astro-cid-eimmu3lg]{display:inline-block;text-decoration:none}a[data-astro-cid-eimmu3lg].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-3ef6ksr2]{margin:0;padding:0 1em;background:#fff;box-shadow:0 2px 8px rgba(var(--black),5%)}h2[data-astro-cid-3ef6ksr2]{margin:0;font-size:1em}h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2],h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none}nav[data-astro-cid-3ef6ksr2]{display:flex;align-items:center;justify-content:space-between}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{padding:1em .5em;color:var(--black);border-bottom:4px solid transparent;text-decoration:none}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none;border-bottom-color:var(--accent)}.social-links[data-astro-cid-3ef6ksr2],.social-links[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{display:flex}@media (max-width: 720px){.social-links[data-astro-cid-3ef6ksr2]{display:none}}
+main[data-astro-cid-bvzihdzo]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-bvzihdzo]{width:100%}.hero-image[data-astro-cid-bvzihdzo] img[data-astro-cid-bvzihdzo]{display:block;margin:0 auto;border-radius:12px;box-shadow:var(--box-shadow)}.prose[data-astro-cid-bvzihdzo]{width:1020px;max-width:calc(100% - 2em);margin:auto;padding:1em;color:rgb(var(--gray-dark))}.title[data-astro-cid-bvzihdzo]{margin-bottom:1em;padding:1em 0;text-align:center;line-height:1}.title[data-astro-cid-bvzihdzo] h1[data-astro-cid-bvzihdzo]{margin:0 0 .5em}.date[data-astro-cid-bvzihdzo]{margin-bottom:.5em;color:rgb(var(--gray))}.last-updated-on[data-astro-cid-bvzihdzo]{font-style:italic}
+</style></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>羽痕爱编程</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 博客 </a>  <a href="/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 关于 </a>  </div> <div class="social-links" data-astro-cid-3ef6ksr2> <a href="https://m.webtoo.ls/@astro" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Follow Astro on Mastodon</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z" data-astro-cid-3ef6ksr2></path></svg> </a> <a href="https://twitter.com/astrodotbuild" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Follow Astro on Twitter</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" data-astro-cid-3ef6ksr2></path></svg> </a> <a href="https://github.com/withastro/astro" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Go to Astro's GitHub repo</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-3ef6ksr2></path></svg> </a> </div> </nav> </header>  <main data-astro-cid-bvzihdzo> <article data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo> <img src="https://static.yuhenabc.com/blog/blog-placeholder-about.jpg" alt data-astro-cid-bvzihdzo="true" loading="lazy" decoding="async" fetchpriority="auto" width="1020" height="510"> </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <h1 data-astro-cid-bvzihdzo>给公司整理的前端规范</h1> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2022-05-17T00:00:00.000Z"> May 17, 2022 </time>  </div> <hr data-astro-cid-bvzihdzo> </div>  <h3 id="一目录结构规范">一、目录结构规范</h3>
+<p>普遍地，项目需要有以下几项文件夹或文件：</p>
+<ul>
+<li><code>src</code> - 源代码存放的文件夹</li>
+<li><code>package.json</code> - 包描述文件</li>
+<li><code>yarn.lock</code> - 包管理器 <code>yarn</code> 自动生成的版本锁定文件</li>
+<li><code>README.md</code> - 新手上手指南，针对项目的启动命令、环境配置，依赖安装难点等进行描述</li>
+</ul>
+<p>其它的目录结构，按照生成项目时使用的脚手架自行决定，推荐的脚手架：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>框架</th><th>脚手架</th><th>创建命令</th><th>官网</th></tr></thead><tbody><tr><td>React</td><td>create-react-app</td><td><code>yarn create react-app my-app</code></td><td><a href="https://create-react-app.dev/">https://create-react-app.dev/</a></td></tr><tr><td>Vue2</td><td>vue-cli-service</td><td><code>vue create my-app</code></td><td><a href="https://cli.vuejs.org/">https://cli.vuejs.org/</a></td></tr><tr><td>Vue3</td><td>vite</td><td><code>yarn create vite my-app</code></td><td><a href="https://vitejs.dev/">https://vitejs.dev/</a></td></tr></tbody></table>
+<p>在 <code>src</code> 目录下，如果脚手架自带的子目录不够使用，可以自己开辟，常见的子目录名称及用法：</p>
+<ul>
+<li><code>utils</code> - 存放工具类函数集合的文件夹</li>
+<li><code>emnus</code> - 存放枚举型变量集合的文件夹</li>
+<li><code>assets</code> / <code>static</code> - 存放图片、音视频等静态资源的文件夹</li>
+<li><code>components</code> - 存放全局公共组件的文件夹</li>
+<li><code>views</code> / <code>pages</code> - 存放页面级别的业务组件的文件夹</li>
+</ul>
+<p>注意：脚手架生成项目完毕，不建议使用 <code>eject</code> 等命令将原始构建脚本暴露，因为这样的操作是不可逆的，不方便将来项目对脚手架的升级。如需对 <code>webpack</code> 等底层工具进行自定义配置，应该采用脚手架建议的方式去拓展或重写，参考各个脚手架的官方文档。</p>
+<p>环境配置，尽量使用 <code>.env</code> 文件家族来定义因环境不同而产生的变量，比如 API 访问地址等。</p>
+<p>不同环境下的文件命名：</p>
+<ul>
+<li><code>development</code> - 开发环境，可用 <code>.env.development</code>、<code>.env.development.local</code> 等文件配置环境变量，其中后者仅当前开发者保有，不同步到 Git 代码仓库</li>
+<li><code>test</code> - 测试环境，可用 <code>.env.test</code>、<code>.env.test.local</code> 等文件配置环境变量</li>
+<li><code>production</code> - 生产环境，可用 <code>.env.production</code>、<code>.env.production.local</code> 等文件配置环境变量</li>
+</ul>
+<hr>
+<h3 id="二文件命名规范">二、文件命名规范</h3>
+<p>JS：</p>
+<ul>
+<li>单个单词小写，多个单词小驼峰命名法（lowerCamelCase）命名，如：<code>routes.js</code>、<code>taskMap.js</code></li>
+</ul>
+<p>React：</p>
+<ul>
+<li>扩展名用 <code>.jsx</code> 作为组件扩展名，但框架如 Next.js 不支持除外。</li>
+<li>组件命名，采用大驼峰命名法（UpperCamelCase）命名，也可以将文件夹名作为组件名，根组件用 <code>index.jsx</code> 命名，如 <code>TodoList.jsx</code>、<code>TodoList/index.jsx</code>。</li>
+<li>组件名应该倾向于完整单词而不是缩写，这一点跟 Vue 一样。</li>
+</ul>
+<p>Vue：</p>
+<ul>
+<li>组件名应该始终是多个单词的，这样做可以避免跟现有的以及未来的 HTML 元素相冲突。</li>
+<li>单文件组件的命名，应采用大驼峰命名法（UpperCamelCase）命名，如 <code>TodoList.vue</code>。</li>
+<li>组件名应该倾向于完整单词而不是缩写，比如 <code>UserProfileOptions.vue</code> 不要缩短成 <code>UProfOpts.vue</code>。</li>
+</ul>
+<hr>
+<h3 id="三变量命名规范">三、变量命名规范</h3>
+<p>JS：</p>
+<ul>
+<li>变量声明，使用 <code>const</code> 或 <code>let</code>，不要使用 <code>var</code>。</li>
+<li>方法名、参数名、成员变量、局部变量命名，采用小写开头的单词或小驼峰命名法（lowerCamelCase）命名，其中 <code>Boolean</code> 类型的变量一般要以 <code>is</code> 或 <code>has</code> 开头，方法名采用 <code>动词 + 名词</code> 的动宾形式，如 <code>toNum</code>、<code>onClick</code> 和 <code>handleClick</code>，不要采用动词修饰名词的形式，如 <code>clickHandler</code>。</li>
+<li>类名和构造函数名，采用大写开头的单词或大驼峰命名法（UpperCamelCase）命名</li>
+<li>不要使用 <code>that</code> 或 <code>_this</code> 等指代 <code>this</code> 变量，而应该寻求使用箭头函数等避免改变 <code>this</code> 指向的途径解决。</li>
+</ul>
+<p>React：</p>
+<ul>
+<li>组件 props 名，采用小驼峰命名法（lowerCamelCase）命名，如 <code>maxLines</code>、<code>beginTime</code>。</li>
+</ul>
+<p>Vue：</p>
+<ul>
+<li>组件 props 名，定义 props 时采用小驼峰命名法（lowerCamelCase），给组件设置 props 时采用串式命名法（kebab-case），如：<code>props: { greetingText: String }</code> 定义，<code>&#x3C;some-component greating-text="hello">&#x3C;/some-component></code> 使用。</li>
+<li>始终使用 <code>:</code>、<code>@</code> 和 <code>#</code> 等指令缩写代替 <code>v-bind:</code>、<code>v-on:</code> 和 <code>v-slot:</code>。</li>
+<li>组件名，引入时保持和文件名一致，如 <code>import MyComponent from './MyComponent.vue'</code>，使用时最好采用成对的串式命名法（kebab-case）使用，如 <code>&#x3C;my-component>&#x3C;/my-component></code></li>
+</ul>
+<p>CSS：</p>
+<ul>
+<li>类名如果是多个单词，采用串式命名法（kebab-case），如 <code>.card-body</code></li>
+</ul>
+<hr>
+<h3 id="四版本命名规范">四、版本命名规范</h3>
+<p>前端项目如果有版本发布需求，命名应当参照 npm 官方的命名规范——<a href="https://semver.org/">semver</a>，即三位数字加上短横线再加自定义部分：<code>&#x3C;数字>.&#x3C;数字>.&#x3C;数字>-&#x3C;自定义>.&#x3C;自定义2></code>，按照项目的迭代进度，分为开发版、测试版、线上预览版、试验版和正式版，我们分别采用不同的标识去加以区分，其中正式版不需要标识：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>版本</th><th>标识</th><th>示例</th><th>说明</th></tr></thead><tbody><tr><td>开发版</td><td>dev</td><td><code>1.0.0-dev.12</code></td><td>该版本用于开发人员打包自测，验证当次的开发迭代是否会对打包流程造成影响</td></tr><tr><td>测试版</td><td>alpha</td><td><code>1.0.0-alpha.20</code></td><td>该版本用于交付测试人员，每次构建都应该升级最末端的小版本号，如 <code>alpha.20</code> -> <code>alpha.21</code></td></tr><tr><td>线上预览版</td><td>beta</td><td><code>1.0.0-beta.4</code></td><td>该版本使用独立的版本标识，但连接线上的服务器接口，用于测试人员回归测试</td></tr><tr><td>试验版</td><td>canary</td><td><code>1.0.0-canary.1</code></td><td>该版本只对少数终端用户可用，如果新的功能或新的设计没有被很好地接受，那么很容易回滚。</td></tr><tr><td>正式版</td><td>无</td><td><code>1.0.0</code></td><td>该版本可以交付给最终用户</td></tr></tbody></table>
+<hr>
+<h3 id="五代码格式规范">五、代码格式规范</h3>
+<p>统一使用 <a href="https://prettier.io/">Prettier</a>，这是一个大部分代码编辑器都支持的格式化工具。</p>
+<ul>
+<li>在对象，数组括号与文字之间加空格，如 <code>{ foo: bar }</code></li>
+<li>箭头函数参数只有一个时是否省略小括号，如 <code>(x) => {}</code> 省略为 <code>x => {}</code>，不要省略</li>
+<li>超过 120 列换行</li>
+<li>行末不留分号</li>
+<li>行结尾模式 LF（Linux 模式）</li>
+<li>使用单引号</li>
+<li>Tab 键宽度设为 2</li>
+<li>在对象或数组最后一个元素后面加逗号</li>
+<li>不读取 <code>.editorConfig</code> 作为格式化依据</li>
+<li>使用空格代替制表符缩进</li>
+<li>JSX 把 <code>></code> 单独放一行</li>
+<li>JSX 中使用单引号代替双引号</li>
+<li>Vue <code>&#x3C;script></code> 和 <code>&#x3C;style></code> 标签不要整体缩进</li>
+</ul>
+<p>想要做到以上这些，只需要往项目根目录中加入 <code>.prettierrc</code> 文件，并且确保编辑器读取文件并且生效，如果使用的是 VS Code 编辑器，则会自动生效。文件内容如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "printWidth"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">120</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "arrowParens"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"always"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "bracketSpacing"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "semi"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "endOfLine"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"lf"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "jsxBracketSameLine"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "jsxSingleQuote"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "singleQuote"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "tabWidth"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "trailingComma"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"es5"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "useEditorConfig"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "useTabs"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "vueIndentScriptAndStyle"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "withNodeModules"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>之后就可以使用编辑器的快捷键进行格式化了。</p>
+<hr>
+<h3 id="六编程规范">六、编程规范</h3>
+<p>编程规范一般指的是模式、语法上的规范，目前比较统一可靠的工具是 <a href="https://eslint.org/">ESLint</a>。</p>
+<p>ESLint 不限定于特定的编码规则，用户也可以自由地启用或禁用各个编码规则，它是一个可高度定制工具。用户可以通过定义原始规则来灵活地设置自己的编码标准。</p>
+<p>前面提到的脚手架，其实在初始化的时候就可以选择自动安装 eslint 依赖，并且生成配置文件；如果初始化项目时并未选择 eslint，可以使用命令 <code>npx eslint --init</code> 根据提示生成配置文件，并且向 <code>package.json</code> 添加用户命令：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#9ECBFF">"scripts"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">  "lint"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"eslint src"</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>之后每次使用 <code>yarn eslint</code> 进行代码校验。</p>
+<p>常见的配置文件格式如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// .eslintrc.js</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">module</span><span style="color:#E1E4E8">.</span><span style="color:#79B8FF">exports</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  env: {</span></span>
+<span class="line"><span style="color:#E1E4E8">    browser: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    es2021: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  extends: [</span><span style="color:#9ECBFF">'eslint:recommended'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'plugin:vue/essential'</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">  parserOptions: {</span></span>
+<span class="line"><span style="color:#E1E4E8">    ecmaVersion: </span><span style="color:#9ECBFF">'latest'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    sourceType: </span><span style="color:#9ECBFF">'module'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  plugins: [</span><span style="color:#9ECBFF">'vue'</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">  rules: {},</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>其中，<code>extends</code> 字段表示继承自哪一套或哪几套规则合集，我们一般使用脚手架设定好的就可以，后期公司可以出一套自己的规则，届时本文档会做相应的修改。</p>
+<p>ESLint 是由一系列的规则组合起来的，有些规则是代码格式规则，这一点和 Prettier 重合，注意不要冲突，其它规则则是模式、语法上的。全部的规则参考其<a href="https://eslint.org/">官网</a>。</p>
+<p>ESLint 推荐的规则中，值得强调的有：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>序号</th><th>规则</th><th>说明</th></tr></thead><tbody><tr><td>1</td><td>object-shorthand</td><td>用对象方法简写</td></tr><tr><td>2</td><td>prefer-destructuring</td><td>尽量用对象的解构赋值来获取和使用对象某个或多个属性值</td></tr><tr><td>3</td><td>prefer-template</td><td>尽量使用模板字符串而不是字符串拼接</td></tr><tr><td>4</td><td>no-loop-func</td><td>不要在非函数块内声明函数</td></tr><tr><td>5</td><td>prefer-rest-params</td><td>不要使用 <code>arguments</code>，用收集参数语法 <code>...</code> 代替</td></tr><tr><td>6</td><td>default-param-last</td><td>把默认参数赋值放在最后</td></tr><tr><td>7</td><td>no-param-reassign</td><td>不要修改参数或对参数重新赋值</td></tr><tr><td>8</td><td>arrow-parens</td><td>在箭头函数参数两头，总是使用小括号包裹住参数</td></tr><tr><td>9</td><td>class-methods-use-this</td><td>类方法应该使用 <code>this</code></td></tr><tr><td>10</td><td>import/first</td><td>把 <code>import</code> 放在其他所有语句之前</td></tr><tr><td>11</td><td>import/extensions</td><td>import 文件不用包含扩展名</td></tr><tr><td>12</td><td>one-var</td><td>为每个变量声明都用一个 <code>const</code> 或 <code>let </code></td></tr><tr><td>13</td><td>eqeqeq</td><td>用 <code>===</code> 和 <code>!==</code> 而不是 <code>==</code> 和 <code>!=</code></td></tr><tr><td>14</td><td>no-else-return</td><td>最后的 <code>return</code> 不需要 <code>else</code> 包裹</td></tr><tr><td>15</td><td>radix</td><td><code>parseInt</code> 转换 <code>string</code> 应总是带上基数</td></tr><tr><td>16</td><td>no-new-wrappers</td><td>不要使用 <code>new</code> 操作符进行类型转化</td></tr></tbody></table>
+<p>完整的例子：</p>
+<h5 id="1-object-shorthand">1. object-shorthand</h5>
+<p>用对象方法简写。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> atom</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  value: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // 键 + 匿名方法</span></span>
+<span class="line"><span style="color:#B392F0">  addValue</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">value</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> atom.value </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> value</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// good</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> atom</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  value: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // 对象的方法</span></span>
+<span class="line"><span style="color:#B392F0">  addValue</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">value</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> atom.value </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> value</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h5 id="2-prefer-destructuring">2. prefer-destructuring</h5>
+<p>尽量用对象的解构赋值来获取和使用对象某个或多个属性值。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> getFullName</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">user</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> firstName</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> user.firstName</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> lastName</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> user.lastName</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#9ECBFF"> `${</span><span style="color:#E1E4E8">firstName</span><span style="color:#9ECBFF">} ${</span><span style="color:#E1E4E8">lastName</span><span style="color:#9ECBFF">}`</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// good</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> getFullName</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">user</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">firstName</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">lastName</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> user</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#9ECBFF"> `${</span><span style="color:#E1E4E8">firstName</span><span style="color:#9ECBFF">} ${</span><span style="color:#E1E4E8">lastName</span><span style="color:#9ECBFF">}`</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// best</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> getFullName</span><span style="color:#E1E4E8">({ </span><span style="color:#FFAB70">firstName</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">lastName</span><span style="color:#E1E4E8"> }) {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#9ECBFF"> `${</span><span style="color:#E1E4E8">firstName</span><span style="color:#9ECBFF">} ${</span><span style="color:#E1E4E8">lastName</span><span style="color:#9ECBFF">}`</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h5 id="3-prefer-template">3. prefer-template</h5>
+<p>尽量使用模板字符串而不是字符串拼接。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> sayHi</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">name</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#9ECBFF"> 'How are you, '</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> name </span><span style="color:#F97583">+</span><span style="color:#9ECBFF"> '?'</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> sayHi</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">name</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">'How are you, '</span><span style="color:#E1E4E8">, name, </span><span style="color:#9ECBFF">'?'</span><span style="color:#E1E4E8">].</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> sayHi</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">name</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#9ECBFF"> `How are you, ${</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">}?`</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// good</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> sayHi</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">name</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#9ECBFF"> `How are you, ${</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">}?`</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h5 id="4-no-loop-func">4. no-loop-func</h5>
+<p>不要在非函数块（<code>if</code>、<code>while</code> 等）内声明函数，浏览器会允许你这样做，但不同浏览器的解析方式不同。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (currentUser) {</span></span>
+<span class="line"><span style="color:#F97583">  function</span><span style="color:#B392F0"> test</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Nope.'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// good</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> test</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (currentUser) {</span></span>
+<span class="line"><span style="color:#B392F0">  test</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Yup.'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h5 id="5-prefer-rest-params">5. prefer-rest-params</h5>
+<p>不要使用 <code>arguments</code>，用收集参数语法 <code>...</code> 代替。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> concatenateAll</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> args</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> Array</span><span style="color:#E1E4E8">.</span><span style="color:#79B8FF">prototype</span><span style="color:#E1E4E8">.slice.</span><span style="color:#B392F0">call</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">arguments</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> args.</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// good</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> concatenateAll</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">...</span><span style="color:#FFAB70">args</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> args.</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h5 id="6-default-param-last">6. default-param-last</h5>
+<p>把默认参数赋值放在最后。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> handleThings</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">opts</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {}, </span><span style="color:#FFAB70">name</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">  // ...</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// good</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> handleThings</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">name</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">opts</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {}) {</span></span>
+<span class="line"><span style="color:#6A737D">  // ...</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h5 id="7-no-param-reassign">7. no-param-reassign</h5>
+<p>不要修改参数或对参数重新赋值。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> f1</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">obj</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">  obj.key </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// good</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> f2</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">obj</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> key</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> Object</span><span style="color:#E1E4E8">.</span><span style="color:#79B8FF">prototype</span><span style="color:#E1E4E8">.hasOwnProperty.</span><span style="color:#B392F0">call</span><span style="color:#E1E4E8">(obj, </span><span style="color:#9ECBFF">'key'</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">?</span><span style="color:#E1E4E8"> obj.key </span><span style="color:#F97583">:</span><span style="color:#79B8FF"> 1</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h5 id="8-arrow-parens">8. arrow-parens</h5>
+<p>在箭头函数参数两头，总是使用小括号包裹住参数，这样做使代码更清晰且一致。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#E1E4E8">;[</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">x</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> y</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> y</span></span>
+<span class="line"><span style="color:#E1E4E8">  })</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  [</span></span>
+<span class="line"><span style="color:#6A737D">    // good</span></span>
+<span class="line"><span style="color:#E1E4E8">    (</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">  ].</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">x</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> y</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> y</span></span>
+<span class="line"><span style="color:#E1E4E8">  })</span></span></code></pre>
+<h5 id="9-class-methods-use-this">9. class-methods-use-this</h5>
+<p>除非外部库或框架需要使用特定的非静态方法，否则类方法应该使用 <code>this</code> 或被写成静态方法。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Foo</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">  bar</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'bar'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// good - this 被使用了</span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Foo</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">  bar</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.bar)</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h5 id="10-importfirst">10. import/first</h5>
+<p>把 <code>import</code> 放在其他所有语句之前。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> foo </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'foo'</span></span>
+<span class="line"><span style="color:#E1E4E8">foo.</span><span style="color:#B392F0">init</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> bar </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'bar'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// good</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> foo </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'foo'</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> bar </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'bar'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">foo.</span><span style="color:#B392F0">init</span><span style="color:#E1E4E8">()</span></span></code></pre>
+<h5 id="11-importextensions">11. import/extensions</h5>
+<p>import 文件不用包含扩展名。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> foo </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './foo.js'</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> bar </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './bar.jsx'</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> baz </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './baz/index.jsx'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// good</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> foo </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './foo'</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> bar </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './bar'</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> baz </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './baz'</span></span></code></pre>
+<h5 id="12-one-var">12. one-var</h5>
+<p>为每个变量声明都用一个 <code>const</code> 或 <code>let </code>。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> items</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> getItems</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#79B8FF">  goSportsTeam</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  dragonball</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> 'z'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// good</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> items</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> getItems</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> goSportsTeam</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> true</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> dragonball</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> 'z'</span></span></code></pre>
+<h5 id="13-eqeqeq">13. eqeqeq</h5>
+<p>用 <code>===</code> 和 <code>!==</code> 而不是 <code>==</code> 和 <code>!=</code>。</p>
+<h5 id="14-no-else-return">14. no-else-return</h5>
+<p>如果 <code>if</code> 语句中每个判断分支总是需要用 <code>return</code> 返回，最后的 <code>return</code> 就不需要 <code>else</code> 包裹了。同时，开发者书写代码时，建议先写最后一行的 <code>return</code>，再写 <code>if</code> 部分，这样可以保证函数有保底的返回语句。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> foo</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (x) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> x</span></span>
+<span class="line"><span style="color:#E1E4E8">  } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> y</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// good</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> foo</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (x) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> x</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> y</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h5 id="15-radix">15. radix</h5>
+<p>用 <code>Number</code> 做类型转换，<code>parseInt</code> 转换 <code>string</code> 应总是带上基数。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> val</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> parseInt</span><span style="color:#E1E4E8">(inputValue)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// good</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> val</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> Number</span><span style="color:#E1E4E8">(inputValue)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// good</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> val</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> parseInt</span><span style="color:#E1E4E8">(inputValue, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">)</span></span></code></pre>
+<h5 id="16-no-new-wrappers">16. no-new-wrappers</h5>
+<p>不要使用 <code>new</code> 操作符进行类型转化。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> reviewScore</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 9</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> age</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// bad</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> totalScore</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> String</span><span style="color:#E1E4E8">(reviewScore) </span><span style="color:#6A737D">// typeof totalScore is "object" not "string"</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> hasAge</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Boolean</span><span style="color:#E1E4E8">(age)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// good</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> totalScore</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> String</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.reviewScore)</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> hasAge</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> Boolean</span><span style="color:#E1E4E8">(age)</span></span></code></pre>  </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+&copy; 2025 Your name here. All rights reserved.
+<div class="social-links" data-astro-cid-sz7xmlte> <a href="https://m.webtoo.ls/@astro" target="_blank" data-astro-cid-sz7xmlte> <span class="sr-only" data-astro-cid-sz7xmlte>Follow Astro on Mastodon</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/mastodon" data-astro-cid-sz7xmlte><path fill="currentColor" d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z" data-astro-cid-sz7xmlte></path></svg> </a> <a href="https://twitter.com/astrodotbuild" target="_blank" data-astro-cid-sz7xmlte> <span class="sr-only" data-astro-cid-sz7xmlte>Follow Astro on Twitter</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/twitter" data-astro-cid-sz7xmlte><path fill="currentColor" d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" data-astro-cid-sz7xmlte></path></svg> </a> <a href="https://github.com/withastro/astro" target="_blank" data-astro-cid-sz7xmlte> <span class="sr-only" data-astro-cid-sz7xmlte>Go to Astro's GitHub repo</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/github" data-astro-cid-sz7xmlte><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-sz7xmlte></path></svg> </a> </div> </footer>  </body></html>

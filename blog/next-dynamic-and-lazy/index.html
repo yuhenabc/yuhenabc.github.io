@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="羽痕爱编程" href="https://example.com/rss.xml"><meta name="generator" content="Astro v5.14.4"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://example.com/blog/next-dynamic-and-lazy/"><!-- Primary Meta Tags --><title>Next 项目中 dynamic 和 lazy 选哪个？</title><meta name="title" content="Next 项目中 dynamic 和 lazy 选哪个？"><meta name="description" content="Lorem ipsum dolor sit amet"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://example.com/blog/next-dynamic-and-lazy/"><meta property="og:title" content="Next 项目中 dynamic 和 lazy 选哪个？"><meta property="og:description" content="Lorem ipsum dolor sit amet"><meta property="og:image" content="https://example.com/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://example.com/blog/next-dynamic-and-lazy/"><meta property="twitter:title" content="Next 项目中 dynamic 和 lazy 选哪个？"><meta property="twitter:description" content="Lorem ipsum dolor sit amet"><meta property="twitter:image" content="https://example.com/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><style>:root{--accent: #2337ff;--accent-dark: #000d8a;--black: 15, 18, 25;--gray: 96, 115, 159;--gray-light: 229, 233, 240;--gray-dark: 34, 41, 57;--gray-gradient: rgba(var(--gray-light), 50%), #fff;--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-bold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}body{font-family:Atkinson,sans-serif;margin:0;padding:0;text-align:left;background:linear-gradient(var(--gray-gradient)) no-repeat;background-size:100% 600px;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));font-size:14px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{color:rgb(var(--black));line-height:1.2}h1{margin:1.5rem 0;font-size:2.852em}h2{margin:1.2rem 0;font-size:2.441em}h3{margin:1rem 0;font-size:1.953em}h4{margin:.8rem 0;font-size:1.563em}h5{margin:.5rem 0;font-size:1.25em}h6{margin:.3rem 0}ul{margin-block-start:8px;margin-block-end:4px}li:first-child{margin-top:0}li{margin-top:.5em}strong,b{font-weight:700}a,a:hover{color:var(--accent)}p{margin-bottom:1em}.prose p{margin-top:.5em;margin-bottom:.5em}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%;margin-bottom:1em}img{max-width:100%;height:auto;border-radius:8px}code{padding:2px 5px;background-color:rgb(var(--gray-light));border-radius:4px}pre{padding:1.5em;border-radius:8px}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);padding:0 0 0 20px;margin:0;font-size:1em}table{border-spacing:0}hr{border:none;border-top:1px solid rgb(var(--gray-light));margin-block-start:2em;margin-block-end:2em}th,td{padding:.3em .5em}th{border-bottom:1px solid rgb(var(--gray-light))}th:not(:last-child),td:not(:last-child){border-right:1px solid rgb(var(--gray-light))}@media (max-width: 720px){body{font-size:12px}main{padding:1em}}.sr-only{border:0;padding:0;margin:0;position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);clip-path:inset(50%);white-space:nowrap}footer[data-astro-cid-sz7xmlte]{padding:2em 1em 6em;background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center}.social-links[data-astro-cid-sz7xmlte]{display:flex;justify-content:center;gap:1em;margin-top:1em}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]{text-decoration:none;color:rgb(var(--gray))}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]:hover{color:rgb(var(--gray-dark))}a[data-astro-cid-eimmu3lg]{display:inline-block;text-decoration:none}a[data-astro-cid-eimmu3lg].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-3ef6ksr2]{margin:0;padding:0 1em;background:#fff;box-shadow:0 2px 8px rgba(var(--black),5%)}h2[data-astro-cid-3ef6ksr2]{margin:0;font-size:1em}h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2],h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none}nav[data-astro-cid-3ef6ksr2]{display:flex;align-items:center;justify-content:space-between}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{padding:1em .5em;color:var(--black);border-bottom:4px solid transparent;text-decoration:none}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none;border-bottom-color:var(--accent)}.social-links[data-astro-cid-3ef6ksr2],.social-links[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{display:flex}@media (max-width: 720px){.social-links[data-astro-cid-3ef6ksr2]{display:none}}
+main[data-astro-cid-bvzihdzo]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-bvzihdzo]{width:100%}.hero-image[data-astro-cid-bvzihdzo] img[data-astro-cid-bvzihdzo]{display:block;margin:0 auto;border-radius:12px;box-shadow:var(--box-shadow)}.prose[data-astro-cid-bvzihdzo]{width:1020px;max-width:calc(100% - 2em);margin:auto;padding:1em;color:rgb(var(--gray-dark))}.title[data-astro-cid-bvzihdzo]{margin-bottom:1em;padding:1em 0;text-align:center;line-height:1}.title[data-astro-cid-bvzihdzo] h1[data-astro-cid-bvzihdzo]{margin:0 0 .5em}.date[data-astro-cid-bvzihdzo]{margin-bottom:.5em;color:rgb(var(--gray))}.last-updated-on[data-astro-cid-bvzihdzo]{font-style:italic}
+</style></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>羽痕爱编程</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 博客 </a>  <a href="/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 关于 </a>  </div> <div class="social-links" data-astro-cid-3ef6ksr2> <a href="https://m.webtoo.ls/@astro" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Follow Astro on Mastodon</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z" data-astro-cid-3ef6ksr2></path></svg> </a> <a href="https://twitter.com/astrodotbuild" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Follow Astro on Twitter</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" data-astro-cid-3ef6ksr2></path></svg> </a> <a href="https://github.com/withastro/astro" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Go to Astro's GitHub repo</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-3ef6ksr2></path></svg> </a> </div> </nav> </header>  <main data-astro-cid-bvzihdzo> <article data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo> <img src="https://static.yuhenabc.com/blog/blog-placeholder-about.jpg" alt data-astro-cid-bvzihdzo="true" loading="lazy" decoding="async" fetchpriority="auto" width="1020" height="510"> </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <h1 data-astro-cid-bvzihdzo>Next 项目中 dynamic 和 lazy 选哪个？</h1> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2025-07-09T00:00:00.000Z"> Jul 9, 2025 </time>  </div> <hr data-astro-cid-bvzihdzo> </div>  <p>在 Next.js 项目中，<code>next/dynamic</code> 和 React 原生的 <code>React.lazy</code> 都能实现组件的懒加载（或称代码分割），但它们在功能和使用场景上有着关键的区别。简单来说，<strong><code>next/dynamic</code> 是 <code>React.lazy</code> 在 Next.js 环境下的增强版，尤其优化了服务器端渲染 (SSR) 的场景</strong>。</p>
+<hr>
+<h3 id="reactlazy--suspense">React.lazy + Suspense</h3>
+<p>这是 React 提供的核心懒加载机制。</p>
+<p><strong>定义方式：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { lazy, Suspense } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 定义一个懒加载组件</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> MyLazyComponent</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> lazy</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#F97583"> import</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'./MyActualComponent'</span><span style="color:#E1E4E8">))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> MyPage</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#79B8FF">Suspense</span><span style="color:#B392F0"> fallback</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">>Loading component...&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">>}></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#79B8FF">MyLazyComponent</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#79B8FF">Suspense</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  )</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>工作原理：</strong></p>
+<ul>
+<li><code>React.lazy</code> 接收一个函数作为参数，该函数必须动态导入一个模块（通常是一个 React 组件）。</li>
+<li>当 <code>MyLazyComponent</code> 被渲染时，它会触发 <code>import()</code> 加载对应的 JavaScript chunk。</li>
+<li>在 chunk 加载完成之前，<code>Suspense</code> 组件会渲染其 <code>fallback</code> prop 定义的 UI。</li>
+</ul>
+<p><strong>主要特点：</strong></p>
+<ul>
+<li><strong>客户端懒加载：</strong> <code>React.lazy</code> 仅在<strong>客户端</strong>工作。这意味着被 <code>lazy</code> 包裹的组件，其代码和渲染只会在浏览器端发生。</li>
+<li><strong>不支持 SSR：</strong> <code>React.lazy</code> 不直接支持服务器端渲染。如果你在服务器端渲染的组件树中使用了 <code>React.lazy</code>，会报错，因为它无法在服务器上“等待”模块的加载。你需要确保这些懒加载组件只在客户端渲染。</li>
+</ul>
+<hr>
+<h3 id="nextdynamic">next/dynamic</h3>
+<p><code>next/dynamic</code> 是 Next.js 对 <code>React.lazy</code> 的一个封装和扩展，它解决了 <code>React.lazy</code> 在 SSR 环境下的局限性，并提供了更多控制选项。</p>
+<p><strong>定义方式：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> dynamic </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'next/dynamic'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 定义一个动态加载组件</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> MyDynamicComponent</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> dynamic</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#F97583"> import</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'../components/MyActualComponent'</span><span style="color:#E1E4E8">), {</span></span>
+<span class="line"><span style="color:#B392F0">  loading</span><span style="color:#E1E4E8">: () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">>Loading (from dynamic)...&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">>, </span><span style="color:#6A737D">// 可选：自定义加载组件</span></span>
+<span class="line"><span style="color:#E1E4E8">  ssr: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 可选：控制是否在 SSR 时包含此组件</span></span>
+<span class="line"><span style="color:#6A737D">  // suspense: true // React 18: 可选，内部自动使用 Suspense</span></span>
+<span class="line"><span style="color:#E1E4E8">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> MyPage</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#6A737D">    // 如果没有设置 suspense: true，仍然需要 Suspense 包裹</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#79B8FF">MyDynamicComponent</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">  )</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>工作原理：</strong></p>
+<ul>
+<li>它也是基于动态 <code>import()</code> 来实现代码分割。</li>
+<li>它在构建时和运行时都与 Next.js 的 SSR 机制深度集成。</li>
+</ul>
+<p><strong>主要特点：</strong></p>
+<ul>
+<li><strong>同时支持客户端和服务器端懒加载（按需）或禁用 SSR：</strong>
+<ul>
+<li>默认情况下 (<code>ssr: true</code>)，<code>next/dynamic</code> 会尝试在服务器端预加载并渲染组件。这对于 SSR 的初始加载性能很重要。</li>
+<li>通过设置 <code>ssr: false</code>，你可以明确地告诉 Next.js <strong>只在客户端加载和渲染</strong>这个组件。这对于依赖浏览器 <code>window</code> 或 <code>document</code> 对象的库（如图表库、播放器等）至关重要，因为它们在服务器端执行时会报错。</li>
+</ul>
+</li>
+<li><strong>提供 <code>loading</code> 选项：</strong> 类似于 <code>Suspense</code> 的 <code>fallback</code>，你可以通过 <code>loading</code> 选项为动态加载的组件指定一个加载状态显示的 React 组件。</li>
+<li><strong>集成 <code>Suspense</code> (可选，React 18+)：</strong> 引入 <code>suspense: true</code> 选项后，<code>next/dynamic</code> 可以在内部自动包裹 <code>Suspense</code>，省去了手动添加 <code>&#x3C;Suspense></code> 标签的麻烦。<code>loading</code> 选项将作为 <code>Suspense</code> 的 <code>fallback</code>。</li>
+</ul>
+<hr>
+<h3 id="关键区别总结">关键区别总结</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">特性</th><th align="left"><code>React.lazy</code></th><th align="left"><code>next/dynamic</code></th></tr></thead><tbody><tr><td align="left"><strong>SSR 支持</strong></td><td align="left"><strong>不支持</strong> (默认只在客户端工作)</td><td align="left"><strong>支持</strong> (默认 <code>ssr: true</code>)，可选择禁用 (<code>ssr: false</code>)</td></tr><tr><td align="left"><strong>加载回退 UI</strong></td><td align="left">通过 <strong><code>&#x3C;Suspense fallback={...}></code></strong> 提供</td><td align="left">通过 <code>loading</code> 选项或 <code>suspense: true</code> 内置</td></tr><tr><td align="left"><strong>用法位置</strong></td><td align="left">可以在任何 React 项目中使用</td><td align="left">Next.js 特有，与 Next.js SSR 紧密集成</td></tr><tr><td align="left"><strong>控制粒度</strong></td><td align="left">较少，只关注客户端加载</td><td align="left">更多，可控制 SSR 行为、自定义加载组件等</td></tr><tr><td align="left"><strong>典型使用场景</strong></td><td align="left">仅在客户端渲染的组件，或者在不需要 SSR 的应用中</td><td align="left"><strong>所有 Next.js 项目</strong>，特别是处理依赖浏览器 API 的组件或需要精细控制 SSR 行为时。</td></tr></tbody></table>
+<hr>
+<h3 id="何时使用哪个">何时使用哪个？</h3>
+<p>在 Next.js 项目中：</p>
+<p><strong>推荐使用 <code>next/dynamic</code>：</strong></p>
+<ul>
+<li>当你需要懒加载组件时，<strong>几乎总是应该优先考虑 <code>next/dynamic</code></strong>。</li>
+<li>它提供了对 SSR 的控制，这是 <code>React.lazy</code> 无法做到的。</li>
+<li>特别是当你的组件<strong>依赖浏览器特有的 API</strong>（如 <code>window</code>, <code>document</code>, <code>localStorage</code> 等）时，你必须使用 <code>next/dynamic</code> 并设置 <code>ssr: false</code> 来避免在服务器端渲染时出错。</li>
+<li>它还提供了一个方便的 <code>loading</code> 选项来处理加载状态。</li>
+</ul>
+<p><strong>很少直接使用 <code>React.lazy</code>：</strong></p>
+<ul>
+<li>在 Next.js 中，你很少会直接使用 <code>React.lazy</code>，因为它没有 <code>next/dynamic</code> 提供的 SSR 兼容性和控制能力。</li>
+<li>如果你在 Next.js 的客户端组件（即 <code>use client</code> 的组件）中偶然遇到一个非常简单的客户端懒加载场景，并且你明确知道这个组件永远不需要 SSR，那么理论上你可以使用 <code>React.lazy</code>，但 <code>next/dynamic</code> 仍然是更统一和强大的选择。</li>
+</ul>
+<p><strong>结论：</strong> 在 Next.js 应用中，<code>next/dynamic</code> 是进行组件懒加载的<strong>首选工具</strong>，它为你提供了必要的控制，以确保你的应用在 SSR 和客户端加载方面都能高效、稳定地运行。</p>  </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+&copy; 2025 Your name here. All rights reserved.
+<div class="social-links" data-astro-cid-sz7xmlte> <a href="https://m.webtoo.ls/@astro" target="_blank" data-astro-cid-sz7xmlte> <span class="sr-only" data-astro-cid-sz7xmlte>Follow Astro on Mastodon</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/mastodon" data-astro-cid-sz7xmlte><path fill="currentColor" d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z" data-astro-cid-sz7xmlte></path></svg> </a> <a href="https://twitter.com/astrodotbuild" target="_blank" data-astro-cid-sz7xmlte> <span class="sr-only" data-astro-cid-sz7xmlte>Follow Astro on Twitter</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/twitter" data-astro-cid-sz7xmlte><path fill="currentColor" d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" data-astro-cid-sz7xmlte></path></svg> </a> <a href="https://github.com/withastro/astro" target="_blank" data-astro-cid-sz7xmlte> <span class="sr-only" data-astro-cid-sz7xmlte>Go to Astro's GitHub repo</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/github" data-astro-cid-sz7xmlte><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-sz7xmlte></path></svg> </a> </div> </footer>  </body></html>

@@ -54,3 +54,8 @@ jobs:
           full_commit_message: astro update
           # set to true if you want an empty commit when no changes
           allow_empty_commit: false
+
+      - name: Trigger webhookd
+        uses: CamiloGarciaLaRotta/watermelon-http-client@v1
+        with:
+          url: https://hook.yuhenabc.com/hooks/io
